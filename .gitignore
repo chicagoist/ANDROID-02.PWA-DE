@@ -26,3 +26,11 @@ Thumbs.db
 
 # Misc
 nul
+
+# Large media assets (audio tracks and textbook PDF)
+# These files are kept out of Git to keep the repository small.
+# See README.md "Local Setup (Large Media Assets)" for extraction instructions.
+android/app/src/main/assets/www/resources/**/*.mp3
+android/app/src/main/assets/www/resources/**/*.MP3
+android/app/src/main/assets/www/resources/**/*.pdf
+android/app/src/main/assets/www/resources/**/*.PDF

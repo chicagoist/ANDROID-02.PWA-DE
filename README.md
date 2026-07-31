@@ -16,7 +16,7 @@ android/
 │       ├── java/com/chicagoist/justgerman/
 │       │   ├── MainActivity.kt
 │       │   └── SpaPathHandler.kt
-│       └── assets/www/          ← статический сайт (432 MB)
+│       └── assets/www/          ← статический сайт (~8 MB без медиа)
 ```
 
 ## Что внутри
@@ -33,11 +33,68 @@ android/
 - Android SDK API 34
 - Gradle 8.2+
 
+## Local Setup (Large Media Assets)
+
+> ⚠️ **Чтобы git-репозиторий оставался компактным, большие медиафайлы исключены из индекса.**
+> В репозитории хранится только HTML/CSS/JS и небольшие ресурсы. Без аудио и PDF локальная сборка пройдёт, но приложение не будет воспроизводить аудио и не откроет учебник.
+
+### Какие файлы нужны
+
+Скачайте архив с медиафайлами (например, `resources.zip`) и распакуйте его так, чтобы структура папки `android/app/src/main/assets/www/resources/` выглядела следующим образом:
+
+```
+android/app/src/main/assets/www/resources/
+├── .gitkeep
+├── Assimil_DE.pdf
+├── CD1/
+│   ├── 01.mp3
+│   ├── 02.mp3
+│   └── ...
+├── CD2/
+│   ├── 27.mp3
+│   ├── 29.mp3
+│   └── ...
+├── CD3/
+│   ├── 53.mp3
+│   ├── 57.mp3
+│   └── ...
+└── CD4/
+    ├── 78.mp3
+    ├── 85.mp3
+    └── ...
+```
+
+### Важные пути
+
+- **Учебник PDF**: `android/app/src/main/assets/www/resources/Assimil_DE.pdf`
+- **Аудио CD1**: `android/app/src/main/assets/www/resources/CD1/*.mp3`
+- **Аудио CD2**: `android/app/src/main/assets/www/resources/CD2/*.mp3`
+- **Аудио CD3**: `android/app/src/main/assets/www/resources/CD3/*.mp3`
+- **Аудио CD4**: `android/app/src/main/assets/www/resources/CD4/*.mp3`
+
+### Проверка
+
+После разархивирования убедитесь, что файлы находятся в нужных папках. В Git Bash или PowerShell выполните:
+
+```bash
+cd "C:\Projects\ANDROID-02.PWA-DE\android\app\src\main\assets\www\resources"
+ls -R
+```
+
+Вы должны увидеть файл `Assimil_DE.pdf` и папки `CD1`, `CD2`, `CD3`, `CD4` с MP3-файлами.
+
+### Почему так
+
+- Файлы MP3 и PDF исключены из `.gitignore` по маскам `*.mp3` и `*.pdf` внутри `android/app/src/main/assets/www/resources/`.
+- При следующем `git push` они не попадут в репозиторий, но останутся на вашем диске.
+- GitHub Actions CI будет собирать APK **без** этих медиафайлов, так как они не хранятся в git. Для CI-сборок с медиафайлами можно либо добавить шаг загрузки архива, либо выполнять release-сборку локально.
+
 ## Как собрать
 
-1. Откройте папку `android` в Android Studio.
-2. Дождитесь окончания Gradle sync.
-3. Выберите **Build → Build Bundle(s) / APK(s) → Build APK(s)**.
+1. Убедитесь, что медиафайлы разархивированы в `android/app/src/main/assets/www/resources/` (см. раздел выше).
+2. Откройте папку `android` в Android Studio.
+3. Дождитесь окончания Gradle sync.
+4. Выберите **Build → Build Bundle(s) / APK(s) → Build APK(s)**.
 
 Готовый APK появится в:
 
@@ -48,6 +105,8 @@ android/app/build/outputs/apk/debug/app-debug.apk
 ## GitHub Actions CI
 
 В `.github/workflows/android.yml` настроен автоматический сборщик, который при каждом `push` в `main` собирает debug APK и сохраняет его в артефакты.
+
+> ⚠️ Сборка CI не включает аудио и PDF, поэтому артефакт `app-debug.apk` будет работать только для проверки UI/UX.
 
 Чтобы запустить CI:
 
