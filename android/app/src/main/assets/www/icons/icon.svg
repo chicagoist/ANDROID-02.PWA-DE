@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="64" fill="#111111"/>
+  <!-- German flag stripe top -->
+  <rect x="64" y="80" width="384" height="24" rx="4" fill="#000000"/>
+  <rect x="64" y="108" width="384" height="24" rx="4" fill="#dd0000"/>
+  <rect x="64" y="136" width="384" height="24" rx="4" fill="#ffce00"/>
+  <!-- JG text -->
+  <text x="256" y="300" font-family="Georgia, serif" font-size="160" font-weight="bold" fill="#e6b800" text-anchor="middle" dominant-baseline="middle">JG</text>
+  <text x="256" y="380" font-family="sans-serif" font-size="40" fill="#ffffff" text-anchor="middle" dominant-baseline="middle">Just German</text>
+</svg>

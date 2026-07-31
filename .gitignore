@@ -1,0 +1,21 @@
+# Gradle
+.gradle/
+build/
+android/build/
+android/app/build/
+android/local.properties
+
+# Android Studio
+.idea/
+*.iml
+*.hprof
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local generated static site (source is in android/app/src/main/assets/www)
+/www/
+
+# Logs
+*.log
