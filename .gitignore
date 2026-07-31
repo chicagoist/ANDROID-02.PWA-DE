@@ -10,6 +10,10 @@ android/local.properties
 *.iml
 *.hprof
 
+# Signing
+*.jks
+*.keystore
+
 # OS
 .DS_Store
 Thumbs.db
@@ -19,3 +23,6 @@ Thumbs.db
 
 # Logs
 *.log
+
+# Misc
+nul

@@ -65,6 +65,67 @@ git push -u origin main
 3. Откройте вкладку **Actions** в GitHub — сборка начнётся автоматически.
 4. После успешного завершения скачайте артефакт `app-debug.apk`.
 
+## Release-сборка с подписью
+
+CI поддерживает подписанный release APK/AAB через GitHub Secrets.
+
+### 1. Сгенерируйте keystore
+
+```bash
+keytool -genkey -v \
+  -keystore release.jks \
+  -keyalg RSA \
+  -keysize 2048 \
+  -validity 10000 \
+  -alias upload
+```
+
+При выполнении укажите:
+- пароль для keystore
+- ваши данные (CN, OU и т.д. — можно оставить значения по умолчанию)
+- пароль для alias (можно совпадающий с паролем keystore)
+
+### 2. Закодируйте keystore в base64
+
+Windows PowerShell:
+
+```powershell
+[Convert]::ToBase64String([IO.File]::ReadAllBytes("release.jks")) | Set-Content release_base64.txt
+```
+
+Git Bash / WSL / macOS / Linux:
+
+```bash
+base64 -w 0 release.jks > release_base64.txt
+```
+
+Содержимое файла `release_base64.txt` — это одна длинная строка.
+
+### 3. Добавьте секреты в GitHub
+
+Откройте страницу репозитория → **Settings → Secrets and variables → Actions → New repository secret** и добавьте четыре секрета:
+
+| Название секрета | Значение |
+|------------------|----------|
+| `KEYSTORE_BASE64` | Вся строка из `release_base64.txt` |
+| `KEYSTORE_PASSWORD` | Пароль от keystore |
+| `KEY_ALIAS` | `upload` (или тот alias, который указали) |
+| `KEY_PASSWORD` | Пароль от alias |
+
+### 4. Запустите сборку
+
+После следующего `push` в `main` CI выполнит дополнительные шаги:
+- `Build release APK and AAB`
+- `Upload release APK`
+- `Upload release AAB`
+
+Готовые артефакты появятся в разделе **Actions → Ваша сборка → Artifacts**.
+
+### Важно
+
+- **Никогда не коммитьте `*.jks` и `*.keystore` в репозиторий** — они уже исключены в `.gitignore`.
+- Храните оригинальный `release.jks` в надёжном месте (локально, в менеджере паролей, в зашифрованном хранилище). Если он потерян, вы не сможете обновлять приложение в Google Play под тем же ключом.
+
 ## Ограничения
 
 - Приложение содержит все статические файлы, включая MP3 и PDF, поэтому размер APK около **430 MB**.
