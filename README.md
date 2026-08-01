@@ -29,8 +29,8 @@ android/
 ## Требования
 
 - Android Studio Hedgehog (2023.1.1) или новее
-- JDK 17 или JDK 21
-- Android SDK API 34
+- **JDK 17** (не JDK 21+/25 — см. «Как собрать»)
+- Android SDK API 34 + build-tools 34.0.0
 - Gradle 8.2+
 
 ## Local Setup (Large Media Assets)
@@ -93,8 +93,12 @@ ls -R
 
 ## Как собрать
 
+> ⚠️ **Требования к окружению:**
+> - Сборка работает на **JDK 17** (не JDK 21+/25 — Gradle 8.5 с ними падает с ошибкой «25.0.2»). Убедитесь, что `JAVA_HOME` указывает на JDK 17.
+> - Установлен **Android SDK** (platform 34 + build-tools 34.0.0). Путь задаётся в `android/local.properties` (`sdk.dir=...`) или через переменную `ANDROID_HOME`.
+
 1. Убедитесь, что медиафайлы разархивированы в `android/app/src/main/assets/www/resources/` (см. раздел выше).
-2. Откройте папку `android` в Android Studio.
+2. Откройте папку `android` в Android Studio (или соберите из командной строки: `cd android && gradlew.bat assembleDebug`).
 3. Дождитесь окончания Gradle sync.
 4. Выберите **Build → Build Bundle(s) / APK(s) → Build APK(s)**.
 
