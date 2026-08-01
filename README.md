@@ -42,7 +42,17 @@ android/
 
 ### Какие файлы нужны
 
-Скачайте архив с медиафайлами (например, `resources.zip`) и распакуйте его так, чтобы структура папки `android/app/src/main/assets/www/resources/` выглядела следующим образом:
+Медиафайлы (86 MP3 + учебник PDF) **не хранятся в git** — их нужно скопировать в проект вручную одним из двух способов.
+
+**Вариант A — файлы уже есть в исходном проекте** (`C:\Projects\02.PWA-DE\public\resources`):
+
+```cmd
+robocopy "C:\Projects\02.PWA-DE\public\resources" "C:\Projects\ANDROID-02.PWA-DE\android\app\src\main\assets\www\resources" /E
+```
+
+(в PowerShell: `Copy-Item -Path "C:\Projects\02.PWA-DE\public\resources\*" -Destination "C:\Projects\ANDROID-02.PWA-DE\android\app\src\main\assets\www\resources\" -Recurse -Force`)
+
+**Вариант B — из архива** (`resources.zip`): распакуйте его так, чтобы структура папки `android/app/src/main/assets/www/resources/` выглядела следующим образом:
 
 ```
 android/app/src/main/assets/www/resources/
@@ -142,7 +152,10 @@ CI поддерживает подписанный release APK/AAB через Gi
 
 ### 1. Сгенерируйте keystore
 
-```bash
+> Выполняйте генерацию **в папке `android/app`** — туда CI декодирует keystore (`android/app/release.jks`), и локальная release-сборка найдёт файл там же.
+
+```cmd
+cd android\app
 keytool -genkey -v \
   -keystore release.jks \
   -keyalg RSA \
@@ -150,6 +163,8 @@ keytool -genkey -v \
   -validity 10000 \
   -alias upload
 ```
+
+> На Windows, если `keytool` не найден, укажите полный путь из установленного JDK 17, например: `"C:\Program Files\Eclipse Adoptium\jdk-17.0.20.8-hotspot\bin\keytool.exe"`.
 
 При выполнении укажите:
 - пароль для keystore
