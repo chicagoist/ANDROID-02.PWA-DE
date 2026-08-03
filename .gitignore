@@ -34,3 +34,9 @@ android/app/src/main/assets/www/resources/**/*.mp3
 android/app/src/main/assets/www/resources/**/*.MP3
 android/app/src/main/assets/www/resources/**/*.pdf
 android/app/src/main/assets/www/resources/**/*.PDF
+android/backup_версия_1.0/
+
+# Local build artifacts (never commit)
+*.apk
+*.aab
+/tools/
