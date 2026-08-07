@@ -5,6 +5,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material.icons.filled.CheckCircle
 import androidx.compose.material.icons.filled.PlayArrow
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -13,8 +14,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.chicagoist.justgerman.data.repository.LessonRepository
+import com.chicagoist.justgerman.data.repository.ProgressRepository
 import com.chicagoist.justgerman.ui.theme.Gold
+import com.chicagoist.justgerman.ui.theme.QuizCorrect
 import com.chicagoist.justgerman.ui.theme.Zinc800
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -32,18 +36,30 @@ fun WeekScreen(
         lessons.flatMap { it.topics }.distinct().take(5)
     }
 
+    // Lesson completion progress (DataStore)
+    val progressRepository = remember { ProgressRepository(context) }
+    val completedLessons by progressRepository.completedLessons
+        .collectAsStateWithLifecycle(initialValue = emptySet())
+    val completedInWeek = remember(completedLessons) {
+        lessons.count { it.id in completedLessons }
+    }
+
     Scaffold(
         topBar = {
             TopAppBar(
-                title = {
-                    Column {
-                        Text("Неделя $weekId")
-                        Text(
-                            topics.joinToString(" · "),
-                            style = MaterialTheme.typography.bodySmall,
-                            color = MaterialTheme.colorScheme.onSurfaceVariant
-                        )
-                    }
+                title = {                        Column {
+                            Text("Неделя $weekId")
+                            Text(
+                                topics.joinToString(" · "),
+                                style = MaterialTheme.typography.bodySmall,
+                                color = MaterialTheme.colorScheme.onSurfaceVariant
+                            )
+                            Text(
+                                "Пройдено $completedInWeek из ${lessons.size}",
+                                style = MaterialTheme.typography.bodySmall,
+                                color = Gold
+                            )
+                        }
                 },
                 navigationIcon = {
                     IconButton(onClick = onBack) {
@@ -91,11 +107,19 @@ fun WeekScreen(
                                 color = MaterialTheme.colorScheme.onSurfaceVariant
                             )
                         }
-                        Icon(
-                            Icons.Default.PlayArrow,
-                            contentDescription = null,
-                            tint = MaterialTheme.colorScheme.onSurfaceVariant
-                        )
+                        if (lesson.id in completedLessons) {
+                            Icon(
+                                Icons.Default.CheckCircle,
+                                contentDescription = "Пройден",
+                                tint = QuizCorrect
+                            )
+                        } else {
+                            Icon(
+                                Icons.Default.PlayArrow,
+                                contentDescription = null,
+                                tint = MaterialTheme.colorScheme.onSurfaceVariant
+                            )
+                        }
                     }
                 }
             }

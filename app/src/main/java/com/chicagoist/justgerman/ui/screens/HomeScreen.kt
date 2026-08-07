@@ -11,7 +11,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.chicagoist.justgerman.data.repository.LessonRepository
 import com.chicagoist.justgerman.data.repository.MediaStore
+import com.chicagoist.justgerman.data.repository.ProgressRepository
 import com.chicagoist.justgerman.ui.theme.Gold
 import com.chicagoist.justgerman.ui.theme.Zinc800
 import kotlinx.coroutines.Dispatchers
@@ -27,6 +30,14 @@ fun HomeScreen(
     val context = LocalContext.current
     val scope = rememberCoroutineScope()
     val mediaStore = remember { MediaStore(context) }
+
+    // Lesson completion progress (DataStore)
+    val progressRepository = remember { ProgressRepository(context) }
+    val completedLessons by progressRepository.completedLessons
+        .collectAsStateWithLifecycle(initialValue = emptySet())
+    val totalLessons = remember {
+        LessonRepository(context).getLessons().size
+    }
 
     var importState by remember { mutableStateOf(ImportState.Idle) }
     var importedCount by remember { mutableIntStateOf(mediaStore.importedMediaCount()) }
@@ -97,7 +108,10 @@ fun HomeScreen(
 
             // Progress banner (like the PWA)
             item {
-                ProgressBanner()
+                ProgressBanner(
+                    completedCount = completedLessons.size,
+                    totalCount = totalLessons
+                )
             }
 
             // Three course blocks: weeks 1-4, 5-8, 9-12 (like the PWA)
@@ -180,7 +194,10 @@ private data class MonthBlock(
 )
 
 @Composable
-fun ProgressBanner() {
+fun ProgressBanner(
+    completedCount: Int,
+    totalCount: Int
+) {
     Card(
         modifier = Modifier.fillMaxWidth(),
         colors = CardDefaults.cardColors(
@@ -192,17 +209,19 @@ fun ProgressBanner() {
             verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {
             Text(
-                "0/100 уроков",
+                "$completedCount/$totalCount уроков",
                 style = MaterialTheme.typography.titleMedium,
                 color = Gold
             )
             Text(
-                "Прогресс появится после отметки уроков как пройденных",
+                "Прогресс обновляется после отметки уроков как пройденных",
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant
             )
             LinearProgressIndicator(
-                progress = { 0f },
+                progress = {
+                    if (totalCount > 0) completedCount.toFloat() / totalCount else 0f
+                },
                 modifier = Modifier.fillMaxWidth(),
                 color = Gold
             )

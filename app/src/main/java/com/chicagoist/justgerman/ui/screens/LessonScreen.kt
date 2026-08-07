@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material.icons.filled.CheckCircle
 import androidx.compose.material.icons.filled.Forward10
 import androidx.compose.material.icons.filled.Pause
 import androidx.compose.material.icons.filled.PlayArrow
@@ -25,11 +26,15 @@ import androidx.media3.common.MediaItem
 import androidx.media3.common.PlaybackParameters
 import androidx.media3.common.Player
 import androidx.media3.exoplayer.ExoPlayer
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.chicagoist.justgerman.data.model.DialogLine
 import com.chicagoist.justgerman.data.repository.LessonRepository
 import com.chicagoist.justgerman.data.repository.MediaStore
+import com.chicagoist.justgerman.data.repository.ProgressRepository
 import com.chicagoist.justgerman.ui.theme.FlagBlack
 import com.chicagoist.justgerman.ui.theme.Gold
+import com.chicagoist.justgerman.ui.theme.QuizCorrect
+import com.chicagoist.justgerman.ui.theme.Zinc800
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -73,6 +78,13 @@ fun LessonScreen(
     DisposableEffect(player) {
         onDispose { player?.release() }
     }
+
+    // Lesson completion progress (DataStore)
+    val progressRepository = remember { ProgressRepository(context) }
+    val completedLessons by progressRepository.completedLessons
+        .collectAsStateWithLifecycle(initialValue = emptySet())
+    val isCompleted = lesson.id in completedLessons
+    val scope = rememberCoroutineScope()
 
     // Single TTS engine for the whole lesson screen.
     val tts = remember { mutableStateOf<TextToSpeech?>(null) }
@@ -234,6 +246,37 @@ fun LessonScreen(
                     SectionCard(title = "Методические советы") {
                         BulletList(items = lesson.tips)
                     }
+                }
+            }
+
+            // Mark lesson as completed (like the PWA)
+            item {
+                Spacer(modifier = Modifier.height(8.dp))
+                Button(
+                    onClick = {
+                        scope.launch {
+                            progressRepository.markCompleted(lesson.id)
+                        }
+                    },
+                    modifier = Modifier.fillMaxWidth(),
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = if (isCompleted) Zinc800 else Gold,
+                        contentColor = if (isCompleted) QuizCorrect else FlagBlack
+                    )
+                ) {
+                    if (isCompleted) {
+                        Icon(
+                            Icons.Default.CheckCircle,
+                            contentDescription = null,
+                            modifier = Modifier.size(20.dp)
+                        )
+                        Spacer(modifier = Modifier.width(8.dp))
+                    }
+                    Text(
+                        if (isCompleted) "Урок пройден" else "Завершить урок",
+                        style = MaterialTheme.typography.titleSmall,
+                        fontWeight = FontWeight.Bold
+                    )
                 }
             }
         }
