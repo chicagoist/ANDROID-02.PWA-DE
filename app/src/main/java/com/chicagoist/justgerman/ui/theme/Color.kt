@@ -17,6 +17,10 @@ val Zinc100 = Color(0xFFF4F4F5)
 val Gold = Color(0xFFFBBF24)
 val GoldDark = Color(0xFFF59E0B)
 
+// Quiz feedback colors (like the desktop PWA)
+val QuizCorrect = Color(0xFF22C55E)
+val QuizWrong = Color(0xFFEF4444)
+
 // Flag colors
 val FlagBlack = Color(0xFF000000)
 val FlagRed = Color(0xFFDD0000)
