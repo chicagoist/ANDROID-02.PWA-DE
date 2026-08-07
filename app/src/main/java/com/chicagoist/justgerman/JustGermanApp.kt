@@ -22,9 +22,6 @@ fun JustGermanApp() {
                 onNavigateToLesson = { lessonId ->
                     navController.navigate("lesson/$lessonId")
                 },
-                onNavigateToQuiz = { quizId ->
-                    navController.navigate("quiz/$quizId")
-                },
                 onNavigateToWeek = { weekId ->
                     navController.navigate("week/$weekId")
                 }
@@ -53,6 +50,9 @@ fun JustGermanApp() {
                 weekId = weekId,
                 onNavigateToLesson = { lessonId ->
                     navController.navigate("lesson/$lessonId")
+                },
+                onNavigateToQuiz = { quizId ->
+                    navController.navigate("quiz/$quizId")
                 },
                 onBack = { navController.popBackStack() }
             )

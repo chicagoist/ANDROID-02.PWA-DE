@@ -4,12 +4,12 @@ import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.chicagoist.justgerman.data.repository.MediaStore
 import com.chicagoist.justgerman.ui.theme.Gold
@@ -22,7 +22,6 @@ import kotlinx.coroutines.withContext
 @Composable
 fun HomeScreen(
     onNavigateToLesson: (Int) -> Unit,
-    onNavigateToQuiz: (Int) -> Unit,
     onNavigateToWeek: (Int) -> Unit
 ) {
     val context = LocalContext.current
@@ -80,6 +79,7 @@ fun HomeScreen(
                 .padding(16.dp),
             verticalArrangement = Arrangement.spacedBy(12.dp)
         ) {
+            // Intro
             item {
                 Text(
                     "12 недель интенсива",
@@ -95,11 +95,52 @@ fun HomeScreen(
                 Spacer(modifier = Modifier.height(16.dp))
             }
 
-            items((1..12).toList()) { week ->
-                WeekCard(
-                    week = week,
-                    onClick = { onNavigateToWeek(week) }
-                )
+            // Progress banner (like the PWA)
+            item {
+                ProgressBanner()
+            }
+
+            // Three course blocks: weeks 1-4, 5-8, 9-12 (like the PWA)
+            listOf(
+                MonthBlock(month = 1, startWeek = 1, endWeek = 4),
+                MonthBlock(month = 2, startWeek = 5, endWeek = 8),
+                MonthBlock(month = 3, startWeek = 9, endWeek = 12)
+            ).forEach { block ->
+                item {
+                    Card(
+                        onClick = { onNavigateToWeek(block.startWeek) },
+                        modifier = Modifier.fillMaxWidth(),
+                        colors = CardDefaults.cardColors(
+                            containerColor = Zinc800
+                        )
+                    ) {
+                        Row(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(16.dp),
+                            horizontalArrangement = Arrangement.SpaceBetween,
+                            verticalAlignment = Alignment.CenterVertically
+                        ) {
+                            Column {
+                                Text(
+                                    "Месяц ${block.month}",
+                                    style = MaterialTheme.typography.titleMedium,
+                                    color = MaterialTheme.colorScheme.onSurface
+                                )
+                                Text(
+                                    "Недели ${block.startWeek}–${block.endWeek}",
+                                    style = MaterialTheme.typography.bodySmall,
+                                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                                )
+                            }
+                            Text(
+                                "→",
+                                style = MaterialTheme.typography.headlineSmall,
+                                color = Gold
+                            )
+                        }
+                    }
+                }
             }
 
             item {
@@ -122,9 +163,49 @@ fun HomeScreen(
                         containerColor = Gold
                     )
                 ) {
-                    Text("Начать урок 1")
+                    Text(
+                        "Продолжить",
+                        fontWeight = FontWeight.Bold
+                    )
                 }
             }
+        }
+    }
+}
+
+private data class MonthBlock(
+    val month: Int,
+    val startWeek: Int,
+    val endWeek: Int
+)
+
+@Composable
+fun ProgressBanner() {
+    Card(
+        modifier = Modifier.fillMaxWidth(),
+        colors = CardDefaults.cardColors(
+            containerColor = Zinc800
+        )
+    ) {
+        Column(
+            modifier = Modifier.padding(16.dp),
+            verticalArrangement = Arrangement.spacedBy(8.dp)
+        ) {
+            Text(
+                "0/100 уроков",
+                style = MaterialTheme.typography.titleMedium,
+                color = Gold
+            )
+            Text(
+                "Прогресс появится после отметки уроков как пройденных",
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant
+            )
+            LinearProgressIndicator(
+                progress = { 0f },
+                modifier = Modifier.fillMaxWidth(),
+                color = Gold
+            )
         }
     }
 }
@@ -184,46 +265,6 @@ fun MediaImportCard(
             ) {
                 Text("Импортировать resources.zip")
             }
-        }
-    }
-}
-
-@Composable
-fun WeekCard(
-    week: Int,
-    onClick: () -> Unit
-) {
-    Card(
-        onClick = onClick,
-        modifier = Modifier.fillMaxWidth(),
-        colors = CardDefaults.cardColors(
-            containerColor = Zinc800
-        )
-    ) {
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(16.dp),
-            horizontalArrangement = Arrangement.SpaceBetween,
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            Column {
-                Text(
-                    "Неделя $week",
-                    style = MaterialTheme.typography.titleMedium,
-                    color = MaterialTheme.colorScheme.onSurface
-                )
-                Text(
-                    "Уроки ${(week - 1) * 7 + 1}–${minOf(week * 7, 100)}",
-                    style = MaterialTheme.typography.bodySmall,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant
-                )
-            }
-            Text(
-                "→",
-                style = MaterialTheme.typography.headlineSmall,
-                color = Gold
-            )
         }
     }
 }
