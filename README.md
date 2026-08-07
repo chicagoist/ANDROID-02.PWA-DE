@@ -1,223 +1,87 @@
-# Just German — Android WebView Wrapper
+# Just German — Android App
 
-Это нативная Android-обёртка (WebView) вокруг статического сайта, сгенерированного из проекта `C:\Projects\02.PWA-DE`.
+Нативное Android-приложение для изучения немецкого языка A2→B1 по методу Assimil.
 
 ## Структура
 
-```
-android/
-├── build.gradle.kts
-├── settings.gradle.kts
-├── gradle.properties
-├── app/
-│   ├── build.gradle.kts
-│   └── src/main/
-│       ├── AndroidManifest.xml
-│       ├── java/com/chicagoist/justgerman/
-│       │   ├── MainActivity.kt
-│       │   └── SpaPathHandler.kt
-│       └── assets/www/          ← статический сайт (~8 MB без медиа)
-```
+- **100 уроков** — полный курс с аудио, диалогами, лексикой, грамматикой
+- **12 квизов** — тесты на артикли (der/die/das)
+- **12 недель** — обзоры недель с прогрессом
+- **PDF учебник** — Assimil Deutsch ohne Mühe heute
+- **86 аудиофайлов** — MP3 записи всех уроков
 
-## Что внутри
+## Технологии
 
-- **Kotlin + AndroidX WebView** — отображает сайт из локальных ассетов.
-- **WebViewAssetLoader** — сервит файлы из `assets/www/` по адресу `https://appassets.androidplatform.net/`.
-- **SpaPathHandler** — поддерживает Next.js-маршуты: `/lesson/1`, `/quiz/1`, `/week/1` и т.д.
-- **FileProvider** — открывает PDF из ассетов во внешнем приложении.
+- **Kotlin 1.9.20**
+- **Jetpack Compose** — современный UI toolkit
+- **Material 3** — темная тема (zinc-950 + gold)
+- **Navigation Compose** — навигация между экранами
+- **kotlinx.serialization** — парсинг JSON данных уроков
+- **Media3 ExoPlayer** — аудиоплеер с управлением скорости
+- **DataStore** — хранение прогресса
+- **FileProvider** — просмотр PDF
 
-## Требования
-
-- Android Studio Hedgehog (2023.1.1) или новее
-- **JDK 17** (не JDK 21+/25 — см. «Как собрать»)
-- Android SDK API 34 + build-tools 34.0.0
-- Gradle 8.2+
-
-## Local Setup (Large Media Assets)
-
-> ⚠️ **Чтобы git-репозиторий оставался компактным, большие медиафайлы исключены из индекса.**
-> В репозитории хранится HTML/CSS/JS и небольшие ресурсы. Без аудио и PDF локальная сборка пройдёт, но приложение не будет воспроизводить аудио и не откроет учебник.
->
-> ️ **Важно:** после `git pull` с этим коммитом Git удалит файлы MP3/PDF из вашей рабочей папки, **если они отслеживались ранее**. Пользователи, у которых файлы уже находятся вне git (например, разархивированы из вашего архива), не потеряют их. Перед обновлением сохраните копию или убедитесь, что у вас есть архив для распаковки.
-
-### Какие файлы нужны
-
-Медиафайлы (86 MP3 + учебник PDF) **не хранятся в git** — их нужно скопировать в проект вручную одним из двух способов.
-
-**Вариант A — файлы уже есть в исходном проекте** (`C:\Projects\02.PWA-DE\public\resources`):
-
-```cmd
-robocopy "C:\Projects\02.PWA-DE\public\resources" "C:\Projects\ANDROID-02.PWA-DE\android\app\src\main\assets\www\resources" /E
-```
-
-(в PowerShell: `Copy-Item -Path "C:\Projects\02.PWA-DE\public\resources\*" -Destination "C:\Projects\ANDROID-02.PWA-DE\android\app\src\main\assets\www\resources\" -Recurse -Force`)
-
-**Вариант B — из архива** (`resources.zip`): распакуйте его так, чтобы структура папки `android/app/src/main/assets/www/resources/` выглядела следующим образом:
-
-```
-android/app/src/main/assets/www/resources/
-├── .gitkeep
-├── Assimil_DE.pdf
-├── CD1/
-│   ├── 01 Lektion.mp3
-│   ├── 02 Lektion.mp3
-│   └── ...
-├── CD2/
-│   ├── 27 Lektion.mp3
-│   ├── 29 Lektion.mp3
-│   └── ...
-├── CD3/
-│   ├── 53 Lektion.mp3
-│   ├── 57 Lektion.mp3
-│   └── ...
-└── CD4/
-    ├── 78 Lektion.mp3
-    ├── 85 Lektion.mp3
-    └── ...
-```
-
-### Важные пути
-
-- **Учебник PDF**: `android/app/src/main/assets/www/resources/Assimil_DE.pdf`
-- **Аудио CD1**: `android/app/src/main/assets/www/resources/CD1/*.mp3`
-- **Аудио CD2**: `android/app/src/main/assets/www/resources/CD2/*.mp3`
-- **Аудио CD3**: `android/app/src/main/assets/www/resources/CD3/*.mp3`
-- **Аудио CD4**: `android/app/src/main/assets/www/resources/CD4/*.mp3`
-
-### Проверка
-
-После разархивирования убедитесь, что файлы находятся в нужных папках. В Git Bash или PowerShell выполните:
+## Сборка
 
 ```bash
-cd "C:\Projects\ANDROID-02.PWA-DE\android\app\src\main\assets\www\resources"
-ls -R
+# Установить зависимости и собрать debug APK
+./gradlew assembleDebug
+
+# Собрать release APK
+./gradlew assembleRelease
+
+# Установить на подключенное устройство
+./gradlew installDebug
+
+# Запустить тесты
+./gradlew test
 ```
 
-Вы должны увидеть файл `Assimil_DE.pdf` и папки `CD1`, `CD2`, `CD3`, `CD4` с MP3-файлами.
+## Структура данных
 
-### Почему так
+- `app/src/main/assets/lessons.json` — 100 уроков (279 KB)
+- `app/src/main/assets/quizzes.json` — 12 квизов (6.4 KB)
+- `app/src/main/assets/resources/CD1-CD4/` — аудиофайлы (*.mp3)
+- `app/src/main/assets/resources/Assimil_DE.pdf` — учебник (21 MB)
 
-- Файлы MP3 и PDF исключены из `.gitignore` по маскам `*.mp3` и `*.pdf` внутри `android/app/src/main/assets/www/resources/`.
-- При следующем `git push` они не попадут в репозиторий, но останутся на вашем диске.
-- GitHub Actions CI будет собирать APK **без** этих медиафайлов, так как они не хранятся в git. Для CI-сборок с медиафайлами можно либо добавить шаг загрузки архива, либо выполнять release-сборку локально.
-
-## Как собрать
-
-> ⚠️ **Требования к окружению:**
-> - Сборка работает на **JDK 17** (не JDK 21+/25 — Gradle 8.5 с ними падает с ошибкой «25.0.2»). Убедитесь, что `JAVA_HOME` указывает на JDK 17. В командной строке cmd.exe (или перезапустите терминал после установки JDK 17):
->
->   ```cmd
->   set JAVA_HOME=C:\Program Files\Eclipse Adoptium\jdk-17.0.20.8-hotspot
->   ```
->
->   *Примечание: путь должен соответствовать месту, куда установлен ваш JDK 17. В PowerShell используйте `$env:JAVA_HOME="C:\...\jdk-17..."`.*
-> - Установлен **Android SDK** (platform 34 + build-tools 34.0.0). Путь задаётся в `android/local.properties` (`sdk.dir=...`) или через переменную `ANDROID_HOME`.
-
-1. Убедитесь, что медиафайлы разархивированы в `android/app/src/main/assets/www/resources/` (см. раздел выше).
-2. Откройте папку `android` в Android Studio (или соберите из командной строки: `cd android && gradlew.bat assembleDebug`).
-3. Дождитесь окончания Gradle sync.
-4. Выберите **Build → Build Bundle(s) / APK(s) → Build APK(s)**.
-
-Готовый APK появится в:
+## Архитектура
 
 ```
-android/app/build/outputs/apk/debug/app-debug.apk
+com.chicagoist.justgerman
+├── MainActivity.kt                  # Точка входа
+├── JustGermanApp.kt                 # Navigation setup
+├── ui/
+│   ├── screens/
+│   │   ├── HomeScreen.kt           # Главная (12 недель)
+│   │   ├── WeekScreen.kt           # Обзор недели
+│   │   ├── LessonScreen.kt         # Полный урок
+│   │   └── QuizScreen.kt           # Квиз на артикли
+│   └── theme/
+│       ├── Color.kt                # Zinc950 + Gold палитра
+│       ├── Theme.kt                # Material3 темная тема
+│       └── Type.kt                 # Typography (Roboto fallback)
+├── data/
+│   ├── model/
+│   │   ├── Lesson.kt               # Модель урока
+│   │   └── Quiz.kt                 # Модель квиза
+│   └── repository/
+│       └── LessonRepository.kt     # Загрузка из assets
 ```
 
-## GitHub Actions CI
+## TODO
 
-В `.github/workflows/android.yml` настроен автоматический сборщик, который при каждом `push` в `main` собирает debug APK и сохраняет его в артефакты.
+- [ ] Реализовать аудиоплеер с ExoPlayer (скорость 0.5x-2x, ±10сек)
+- [ ] Добавить кнопку открытия PDF на нужной странице
+- [ ] Реализовать прогресс через DataStore (отметка уроков как пройденных)
+- [ ] Добавить показ/скрытие переводов
+- [ ] Оптимизировать размер APK (сжатие MP3, PDF)
+- [ ] Добавить реальные шрифты Ubuntu Sans (сейчас Roboto fallback)
+- [ ] Настроить иконку приложения (сейчас placeholder)
 
-> ⚠️ Сборка CI не включает аудио и PDF, поэтому артефакт `app-debug.apk` будет работать только для проверки UI/UX.
+## Связанный проект
 
-Чтобы запустить CI:
+Десктопная PWA версия: `C:\Projects\02.PWA-DE` (Next.js 15 + Tailwind)
 
-1. Создайте новый публичный репозиторий на GitHub.
-2. Выполните в терминале:
+## Лицензия
 
-```bash
-cd "C:\Projects\ANDROID-02.PWA-DE"
-git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO.git
-git add .
-git commit -m "Initial commit: Just German Android WebView wrapper"
-git push -u origin main
-```
-
-3. Откройте вкладку **Actions** в GitHub — сборка начнётся автоматически.
-4. После успешного завершения скачайте артефакт `app-debug.apk`.
-
-## Release-сборка с подписью
-
-CI поддерживает подписанный release APK/AAB через GitHub Secrets.
-
-### 1. Сгенерируйте keystore
-
-> Выполняйте генерацию **в папке `android/app`** — туда CI декодирует keystore (`android/app/release.jks`), и локальная release-сборка найдёт файл там же.
-
-```cmd
-cd android\app
-keytool -genkey -v \
-  -keystore release.jks \
-  -keyalg RSA \
-  -keysize 2048 \
-  -validity 10000 \
-  -alias upload
-```
-
-> На Windows, если `keytool` не найден, укажите полный путь из установленного JDK 17, например: `"C:\Program Files\Eclipse Adoptium\jdk-17.0.20.8-hotspot\bin\keytool.exe"`.
-
-При выполнении укажите:
-- пароль для keystore
-- ваши данные (CN, OU и т.д. — можно оставить значения по умолчанию)
-- пароль для alias (можно совпадающий с паролем keystore)
-
-### 2. Закодируйте keystore в base64
-
-Windows PowerShell:
-
-```powershell
-[Convert]::ToBase64String([IO.File]::ReadAllBytes("release.jks")) | Set-Content release_base64.txt
-```
-
-Git Bash / WSL / macOS / Linux:
-
-```bash
-base64 -w 0 release.jks > release_base64.txt
-```
-
-Содержимое файла `release_base64.txt` — это одна длинная строка.
-
-### 3. Добавьте секреты в GitHub
-
-Откройте страницу репозитория → **Settings → Secrets and variables → Actions → New repository secret** и добавьте четыре секрета:
-
-| Название секрета | Значение |
-|------------------|----------|
-| `KEYSTORE_BASE64` | Вся строка из `release_base64.txt` |
-| `KEYSTORE_PASSWORD` | Пароль от keystore |
-| `KEY_ALIAS` | `upload` (или тот alias, который указали) |
-| `KEY_PASSWORD` | Пароль от alias |
-
-### 4. Запустите сборку
-
-После следующего `push` в `main` CI выполнит дополнительные шаги:
-- `Build release APK and AAB`
-- `Upload release APK`
-- `Upload release AAB`
-
-Готовые артефакты появятся в разделе **Actions → Ваша сборка → Artifacts**.
-
-### Важно
-
-- **Никогда не коммитьте `*.jks` и `*.keystore` в репозиторий** — они уже исключены в `.gitignore`.
-- Храните оригинальный `release.jks` в надёжном месте (локально, в менеджере паролей, в зашифрованном хранилище). Если он потерян, вы не сможете обновлять приложение в Google Play под тем же ключом.
-
-## Ограничения
-
-- Медиафайлы (MP3 и PDF) не хранятся в git. Полный APK с ними занимает около **430 MB**; без них — около **10 MB**.
-- Service Worker из оригинальной PWA не нужен, так как файлы находятся локально.
-- Некоторые динамические функции Next.js, зависящие от серверной части (например, `/api/progress`), не работают. Прогресс можно хранить через `localStorage`/`IndexedDB` WebView.
-
-## Оффлайн
-
-После установки приложение работает полностью офлайн: все уроки, квизы, аудио и PDF уже внутри APK.
+Private project.

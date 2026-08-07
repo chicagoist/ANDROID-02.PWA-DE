@@ -1,0 +1,202 @@
+{
+  "quizzes": [
+    {
+      "id": 1,
+      "week": 1,
+      "questions": [
+        {"word": "Tee", "article": "der"},
+        {"word": "Kaffee", "article": "der"},
+        {"word": "Milch", "article": "die"},
+        {"word": "Zucker", "article": "der"},
+        {"word": "Wasser", "article": "das"},
+        {"word": "Bier", "article": "das"},
+        {"word": "Wein", "article": "der"},
+        {"word": "Cola", "article": "die"},
+        {"word": "Saft", "article": "der"},
+        {"word": "Butter", "article": "die"}
+      ]
+    },
+    {
+      "id": 2,
+      "week": 2,
+      "questions": [
+        {"word": "Tisch", "article": "der"},
+        {"word": "Stuhl", "article": "der"},
+        {"word": "Lampe", "article": "die"},
+        {"word": "Fenster", "article": "das"},
+        {"word": "Tür", "article": "die"},
+        {"word": "Buch", "article": "das"},
+        {"word": "Heft", "article": "das"},
+        {"word": "Stift", "article": "der"},
+        {"word": "Tasche", "article": "die"},
+        {"word": "Handy", "article": "das"}
+      ]
+    },
+    {
+      "id": 3,
+      "week": 3,
+      "questions": [
+        {"word": "Haus", "article": "das"},
+        {"word": "Wohnung", "article": "die"},
+        {"word": "Zimmer", "article": "das"},
+        {"word": "Küche", "article": "die"},
+        {"word": "Bad", "article": "das"},
+        {"word": "Schlafzimmer", "article": "das"},
+        {"word": "Garten", "article": "der"},
+        {"word": "Balkon", "article": "der"},
+        {"word": "Garage", "article": "die"},
+        {"word": "Dach", "article": "das"}
+      ]
+    },
+    {
+      "id": 4,
+      "week": 4,
+      "questions": [
+        {"word": "Auto", "article": "das"},
+        {"word": "Bus", "article": "der"},
+        {"word": "Bahn", "article": "die"},
+        {"word": "Fahrrad", "article": "das"},
+        {"word": "Zug", "article": "der"},
+        {"word": "Flugzeug", "article": "das"},
+        {"word": "Straße", "article": "die"},
+        {"word": "Weg", "article": "der"},
+        {"word": "Platz", "article": "der"},
+        {"word": "Park", "article": "der"}
+      ]
+    },
+    {
+      "id": 5,
+      "week": 5,
+      "questions": [
+        {"word": "Vater", "article": "der"},
+        {"word": "Mutter", "article": "die"},
+        {"word": "Kind", "article": "das"},
+        {"word": "Bruder", "article": "der"},
+        {"word": "Schwester", "article": "die"},
+        {"word": "Familie", "article": "die"},
+        {"word": "Freund", "article": "der"},
+        {"word": "Freundin", "article": "die"},
+        {"word": "Lehrer", "article": "der"},
+        {"word": "Lehrerin", "article": "die"}
+      ]
+    },
+    {
+      "id": 6,
+      "week": 6,
+      "questions": [
+        {"word": "Arbeit", "article": "die"},
+        {"word": "Beruf", "article": "der"},
+        {"word": "Büro", "article": "das"},
+        {"word": "Chef", "article": "der"},
+        {"word": "Kollege", "article": "der"},
+        {"word": "Firma", "article": "die"},
+        {"word": "Geld", "article": "das"},
+        {"word": "Konto", "article": "das"},
+        {"word": "Bank", "article": "die"},
+        {"word": "Karte", "article": "die"}
+      ]
+    },
+    {
+      "id": 7,
+      "week": 7,
+      "questions": [
+        {"word": "Essen", "article": "das"},
+        {"word": "Frühstück", "article": "das"},
+        {"word": "Mittagessen", "article": "das"},
+        {"word": "Abendessen", "article": "das"},
+        {"word": "Brot", "article": "das"},
+        {"word": "Käse", "article": "der"},
+        {"word": "Wurst", "article": "die"},
+        {"word": "Fleisch", "article": "das"},
+        {"word": "Fisch", "article": "der"},
+        {"word": "Gemüse", "article": "das"}
+      ]
+    },
+    {
+      "id": 8,
+      "week": 8,
+      "questions": [
+        {"word": "Apfel", "article": "der"},
+        {"word": "Banane", "article": "die"},
+        {"word": "Orange", "article": "die"},
+        {"word": "Obst", "article": "das"},
+        {"word": "Salat", "article": "der"},
+        {"word": "Tomate", "article": "die"},
+        {"word": "Kartoffel", "article": "die"},
+        {"word": "Reis", "article": "der"},
+        {"word": "Nudel", "article": "die"},
+        {"word": "Suppe", "article": "die"}
+      ]
+    },
+    {
+      "id": 9,
+      "week": 9,
+      "questions": [
+        {"word": "Kopf", "article": "der"},
+        {"word": "Auge", "article": "das"},
+        {"word": "Nase", "article": "die"},
+        {"word": "Mund", "article": "der"},
+        {"word": "Ohr", "article": "das"},
+        {"word": "Hand", "article": "die"},
+        {"word": "Fuß", "article": "der"},
+        {"word": "Arm", "article": "der"},
+        {"word": "Bein", "article": "das"},
+        {"word": "Herz", "article": "das"}
+      ]
+    },
+    {
+      "id": 10,
+      "week": 10,
+      "questions": [
+        {"word": "Hemd", "article": "das"},
+        {"word": "Hose", "article": "die"},
+        {"word": "Rock", "article": "der"},
+        {"word": "Kleid", "article": "das"},
+        {"word": "Jacke", "article": "die"},
+        {"word": "Mantel", "article": "der"},
+        {"word": "Schuh", "article": "der"},
+        {"word": "Tasche", "article": "die"},
+        {"word": "Hemd", "article": "das"},
+        {"word": "Kleidung", "article": "die"}
+      ]
+    },
+    {
+      "id": 11,
+      "week": 11,
+      "questions": [
+        {"word": "Tag", "article": "der"},
+        {"word": "Woche", "article": "die"},
+        {"word": "Monat", "article": "der"},
+        {"word": "Jahr", "article": "das"},
+        {"word": "Zeit", "article": "die"},
+        {"word": "Stunde", "article": "die"},
+        {"word": "Minute", "article": "die"},
+        {"word": "Uhr", "article": "die"},
+        {"word": "Morgen", "article": "der"},
+        {"word": "Abend", "article": "der"}
+      ]
+    },
+    {
+      "id": 12,
+      "week": 12,
+      "questions": [
+        {"word": "Wetter", "article": "das"},
+        {"word": "Sonne", "article": "die"},
+        {"word": "Regen", "article": "der"},
+        {"word": "Schnee", "article": "der"},
+        {"word": "Wind", "article": "der"},
+        {"word": "Wolke", "article": "die"},
+        {"word": "Himmel", "article": "der"},
+        {"word": "Temperatur", "article": "die"},
+        {"word": "Grad", "article": "der"},
+        {"word": "Klima", "article": "das"}
+      ]
+    }
+  ],
+  "metadata": {
+    "totalQuizzes": 12,
+    "questionsPerQuiz": 10,
+    "generatedAt": "2026-08-05T17:36:00.000Z",
+    "version": "1.0"
+  }
+}

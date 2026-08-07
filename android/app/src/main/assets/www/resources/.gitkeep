@@ -1,3 +1,0 @@
-# This file keeps the resources/ directory in Git even when no media files are present.
-# Place the MP3 audio files and the textbook PDF here before building the Android app.
-# See README.md for detailed instructions.

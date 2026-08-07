@@ -1,42 +1,43 @@
 # Gradle
 .gradle/
 build/
-android/build/
-android/app/build/
-android/local.properties
+local.properties
 
 # Android Studio
 .idea/
 *.iml
 *.hprof
+captures/
+.externalNativeBuild
+.cxx
 
 # Signing
 *.jks
 *.keystore
+release_base64.txt
 
 # OS
 .DS_Store
 Thumbs.db
 
-# Local generated static site (source is in android/app/src/main/assets/www)
-/www/
+# Legacy WebView files (удалены)
+www/
+generate-static.js
+android/
+
+# Large media assets (audio tracks and textbook PDF)
+# Not committed due to copyright. Restore via resources.zip — see README.md.
+app/src/main/assets/resources/
 
 # Logs
 *.log
+server-output.log
+session.txt
 
 # Misc
 nul
+gradle.zip
 
-# Large media assets (audio tracks and textbook PDF)
-# These files are kept out of Git to keep the repository small.
-# See README.md "Local Setup (Large Media Assets)" for extraction instructions.
-android/app/src/main/assets/www/resources/**/*.mp3
-android/app/src/main/assets/www/resources/**/*.MP3
-android/app/src/main/assets/www/resources/**/*.pdf
-android/app/src/main/assets/www/resources/**/*.PDF
-android/backup_версия_1.0/
-
-# Local build artifacts (never commit)
+# Build artifacts
 *.apk
 *.aab
-/tools/

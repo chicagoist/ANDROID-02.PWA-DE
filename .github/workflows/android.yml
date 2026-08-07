@@ -71,7 +71,9 @@ jobs:
           KEYSTORE_PATH: release.jks
           KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
           KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
-          KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
+          # NOTE: KEY_PASSWORD intentionally NOT passed. The keystore is PKCS12,
+          # where the key password must equal the store password. build.gradle.kts
+          # falls back to KEYSTORE_PASSWORD when KEY_PASSWORD is unset.
         run: ./gradlew assembleRelease bundleRelease --no-daemon --stacktrace
 
       - name: Upload release APK
