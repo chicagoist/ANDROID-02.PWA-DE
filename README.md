@@ -37,12 +37,63 @@
 ./gradlew test
 ```
 
+> 💡 **Локальная сборка** включает медиафайлы, если они лежат в
+> `app/src/main/assets/resources/` — тогда APK получается ~470 МБ.
+> Сборка в CI (GitHub Actions) идёт без медиа — их можно импортировать
+> в установленное приложение из архива `resources.zip` (см. ниже).
+
 ## Структура данных
 
 - `app/src/main/assets/lessons.json` — 100 уроков (279 KB)
 - `app/src/main/assets/quizzes.json` — 12 квизов (6.4 KB)
 - `app/src/main/assets/resources/CD1-CD4/` — аудиофайлы (*.mp3)
 - `app/src/main/assets/resources/Assimil_DE.pdf` — учебник (21 MB)
+
+## Медиафайлы (аудио и PDF)
+
+> ⚠️ **Медиафайлы не хранятся в git** из-за авторских прав.
+> В репозитории есть только код и данные уроков (JSON).
+
+### Как создать resources.zip
+
+Архив должен содержать структуру `resources/` (или просто файлы в корне):
+
+```
+resources.zip
+├── Assimil_DE.pdf
+├── CD1/01 Lektion.mp3 … 26 Lektion.mp3
+├── CD2/27 Lektion.mp3 … 52 Lektion.mp3
+├── CD3/53 Lektion.mp3 … 77 Lektion.mp3
+└── CD4/78 Lektion.mp3 … 100 Lektion.mp3
+```
+
+**Вариант A — из десктопной PWA** (`C:\Projects\02.PWA-DE\public\resources`):
+
+```cmd
+cd /d C:\Projects\02.PWA-DE\public\resources
+powershell -Command "Compress-Archive -Path * -DestinationPath C:\Projects\ANDROID-02.PWA-DE\resources.zip -Force"
+```
+
+**Вариант B — из папки проекта** (если файлы уже скопированы в `app/src/main/assets/resources/`):
+
+```cmd
+cd /d C:\Projects\ANDROID-02.PWA-DE\app\src\main\assets\resources
+powershell -Command "Compress-Archive -Path * -DestinationPath C:\Projects\ANDROID-02.PWA-DE\resources.zip -Force"
+```
+
+Приложение принимает архив и с префиксом `resources/` внутри, и без него —
+распаковываются только `.mp3` и `.pdf` файлы.
+
+### Как импортировать в установленное приложение
+
+1. Скопируйте `resources.zip` на устройство (через USB, Google Drive, мессенджер и т.д.).
+2. Откройте приложение **Just German**.
+3. На главном экране найдите карточку **«Медиафайлы»** и нажмите **«Импортировать resources.zip»**.
+4. В системном окне выбора файлов укажите архив `resources.zip`.
+5. Дождитесь окончания импорта — в карточке появится количество импортированных файлов.
+
+После импорта аудио всех уроков и учебник PDF доступны офлайн.
+Импортированные файлы имеют приоритет над встроенными в APK.
 
 ## Архитектура
 
@@ -70,8 +121,11 @@ com.chicagoist.justgerman
 
 ## TODO
 
-- [ ] Реализовать аудиоплеер с ExoPlayer (скорость 0.5x-2x, ±10сек)
-- [ ] Добавить кнопку открытия PDF на нужной странице
+- [x] Аудиоплеер с ExoPlayer (скорость 0.75x-2x, ±10сек, громкость)
+- [x] Озвучка реплик диалога через системный TTS
+- [x] Кнопка открытия учебника PDF
+- [x] Импорт медиафайлов из resources.zip
+- [ ] Открытие PDF на нужной странице урока
 - [ ] Реализовать прогресс через DataStore (отметка уроков как пройденных)
 - [ ] Добавить показ/скрытие переводов
 - [ ] Оптимизировать размер APK (сжатие MP3, PDF)

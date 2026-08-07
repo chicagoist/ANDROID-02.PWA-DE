@@ -27,14 +27,13 @@ import androidx.media3.common.Player
 import androidx.media3.exoplayer.ExoPlayer
 import com.chicagoist.justgerman.data.model.DialogLine
 import com.chicagoist.justgerman.data.repository.LessonRepository
+import com.chicagoist.justgerman.data.repository.MediaStore
 import com.chicagoist.justgerman.ui.theme.FlagBlack
 import com.chicagoist.justgerman.ui.theme.Gold
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import java.io.File
-import java.net.URLDecoder
 import java.util.Locale
 import java.util.concurrent.TimeUnit
 
@@ -58,19 +57,21 @@ fun LessonScreen(
         return
     }
 
-    // Hoisted to screen scope so the audio keeps playing even when the
-    // player card scrolls out of the LazyColumn viewport.
-    val decodedPath = remember(lesson.audioPath) {
-        URLDecoder.decode(lesson.audioPath, "UTF-8").removePrefix("/")
-    }
-    val player = remember(decodedPath) {
-        ExoPlayer.Builder(context).build().apply {
-            setMediaItem(MediaItem.fromUri("asset:///$decodedPath"))
-            prepare()
+    // Resolve media: imported files (from resources.zip) take priority,
+    // bundled APK assets are the fallback. Hoisted to screen scope so the
+    // audio keeps playing even when the player card scrolls out of view.
+    val mediaStore = remember { MediaStore(context) }
+    val audioUri = remember(lesson.audioPath) { mediaStore.resolveAudioUri(lesson.audioPath) }
+    val player = remember(audioUri) {
+        audioUri?.let { uri ->
+            ExoPlayer.Builder(context).build().apply {
+                setMediaItem(MediaItem.fromUri(uri))
+                prepare()
+            }
         }
     }
     DisposableEffect(player) {
-        onDispose { player.release() }
+        onDispose { player?.release() }
     }
 
     // Single TTS engine for the whole lesson screen.
@@ -130,12 +131,17 @@ fun LessonScreen(
         ) {
             // Audio player
             item {
-                LessonAudioPlayer(player = player)
+                val p = player
+                if (p != null) {
+                    LessonAudioPlayer(player = p)
+                } else {
+                    MediaMissingCard()
+                }
             }
 
             // PDF textbook button
             item {
-                TextbookButton()
+                TextbookButton(mediaStore = mediaStore)
             }
 
             // Dialog
@@ -505,7 +511,7 @@ fun LessonAudioPlayer(player: ExoPlayer) {
 }
 
 @Composable
-fun TextbookButton() {
+fun TextbookButton(mediaStore: MediaStore) {
     val context = LocalContext.current
     val scope = rememberCoroutineScope()
     var error by remember { mutableStateOf<String?>(null) }
@@ -514,24 +520,11 @@ fun TextbookButton() {
         onClick = {
             error = null
             scope.launch {
-                val pdfFile = File(context.cacheDir, "pdfs/Assimil_DE.pdf")
-                val prepared = withContext(Dispatchers.IO) {
-                    try {
-                        if (!pdfFile.exists()) {
-                            pdfFile.parentFile?.mkdirs()
-                            context.assets.open("resources/Assimil_DE.pdf").use { input ->
-                                pdfFile.outputStream().use { output ->
-                                    input.copyTo(output)
-                                }
-                            }
-                        }
-                        true
-                    } catch (e: Exception) {
-                        false
-                    }
+                val pdfFile = withContext(Dispatchers.IO) {
+                    mediaStore.resolvePdfFile()
                 }
-                if (!prepared) {
-                    error = "Не удалось подготовить учебник"
+                if (pdfFile == null) {
+                    error = "Медиафайлы не найдены. Импортируйте resources.zip на главном экране"
                     return@launch
                 }
                 try {
@@ -571,6 +564,32 @@ fun TextbookButton() {
             style = MaterialTheme.typography.bodySmall,
             color = MaterialTheme.colorScheme.error
         )
+    }
+}
+
+@Composable
+fun MediaMissingCard() {
+    Card(
+        modifier = Modifier.fillMaxWidth(),
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.surfaceVariant
+        )
+    ) {
+        Column(
+            modifier = Modifier.padding(16.dp),
+            verticalArrangement = Arrangement.spacedBy(8.dp)
+        ) {
+            Text(
+                "Аудио урока",
+                style = MaterialTheme.typography.titleSmall,
+                color = Gold
+            )
+            Text(
+                "Медиафайлы не найдены. Импортируйте resources.zip на главном экране, чтобы включить аудио и учебник.",
+                style = MaterialTheme.typography.bodyMedium,
+                color = MaterialTheme.colorScheme.onSurfaceVariant
+            )
+        }
     }
 }
 
