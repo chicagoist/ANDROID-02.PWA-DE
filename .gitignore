@@ -29,6 +29,10 @@ android/
 # Not committed due to copyright. Restore via resources.zip — see README.md.
 app/src/main/assets/resources/
 
+# Local media archive for import (see README.md) and test screenshots
+resources.zip
+screenshots/
+
 # Logs
 *.log
 server-output.log
