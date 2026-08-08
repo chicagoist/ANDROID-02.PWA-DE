@@ -130,7 +130,11 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: app-release-apk
-          path: app/build/outputs/apk/release/app-release.apk
+          # Glob covers the default `app-release.apk` and the AGP fallback
+          # naming (`app-release-unsigned.apk`) if signing ever silently drops.
+          # build.gradle.kts now throws on missing signingConfig, so this is
+          # defense-in-depth only and `if-no-files-found: error` still bites.
+          path: app/build/outputs/apk/release/app-release*.apk
           if-no-files-found: error
 
       - name: Upload release AAB

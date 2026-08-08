@@ -98,7 +98,11 @@ jobs:
           # Auto-generate notes from PR titles + commit subjects between the
           # previous tag and this one — no manual CHANGELOG.md maintenance.
           generate_release_notes: true
+          # Globs APK to also catch AGP's `app-release-unsigned.apk` fallback
+          # name. build.gradle.kts throws on missing signing config, so this
+          # glob is defense-in-depth and `fail_on_unmatched_files: true` still
+          # rejects an empty release artifact.
           files: |
-            app/build/outputs/apk/release/app-release.apk
+            app/build/outputs/apk/release/app-release*.apk
             app/build/outputs/bundle/release/app-release.aab
           fail_on_unmatched_files: true

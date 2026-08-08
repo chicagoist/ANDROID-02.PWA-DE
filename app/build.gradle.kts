@@ -20,13 +20,52 @@ android {
         }
     }
 
+    signingConfigs {
+        // Release signing comes from environment variables (see tools/build-release.sh)
+        // so keystore secrets never end up in the repo. Without them the release is unsigned.
+        val keystorePath = System.getenv("KEYSTORE_PATH")
+        if (keystorePath != null) {
+            create("release") {
+                storeFile = file(keystorePath)
+                storePassword = System.getenv("KEYSTORE_PASSWORD") ?: ""
+                keyAlias = System.getenv("KEY_ALIAS") ?: ""
+                keyPassword = System.getenv("KEY_PASSWORD")
+                    ?: System.getenv("KEYSTORE_PASSWORD") ?: ""
+            }
+        }
+    }
+
     buildTypes {
         release {
             isMinifyEnabled = true
+            isShrinkResources = true
+            // Fail loud if a release variant is built without a signing
+            // config: AGP would otherwise silently produce
+            // `app-release-unsigned.apk`, which a CI glob path could
+            // mis-attribute as a signed artifact. Throw so the cause is
+            // obvious from the build log. Env vars match what
+            // tools/build-release.sh and the CI workflows export.
+            signingConfig = signingConfigs.findByName("release")
+                ?: error("Release signing keystore not configured. " +
+                        "Set KEYSTORE_PATH (path to release.jks), KEYSTORE_PASSWORD, " +
+                        "and KEY_ALIAS env vars; see tools/build-release.sh.")
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+        }
+    }
+
+    // App Bundle: Play Store serves only the resources each device needs.
+    bundle {
+        language {
+            enableSplit = true
+        }
+        density {
+            enableSplit = true
+        }
+        abi {
+            enableSplit = true
         }
     }
 
