@@ -1,17 +1,31 @@
+/*
+ * Just German — учебный проект
+ * Copyright (c) 2026 chicagoist
+ *
+ * SPDX-License-Identifier: LicenseRef-proprietary
+ *
+ * Аудио, учебник и метод Assimil принадлежат правообладателю Assimil SAS
+ * (Франция, assimil.com). Распространение этих материалов запрещено.
+ * См. файл NOTICE.
+ */
+
 package com.chicagoist.justgerman.ui.screens
 
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.chicagoist.justgerman.R
 import com.chicagoist.justgerman.data.repository.LessonRepository
 import com.chicagoist.justgerman.data.repository.MediaStore
 import com.chicagoist.justgerman.data.repository.ProgressRepository
@@ -35,8 +49,24 @@ fun HomeScreen(
     val progressRepository = remember { ProgressRepository(context) }
     val completedLessons by progressRepository.completedLessons
         .collectAsStateWithLifecycle(initialValue = emptySet())
-    val totalLessons = remember {
-        LessonRepository(context).getLessons().size
+    val repository = remember { LessonRepository(context) }
+    val lessons = remember { repository.getLessons() }
+    val totalLessons = lessons.size
+    // Total weeks is derived from the data so the home screen stays correct if
+    // lessons.json ever grows or shrinks. Currently 15 (weeks 1-14 × 7 + week
+    // 15 × 2 = 100 lessons). The previous "3 month" UI hid weeks 2-4, 6-8
+    // and 10-15 even though WeekScreen could render them.
+    val totalWeeks = remember(lessons) { lessons.maxOfOrNull { it.week } ?: 1 }
+    val weeks = remember(lessons, completedLessons, totalWeeks) {
+        val byWeek = lessons.groupBy { it.week }
+        (1..totalWeeks).map { weekId ->
+            val inWeek = byWeek[weekId].orEmpty()
+            WeekEntry(
+                weekId = weekId,
+                total = inWeek.size,
+                completed = inWeek.count { it.id in completedLessons }
+            )
+        }
     }
 
     var importState by remember { mutableStateOf(ImportState.Idle) }
@@ -92,8 +122,15 @@ fun HomeScreen(
         ) {
             // Intro
             item {
+                // Russian pluralization: 1 неделя / 2-4 недели / 5-20 недель.
+                // Source of truth always matches the actual weeks rendered below.
+                val weekWord = when {
+                    totalWeeks % 10 == 1 && totalWeeks % 100 != 11 -> "неделя"
+                    totalWeeks % 10 in 2..4 && (totalWeeks % 100 !in 12..14) -> "недели"
+                    else -> "недель"
+                }
                 Text(
-                    "12 недель интенсива",
+                    "$totalWeeks $weekWord интенсива",
                     style = MaterialTheme.typography.titleLarge,
                     color = MaterialTheme.colorScheme.onBackground
                 )
@@ -114,47 +151,14 @@ fun HomeScreen(
                 )
             }
 
-            // Three course blocks: weeks 1-4, 5-8, 9-12 (like the PWA)
-            listOf(
-                MonthBlock(month = 1, startWeek = 1, endWeek = 4),
-                MonthBlock(month = 2, startWeek = 5, endWeek = 8),
-                MonthBlock(month = 3, startWeek = 9, endWeek = 12)
-            ).forEach { block ->
-                item {
-                    Card(
-                        onClick = { onNavigateToWeek(block.startWeek) },
-                        modifier = Modifier.fillMaxWidth(),
-                        colors = CardDefaults.cardColors(
-                            containerColor = Zinc800
-                        )
-                    ) {
-                        Row(
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .padding(16.dp),
-                            horizontalArrangement = Arrangement.SpaceBetween,
-                            verticalAlignment = Alignment.CenterVertically
-                        ) {
-                            Column {
-                                Text(
-                                    "Месяц ${block.month}",
-                                    style = MaterialTheme.typography.titleMedium,
-                                    color = MaterialTheme.colorScheme.onSurface
-                                )
-                                Text(
-                                    "Недели ${block.startWeek}–${block.endWeek}",
-                                    style = MaterialTheme.typography.bodySmall,
-                                    color = MaterialTheme.colorScheme.onSurfaceVariant
-                                )
-                            }
-                            Text(
-                                "→",
-                                style = MaterialTheme.typography.headlineSmall,
-                                color = Gold
-                            )
-                        }
-                    }
-                }
+            // One card per course week (matches lessons.json: 15 weeks × ~7 lessons)
+            items(weeks) { week ->
+                WeekCard(
+                    weekId = week.weekId,
+                    lessonCount = week.total,
+                    completedCount = week.completed,
+                    onClick = { onNavigateToWeek(week.weekId) }
+                )
             }
 
             item {
@@ -183,14 +187,45 @@ fun HomeScreen(
                     )
                 }
             }
+
+            // Copyright / attribution (best practice for bundled third-party content)
+            item {
+                CopyrightNotice()
+            }
         }
     }
 }
 
-private data class MonthBlock(
-    val month: Int,
-    val startWeek: Int,
-    val endWeek: Int
+@Composable
+private fun CopyrightNotice() {
+    Card(
+        modifier = Modifier.fillMaxWidth(),
+        colors = CardDefaults.cardColors(
+            containerColor = Zinc800
+        )
+    ) {
+        Column(
+            modifier = Modifier.padding(16.dp),
+            verticalArrangement = Arrangement.spacedBy(4.dp)
+        ) {
+            Text(
+                stringResource(R.string.copyright_title),
+                style = MaterialTheme.typography.labelSmall,
+                color = Gold
+            )
+            Text(
+                stringResource(R.string.copyright_text),
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant
+            )
+        }
+    }
+}
+
+private data class WeekEntry(
+    val weekId: Int,
+    val total: Int,
+    val completed: Int
 )
 
 @Composable
@@ -284,6 +319,48 @@ fun MediaImportCard(
             ) {
                 Text("Импортировать resources.zip")
             }
+        }
+    }
+}
+
+@Composable
+private fun WeekCard(
+    weekId: Int,
+    lessonCount: Int,
+    completedCount: Int,
+    onClick: () -> Unit
+) {
+    Card(
+        onClick = onClick,
+        modifier = Modifier.fillMaxWidth(),
+        colors = CardDefaults.cardColors(
+            containerColor = Zinc800
+        )
+    ) {
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Column(modifier = Modifier.weight(1f)) {
+                Text(
+                    "Неделя $weekId",
+                    style = MaterialTheme.typography.titleMedium,
+                    color = Gold
+                )
+                Text(
+                    "Уроков: $lessonCount · пройдено: $completedCount",
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+            }
+            Text(
+                "→",
+                style = MaterialTheme.typography.headlineSmall,
+                color = Gold
+            )
         }
     }
 }

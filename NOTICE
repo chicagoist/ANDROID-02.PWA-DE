@@ -1,0 +1,39 @@
+Just German
+===========
+Copyright (c) 2026 chicagoist
+
+This software is an educational (learning) project created by the author
+"chicagoist" for personal study of the German language (A2 -> B1).
+
+THIRD-PARTY CONTENT - NOT REDISTRIBUTABLE
+=========================================
+
+All media files (audio MP3), the textbook PDF (Assimil_DE.pdf), and the
+"Assimil" language-learning system/method used in this application are the
+intellectual property of their respective rights holder:
+
+    Assimil
+    Assimil SAS (France)
+    https://www.assimil.com/
+
+This content is included in the application exclusively for personal,
+non-commercial, educational use. Reproduction, redistribution, uploading,
+or any other form of distribution of this content - in whole or in part,
+in any medium - is strictly prohibited without the explicit written consent
+of the rights holder.
+
+APPLICATION CODE
+================
+
+The application source code (Kotlin, Jetpack Compose UI, Gradle
+configuration, lesson/quiz JSON data) was written by chicagoist as an
+educational project. All rights to the application code are reserved to
+chicagoist (see the SPDX headers in the source files:
+SPDX-License-Identifier: LicenseRef-proprietary). It is provided on an
+"AS IS" basis, without warranty of any kind, express or implied, including
+but not limited to the implied warranties of merchantability and fitness
+for a particular purpose.
+
+Русская версия уведомления о правах — в разделе «Лицензия и права»
+файла README.md.
+

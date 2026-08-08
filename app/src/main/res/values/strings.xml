@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Just German</string>
+    <string name="copyright_title">© chicagoist · учебный проект</string>
+    <string name="copyright_text">Аудио, учебник и обучающая система Assimil принадлежат правообладателю — Assimil SAS (Франция, assimil.com). Распространение этих материалов запрещено.</string>
 </resources>

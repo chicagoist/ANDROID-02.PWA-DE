@@ -39,16 +39,26 @@ android {
         release {
             isMinifyEnabled = true
             isShrinkResources = true
-            // Fail loud if a release variant is built without a signing
-            // config: AGP would otherwise silently produce
+            // Fail loud ONLY when a release build is actually requested and
+            // no signing config exists: AGP would otherwise silently produce
             // `app-release-unsigned.apk`, which a CI glob path could
-            // mis-attribute as a signed artifact. Throw so the cause is
-            // obvious from the build log. Env vars match what
-            // tools/build-release.sh and the CI workflows export.
-            signingConfig = signingConfigs.findByName("release")
-                ?: error("Release signing keystore not configured. " +
+            // mis-attribute as a signed artifact. The check is gated on the
+            // requested task names so `assembleDebug`, tests, lint and IDE
+            // sync never require the release signing env vars. Env vars
+            // match what tools/build-release.sh and the CI workflows export.
+            val releaseSigning = signingConfigs.findByName("release")
+            signingConfig = releaseSigning
+            // Fire only for explicit release tasks (assembleRelease,
+            // bundleRelease, installRelease, ...), not for bare `assemble`
+            // or unit-test-only task names that merely contain "release".
+            val releaseRequested = gradle.startParameter.taskNames.any {
+                it.substringAfterLast(':').endsWith("Release", ignoreCase = true)
+            }
+            if (releaseRequested && releaseSigning == null) {
+                error("Release signing keystore not configured. " +
                         "Set KEYSTORE_PATH (path to release.jks), KEYSTORE_PASSWORD, " +
                         "and KEY_ALIAS env vars; see tools/build-release.sh.")
+            }
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"

@@ -1,8 +1,20 @@
+/*
+ * Just German — учебный проект
+ * Copyright (c) 2026 chicagoist
+ *
+ * SPDX-License-Identifier: LicenseRef-proprietary
+ *
+ * Аудио, учебник и метод Assimil принадлежат правообладателю Assimil SAS
+ * (Франция, assimil.com). Распространение этих материалов запрещено.
+ * См. файл NOTICE.
+ */
+
 package com.chicagoist.justgerman.data.repository
 
 import android.content.Context
 import android.net.Uri
 import java.io.File
+import java.io.IOException
 import java.net.URLDecoder
 import java.util.zip.ZipInputStream
 
@@ -33,20 +45,51 @@ class MediaStore(private val context: Context) {
         }
 
     /**
+     * Approximate cap on cached extracted MP3 (~5 MB each → ~100 MB total).
+     * Keeps the on-disk footprint bounded instead of growing to all 86 lessons
+     * (~430 MB on top of a 430 MB APK).
+     */
+    private val audioCacheFileLimit = 20
+
+    /**
      * Resolves a URL-encoded audio path from lessons.json
-     * (e.g. "/resources/CD1/01%20Lektion.mp3") to a playable URI.
+     * (e.g. "/resources/CD1/01%20Lektion.mp3") to a playable [Uri].
      *
-     * @return a file:// URI for an imported track, an asset:// URI for a
-     *         bundled track, or null when the file is not available at all.
+     * Bundled MP3 assets are copied into [filesDir] on first use and returned
+     * as a regular `file://` [Uri]. This avoids ExoPlayer's well-known issues
+     * with the `asset:///` scheme on compressed APK assets and on filenames
+     * that contain spaces (e.g. "01 Lektion.mp3"), which would otherwise
+     * leave the player stuck in STATE_IDLE with no audible output and a
+     * frozen progress bar.
+     *
+     * @return a `file://` URI for an imported or cached track, or null when
+     *         the file is not available at all.
      */
     fun resolveAudioUri(encodedPath: String): Uri? {
+        val file = resolveAudioFile(encodedPath) ?: return null
+        return Uri.fromFile(file)
+    }
+
+    /**
+     * Same resolution as [resolveAudioUri] but returns a [File].
+     * Preference order: imported file → cached bundled copy → extract from assets.
+     */
+    fun resolveAudioFile(encodedPath: String): File? {
         val decoded = URLDecoder.decode(encodedPath, "UTF-8").removePrefix("/")
-        val imported = File(resourcesDir, decoded.removePrefix("resources/"))
-        return when {
-            imported.exists() -> Uri.fromFile(imported)
-            assetExists(decoded) -> Uri.parse("asset:///$decoded")
-            else -> null
+        val relative = decoded.removePrefix("resources/")
+        val imported = File(resourcesDir, relative)
+        if (imported.exists()) return imported
+        val cached = File(context.filesDir, "audio/$relative")
+        if (cached.exists()) {
+            // Touch mtime so pruneAudioCache evicts by access order, not by
+            // extract order — cheaper than tracking a separate LRU map.
+            cached.setLastModified(System.currentTimeMillis())
+            return cached
         }
+        if (!assetExists(decoded)) return null
+        val materialized = materializeAsset(decoded, cached) ?: return null
+        pruneAudioCache()
+        return materialized
     }
 
     /**
@@ -57,17 +100,45 @@ class MediaStore(private val context: Context) {
     fun resolvePdfFile(): File? {
         val imported = File(resourcesDir, "Assimil_DE.pdf")
         if (imported.exists()) return imported
-        if (assetExists("resources/Assimil_DE.pdf")) {
-            val cached = File(context.cacheDir, "pdfs/Assimil_DE.pdf")
-            if (!cached.exists()) {
-                cached.parentFile?.mkdirs()
-                context.assets.open("resources/Assimil_DE.pdf").use { input ->
-                    cached.outputStream().use { output -> input.copyTo(output) }
-                }
+        if (!assetExists("resources/Assimil_DE.pdf")) return null
+        val cached = File(context.cacheDir, "pdfs/Assimil_DE.pdf")
+        if (cached.exists()) return cached
+        return materializeAsset("resources/Assimil_DE.pdf", cached)
+    }
+
+    /**
+     * Single helper used by both audio and PDF extraction. Centralises the
+     * directory creation + copy + IOException handling so the two flows stay
+     * in sync.
+     */
+    private fun materializeAsset(assetPath: String, target: File): File? {
+        target.parentFile?.mkdirs()
+        return try {
+            context.assets.open(assetPath).use { input ->
+                target.outputStream().use { output -> input.copyTo(output) }
             }
-            return cached
+            target
+        } catch (e: IOException) {
+            // Missing asset, full disk, or permission error → caller treats
+            // the file as "media unavailable" rather than crashing the player
+            // or the PDF renderer.
+            null
         }
-        return null
+    }
+
+    /**
+     * Best-effort LRU prune of the bundled MP3 cache. Runs after every copy
+     * and keeps files around that were most recently opened. Touching mtime
+     * in [resolveAudioFile] makes this real LRU and not "FIFO by extract".
+     */
+    private fun pruneAudioCache() {
+        val dir = File(context.filesDir, "audio")
+        if (!dir.isDirectory) return
+        val files = dir.walkTopDown().filter { it.isFile }.toList()
+        if (files.size <= audioCacheFileLimit) return
+        files.sortedBy { it.lastModified() }
+            .take(files.size - audioCacheFileLimit)
+            .forEach { runCatching { it.delete() } }
     }
 
     /**

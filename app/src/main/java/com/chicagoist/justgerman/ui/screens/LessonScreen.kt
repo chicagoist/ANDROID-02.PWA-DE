@@ -1,14 +1,28 @@
+/*
+ * Just German — учебный проект
+ * Copyright (c) 2026 chicagoist
+ *
+ * SPDX-License-Identifier: LicenseRef-proprietary
+ *
+ * Аудио, учебник и метод Assimil принадлежат правообладателю Assimil SAS
+ * (Франция, assimil.com). Распространение этих материалов запрещено.
+ * См. файл NOTICE.
+ */
+
 package com.chicagoist.justgerman.ui.screens
 
 import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.net.Uri
 import android.speech.tts.TextToSpeech
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.CheckCircle
+import androidx.compose.material.icons.filled.Error
 import androidx.compose.material.icons.filled.Forward10
 import androidx.compose.material.icons.filled.Pause
 import androidx.compose.material.icons.filled.PlayArrow
@@ -19,10 +33,12 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.core.content.FileProvider
 import androidx.media3.common.MediaItem
+import androidx.media3.common.PlaybackException
 import androidx.media3.common.PlaybackParameters
 import androidx.media3.common.Player
 import androidx.media3.exoplayer.ExoPlayer
@@ -31,14 +47,14 @@ import com.chicagoist.justgerman.data.model.DialogLine
 import com.chicagoist.justgerman.data.repository.LessonRepository
 import com.chicagoist.justgerman.data.repository.MediaStore
 import com.chicagoist.justgerman.data.repository.ProgressRepository
-import com.chicagoist.justgerman.ui.theme.FlagBlack
-import com.chicagoist.justgerman.ui.theme.Gold
-import com.chicagoist.justgerman.ui.theme.QuizCorrect
-import com.chicagoist.justgerman.ui.theme.Zinc800
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import com.chicagoist.justgerman.ui.theme.FlagBlack
+import com.chicagoist.justgerman.ui.theme.Gold
+import com.chicagoist.justgerman.ui.theme.QuizCorrect
+import com.chicagoist.justgerman.ui.theme.Zinc800
 import java.util.Locale
 import java.util.concurrent.TimeUnit
 
@@ -117,7 +133,7 @@ fun LessonScreen(
                     Column {
                         Text("Урок ${lesson.id}")
                         Text(
-                            lesson.topics.joinToString(" · "),
+                            lesson.title.ifBlank { lesson.topics.joinToString(" · ") },
                             style = MaterialTheme.typography.bodySmall,
                             color = MaterialTheme.colorScheme.onSurfaceVariant
                         )
@@ -151,7 +167,12 @@ fun LessonScreen(
                 }
             }
 
-            // PDF textbook button
+            // PDF textbook button: opens the bundled or imported textbook
+            // in the user's preferred external PDF reader via
+            // Intent.ACTION_VIEW + FileProvider. We deliberately rely on the
+            // platform PdfRenderer-free path because Android 13 Go devices
+            // (moto e13, Unisoc) fail to produce bitmaps through it, leaving
+            // a per-page "Не удалось загрузить" error string.
             item {
                 TextbookButton(mediaStore = mediaStore)
             }
@@ -160,7 +181,7 @@ fun LessonScreen(
             item {
                 SectionCard(title = "Диалог урока") {
                     Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
-                        lesson.dialog.forEachIndexed { index, line ->
+                            lesson.dialog.forEachIndexed { index, line ->
                             DialogLineRow(
                                 line = line,
                                 index = index,
@@ -183,13 +204,20 @@ fun LessonScreen(
                                 Text(
                                     item.german,
                                     style = MaterialTheme.typography.bodyMedium,
-                                    color = MaterialTheme.colorScheme.onSurface
+                                    color = MaterialTheme.colorScheme.onSurface,
+                                    modifier = Modifier.weight(1f)
                                 )
-                                Text(
-                                    item.russian,
-                                    style = MaterialTheme.typography.bodySmall,
-                                    color = MaterialTheme.colorScheme.onSurfaceVariant
-                                )
+                                // Russian sits at the right edge to mirror
+                                // the desktop PWA's vocabulary card.
+                                Column(
+                                    horizontalAlignment = Alignment.End
+                                ) {
+                                    Text(
+                                        stripAutoMarker(item.russian),
+                                        style = MaterialTheme.typography.bodySmall,
+                                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                                    )
+                                }
                             }
                         }
                     }
@@ -306,6 +334,13 @@ fun BulletList(items: List<String>) {
     }
 }
 
+/**
+ * Strips the ` [auto]` provenance marker that tools/translate-builtin.js appends
+ * to machine-translated strings (Google Translate gtx_). The marker is preserved
+ * in `lessons.json` for audit and easy grep-ing, but never reaches the user.
+ */
+private fun stripAutoMarker(s: String): String = s.removeSuffix(" [auto]")
+
 @Composable
 fun DialogLineRow(line: DialogLine, index: Int, tts: TextToSpeech?) {
     Row(
@@ -339,12 +374,24 @@ fun DialogLineRow(line: DialogLine, index: Int, tts: TextToSpeech?) {
                 "[${line.pronunciation}]",
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant
-            )
+            )            // Always render Russian under each German line. The toggle and
+            // per-line "машинный перевод" label were removed in favour of
+            // always-on translation; the "↳ перевод уточняется" placeholder
+            // stays for any future lesson whose dialog is still missing
+            // Russian strings.
             if (line.russian.isNotBlank()) {
                 Text(
-                    line.russian,
+                    stripAutoMarker(line.russian),
                     style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+            } else {
+                Text(
+                    "↳ перевод уточняется",
+                    style = MaterialTheme.typography.labelMedium,
+                    color = Gold,
+                    fontWeight = FontWeight.Medium,
+                    fontStyle = FontStyle.Italic
                 )
             }
         }
@@ -362,6 +409,10 @@ fun LessonAudioPlayer(player: ExoPlayer) {
     var speed by remember { mutableFloatStateOf(1f) }
     var volume by remember { mutableFloatStateOf(1f) }
     var isSeeking by remember { mutableStateOf(false) }
+    // Surface ExoPlayer prepare()/decode errors as visible text instead of
+    // leaving the card stuck on "0:00 / 0:00" forever. A previous version had
+    // no error listener, so the only symptom was a frozen progress bar.
+    var playbackError by remember { mutableStateOf<String?>(null) }
 
     DisposableEffect(player) {
         val listener = object : Player.Listener {
@@ -372,11 +423,23 @@ fun LessonAudioPlayer(player: ExoPlayer) {
             override fun onPlaybackStateChanged(playbackState: Int) {
                 if (playbackState == Player.STATE_READY) {
                     duration = player.duration.coerceAtLeast(0L)
+                    // A successful prepare clears any previous error so the
+                    // card doesn't keep showing a stale alert after the user
+                    // retries or switches lessons.
+                    playbackError = null
                 }
                 if (playbackState == Player.STATE_ENDED) {
                     isPlaying = false
                     player.seekTo(0)
                 }
+            }
+
+            override fun onPlayerError(error: PlaybackException) {
+                // errorCodeName is stable across ExoPlayer versions (e.g.
+                // ERROR_CODE_IO_FILE_NOT_FOUND, ERROR_CODE_DECODER_INIT_FAILED).
+                // Surface a short, single-line alert inside the card.
+                playbackError = "Аудио не запустилось · ${error.errorCodeName}" +
+                    (error.message?.let { " · $it" } ?: "")
             }
         }
         player.addListener(listener)
@@ -410,6 +473,35 @@ fun LessonAudioPlayer(player: ExoPlayer) {
                 style = MaterialTheme.typography.titleSmall,
                 color = Gold
             )
+
+            // Surface decoder/IO errors as an inline alert. Cleared by the
+            // next STATE_READY transition (see listener above). Keeps the
+            // audio card intact — only prepends a single error row.
+            playbackError?.let { msg ->
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .background(
+                            color = MaterialTheme.colorScheme.errorContainer.copy(alpha = 0.30f),
+                            shape = RoundedCornerShape(8.dp)
+                        )
+                        .padding(horizontal = 12.dp, vertical = 8.dp),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Icon(
+                        Icons.Default.Error,
+                        contentDescription = null,
+                        tint = MaterialTheme.colorScheme.error,
+                        modifier = Modifier.size(20.dp)
+                    )
+                    Spacer(modifier = Modifier.width(8.dp))
+                    Text(
+                        msg,
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.onSurface
+                    )
+                }
+            }
 
             // Progress bar + time
             Row(
@@ -553,21 +645,35 @@ fun LessonAudioPlayer(player: ExoPlayer) {
     }
 }
 
+/**
+ * Opens [MediaStore.resolvePdfFile] in the user's preferred external PDF
+ * viewer through an `Intent.ACTION_VIEW` + FileProvider URI grant.
+ *
+ * Why external rather than `Intent.ACTION_VIEW`:
+ *   - Works on every Android version from 4.0.
+ *   - The framework PdfRenderer produces empty bitmaps (silently, no
+ *     exception thrown) on a few low-RAM SoCs (Unisoc / Android 13 Go).
+ *   - Lets the user pick the reader they trust and keep their last-read
+ *     page between launches.
+ *
+ * The resolve step runs on [Dispatchers.IO] because copying the bundled PDF
+ * out of compressed APK assets on first launch takes ~200 ms.
+ */
 @Composable
 fun TextbookButton(mediaStore: MediaStore) {
     val context = LocalContext.current
     val scope = rememberCoroutineScope()
-    var error by remember { mutableStateOf<String?>(null) }
+    var errorText by remember { mutableStateOf<String?>(null) }
 
     Button(
         onClick = {
-            error = null
+            errorText = null
             scope.launch {
                 val pdfFile = withContext(Dispatchers.IO) {
                     mediaStore.resolvePdfFile()
                 }
                 if (pdfFile == null) {
-                    error = "Медиафайлы не найдены. Импортируйте resources.zip на главном экране"
+                    errorText = "Медиафайлы не найдены. Импортируйте resources.zip на главном экране"
                     return@launch
                 }
                 try {
@@ -582,9 +688,9 @@ fun TextbookButton(mediaStore: MediaStore) {
                     }
                     context.startActivity(intent)
                 } catch (e: ActivityNotFoundException) {
-                    error = "Нет приложения для просмотра PDF"
+                    errorText = "Нет приложения для просмотра PDF. Установите любой PDF-ридер из Play Market"
                 } catch (e: Exception) {
-                    error = "Не удалось открыть учебник"
+                    errorText = "Не удалось открыть учебник"
                 }
             }
         },
@@ -601,9 +707,10 @@ fun TextbookButton(mediaStore: MediaStore) {
         )
     }
 
-    error?.let {
+    errorText?.let { msg ->
+        Spacer(modifier = Modifier.height(8.dp))
         Text(
-            it,
+            msg,
             style = MaterialTheme.typography.bodySmall,
             color = MaterialTheme.colorScheme.error
         )
@@ -674,3 +781,4 @@ private fun formatSpeed(speed: Float): String {
         speed.toString().trimEnd('0')
     }
 }
+

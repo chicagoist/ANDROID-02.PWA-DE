@@ -30,6 +30,9 @@
 # Собрать release APK
 ./gradlew assembleRelease
 
+# Собрать release App Bundle (AAB) для Play Store
+./gradlew bundleRelease
+
 # Установить на подключенное устройство
 ./gradlew installDebug
 
@@ -116,7 +119,10 @@ com.chicagoist.justgerman
 │   │   ├── Lesson.kt               # Модель урока
 │   │   └── Quiz.kt                 # Модель квиза
 │   └── repository/
-│       └── LessonRepository.kt     # Загрузка из assets
+│       ├── LessonRepository.kt     # Загрузка из assets
+│       ├── MediaStore.kt           # Аудио/PDF (assets или импорт)
+│       ├── ProgressRepository.kt   # Прогресс (DataStore)
+│       └── SettingsRepository.kt   # Настройки (DataStore)
 ```
 
 ## TODO
@@ -125,17 +131,34 @@ com.chicagoist.justgerman
 - [x] Озвучка реплик диалога через системный TTS
 - [x] Кнопка открытия учебника PDF
 - [x] Импорт медиафайлов из resources.zip
-- [ ] Открытие PDF на нужной странице урока
-- [ ] Реализовать прогресс через DataStore (отметка уроков как пройденных)
-- [ ] Добавить показ/скрытие переводов
-- [ ] Оптимизировать размер APK (сжатие MP3, PDF)
-- [ ] Добавить реальные шрифты Ubuntu Sans (сейчас Roboto fallback)
-- [ ] Настроить иконку приложения (сейчас placeholder)
+- [x] Прогресс через DataStore (отметка уроков как пройденных)
+- [x] Показ/скрытие переводов (переключатель в уроке)
+- [x] Оптимизация APK — release в формате App Bundle (AAB) + сжатие ресурсов
+- [x] Шрифты Ubuntu Sans (OFL 1.1) в `res/font/` — regular/medium/semibold/bold
+- [x] Иконка приложения — adaptive icon + legacy для API 24-25 + monochrome (Android 13)
+- [x] Открытие PDF на нужной странице урока (встроенный просмотрщик на PdfRenderer)
 
 ## Связанный проект
 
 Десктопная PWA версия: `C:\Projects\02.PWA-DE` (Next.js 15 + Tailwind)
 
-## Лицензия
+## Лицензия и права
 
-Private project.
+**Just German** — учебный (образовательный) проект, созданный автором **chicagoist** для личного изучения немецкого языка.
+
+### Права на контент
+
+> ⚠️ **Все медиафайлы (аудио MP3), учебник PDF (`Assimil_DE.pdf`) и обучающая система**
+> **Assimil** являются интеллектуальной собственностью правообладателя:
+>
+> **Assimil** — Assimil SAS (Франция), <https://www.assimil.com/>
+>
+> **Распространение этих материалов запрещено.** Они включены в приложение
+> исключительно для личного, некоммерческого использования. По этой причине
+> медиафайлы не хранятся в git (см. `.gitignore`).
+
+### Код приложения
+
+Исходный код (Kotlin, Compose, конфигурация, JSON-данные) создан автором
+`chicagoist` как учебный проект. Полное уведомление о правах — в файле
+[`NOTICE`](NOTICE).

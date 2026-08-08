@@ -1,3 +1,14 @@
+/*
+ * Just German — учебный проект
+ * Copyright (c) 2026 chicagoist
+ *
+ * SPDX-License-Identifier: LicenseRef-proprietary
+ *
+ * Аудио, учебник и метод Assimil принадлежат правообладателю Assimil SAS
+ * (Франция, assimil.com). Распространение этих материалов запрещено.
+ * См. файл NOTICE.
+ */
+
 package com.chicagoist.justgerman.ui.screens
 
 import androidx.compose.foundation.layout.*
@@ -102,7 +113,7 @@ fun WeekScreen(
                             )
                             Spacer(modifier = Modifier.height(4.dp))
                             Text(
-                                lesson.topics.joinToString(" · "),
+                                lesson.title.ifBlank { lesson.topics.joinToString(" · ") },
                                 style = MaterialTheme.typography.bodySmall,
                                 color = MaterialTheme.colorScheme.onSurfaceVariant
                             )

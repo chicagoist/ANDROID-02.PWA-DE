@@ -1,3 +1,14 @@
+/*
+ * Just German — учебный проект
+ * Copyright (c) 2026 chicagoist
+ *
+ * SPDX-License-Identifier: LicenseRef-proprietary
+ *
+ * Аудио, учебник и метод Assimil принадлежат правообладателю Assimil SAS
+ * (Франция, assimil.com). Распространение этих материалов запрещено.
+ * См. файл NOTICE.
+ */
+
 package com.chicagoist.justgerman.data.repository
 
 import android.content.Context
