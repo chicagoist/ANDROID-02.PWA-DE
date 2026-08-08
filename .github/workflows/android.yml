@@ -1,3 +1,16 @@
+# GitHub Secrets used by this workflow (for signed releases):
+#   KEYSTORE_BASE64     — base64-encoded release.jks  (required for release build)
+#   KEYSTORE_PASSWORD   — PKCS12 store password (also used as key password)
+#   KEY_ALIAS           — keystore alias            (default value used locally: upload)
+# KEY_PASSWORD is intentionally NOT exported here. PKCS12 keystores require
+# key password == store password; build.gradle.kts falls back to
+# KEYSTORE_PASSWORD when KEY_PASSWORD is unset.
+# (The literal line `KEY_PASSWORD=KEYSTORE_PASSWORD` in keystore-passwords.txt
+# is a documentation marker for humans — NOT an env=value pair.)
+#
+# For local builds, tools/build-release.sh reads keystore-passwords.txt directly
+# instead of going through GitHub Secrets.
+
 name: Android Build
 
 on:
@@ -7,9 +20,17 @@ on:
     branches: [main]
   workflow_dispatch:
 
+# Cancel in-flight runs for the same ref so PR re-runs don't queue behind
+# an obsolete push-triggered build. Don't cancel pushes to main (let those
+# complete), but auto-cancel superseded PR builds.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
 
     steps:
       - name: Checkout repository
@@ -27,24 +48,54 @@ jobs:
           path: |
             ~/.gradle/caches
             ~/.gradle/wrapper
-            ~/.android/build-cache
-          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+          # Include gradle.properties in the key so cache invalidates when
+          # the project's org.gradle.jvmargs / parallel toggles change.
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties', 'gradle.properties') }}
           restore-keys: |
             ${{ runner.os }}-gradle-
 
+      # The wrapper is committed with the right bit, but `actions/checkout@v4`
+      # can drop the exec bit on some Linux runners — re-apply defensively.
       - name: Grant execute permission for Gradle wrapper
-        run: chmod +x android/gradlew
+        run: chmod +x gradlew
+
+      # Run unit tests FIRST so a regression is reported before the slow debug
+      # build spends minutes producing an APK that we'd throw away anyway.
+      - name: Run unit tests
+        run: ./gradlew test --no-daemon --stacktrace
+
+      # Lint failures shouldn't block production CIs that merge through protected
+      # branches but should still be loud — Android Lint reports go to the run
+      # summary so maintainers spot them in the PR's "Files changed" tab.
+      - name: Run Android Lint
+        run: ./gradlew lint --no-daemon --stacktrace
+        continue-on-error: true
+
+      # Always upload the lint report so reviewers can dig in even when the
+      # lint step's `continue-on-error: true` would otherwise hide the warning.
+      # `if-no-files-found: ignore` lets Android Studio Lint skip emission
+      # cleanly when the user has globally disabled a specific check.
+      - name: Upload lint report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lint-report
+          path: app/build/reports/lint-results-*.xml
+          if-no-files-found: ignore
 
       - name: Build debug APK
-        working-directory: ./android
         run: ./gradlew assembleDebug --no-daemon --stacktrace
 
       - name: Upload debug APK
         uses: actions/upload-artifact@v4
         with:
           name: app-debug
-          path: android/app/build/outputs/apk/debug/app-debug.apk
+          path: app/build/outputs/apk/debug/app-debug.apk
+          if-no-files-found: error
 
+      # Release build is conditional on secrets being configured. PRs from forks
+      # don't have access to secrets, so unsigned debug build is still useful
+      # for visual review.
       - name: Check release signing secrets
         id: release_secrets
         env:
@@ -56,9 +107,11 @@ jobs:
             echo "has_secrets=false" >> "$GITHUB_OUTPUT"
           fi
 
+      # Decode the keystore next to app/build.gradle.kts so the relative path
+      # `release.jks` passed as KEYSTORE_PATH resolves against app/, not repo root.
       - name: Decode release keystore
         if: steps.release_secrets.outputs.has_secrets == 'true'
-        working-directory: ./android/app
+        working-directory: ./app
         env:
           KEYSTORE_BASE64: ${{ secrets.KEYSTORE_BASE64 }}
         run: |
@@ -66,14 +119,10 @@ jobs:
 
       - name: Build release APK and AAB
         if: steps.release_secrets.outputs.has_secrets == 'true'
-        working-directory: ./android
         env:
           KEYSTORE_PATH: release.jks
           KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
           KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
-          # NOTE: KEY_PASSWORD intentionally NOT passed. The keystore is PKCS12,
-          # where the key password must equal the store password. build.gradle.kts
-          # falls back to KEYSTORE_PASSWORD when KEY_PASSWORD is unset.
         run: ./gradlew assembleRelease bundleRelease --no-daemon --stacktrace
 
       - name: Upload release APK
@@ -81,11 +130,38 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: app-release-apk
-          path: android/app/build/outputs/apk/release/app-release.apk
+          path: app/build/outputs/apk/release/app-release.apk
+          if-no-files-found: error
 
       - name: Upload release AAB
         if: steps.release_secrets.outputs.has_secrets == 'true'
         uses: actions/upload-artifact@v4
         with:
           name: app-release-aab
-          path: android/app/build/outputs/bundle/release/app-release.aab
+          path: app/build/outputs/bundle/release/app-release.aab
+          if-no-files-found: error
+
+      - name: Write run summary
+        if: always()
+        env:
+          HAS_RELEASE: ${{ steps.release_secrets.outputs.has_secrets }}
+        run: |
+          {
+            echo "## 🤖 Android Build"
+            echo ""
+            echo "| Property | Value |"
+            echo "|---|---|"
+            echo "| Commit | \`${{ github.sha }}\` |"
+            echo "| Ref | \`${{ github.ref }}\` |"
+            echo "| Trigger | \`${{ github.event_name }}\` |"
+            echo "| Job result | \`${{ job.status }}\` |"
+            echo ""
+            echo "### Artifacts uploaded"
+            echo "- **app-debug** (\`app/build/outputs/apk/debug/app-debug.apk\`)"
+            if [ "$HAS_RELEASE" = "true" ]; then
+              echo "- **app-release-apk** (\`app/build/outputs/apk/release/app-release.apk\`)"
+              echo "- **app-release-aab** (\`app/build/outputs/bundle/release/app-release.aab\`)"
+            else
+              echo "_Release artifacts skipped — verify KEYSTORE_BASE64 / KEYSTORE_PASSWORD / KEY_ALIAS are configured in repo Settings → Secrets._"
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"

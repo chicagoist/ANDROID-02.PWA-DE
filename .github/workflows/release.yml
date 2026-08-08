@@ -1,0 +1,104 @@
+# Mirror of the secrets block in android.yml — kept here so this workflow is
+# self-contained when read in isolation.
+#
+# Required GitHub Secrets:
+#   KEYSTORE_BASE64     — base64-encoded release.jks
+#   KEYSTORE_PASSWORD   — PKCS12 store password (also used as key password)
+#   KEY_ALIAS           — keystore alias            (default local value: upload)
+# KEY_PASSWORD is intentionally NOT exported; PKCS12 requires key == store
+# password, and app/build.gradle.kts falls back to KEYSTORE_PASSWORD. The
+# literal `KEY_PASSWORD=KEYSTORE_PASSWORD` in keystore-passwords.txt is a
+# documentation marker, not a value.
+
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+permissions:
+  contents: write   # required to create a GitHub Release
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          # Full history so generated release notes can walk the change-log.
+          fetch-depth: 0
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      # Same cache key strategy as android.yml so the two workflows share the
+      # ~/.gradle/caches from the previous run on this runner.
+      - name: Cache Gradle dependencies
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties', 'gradle.properties') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-
+
+      - name: Grant execute permission for Gradle wrapper
+        run: chmod +x gradlew
+
+      # Refuse to run if signing secrets are missing. A signed release is the
+      # whole point of this workflow; silently publishing an unsigned APK is
+      # worse than failing loudly.
+      - name: Verify signing secrets
+        env:
+          KEYSTORE_BASE64: ${{ secrets.KEYSTORE_BASE64 }}
+        run: |
+          if [ -z "$KEYSTORE_BASE64" ]; then
+            echo "::error::KEYSTORE_BASE64 missing — refusing to publish unsigned release."
+            exit 1
+          fi
+
+      # Decode the keystore next to app/build.gradle.kts so the relative path
+      # `release.jks` passed as KEYSTORE_PATH resolves correctly.
+      - name: Decode release keystore
+        working-directory: ./app
+        env:
+          KEYSTORE_BASE64: ${{ secrets.KEYSTORE_BASE64 }}
+        run: |
+          echo "$KEYSTORE_BASE64" | base64 --decode > release.jks
+
+      - name: Build release APK and AAB
+        env:
+          KEYSTORE_PATH: release.jks
+          KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+          KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
+        run: ./gradlew assembleRelease bundleRelease --no-daemon --stacktrace
+
+      # Strip the leading "v" so a tag of "v1.2.3" produces a release titled
+      # "Release 1.2.3" rather than "Release v1.2.3".
+      - name: Determine release version
+        id: version
+        run: |
+          TAG=${GITHUB_REF#refs/tags/v}
+          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: "Release ${{ steps.version.outputs.tag }}"
+          # Auto-generate notes from PR titles + commit subjects between the
+          # previous tag and this one — no manual CHANGELOG.md maintenance.
+          generate_release_notes: true
+          files: |
+            app/build/outputs/apk/release/app-release.apk
+            app/build/outputs/bundle/release/app-release.aab
+          fail_on_unmatched_files: true
