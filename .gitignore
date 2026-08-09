@@ -15,6 +15,7 @@ captures/
 *.jks
 *.keystore
 release_base64.txt
+keystore-passwords.txt
 
 # OS
 .DS_Store
