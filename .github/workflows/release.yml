@@ -102,6 +102,11 @@ jobs:
           # name. build.gradle.kts throws on missing signing config, so this
           # glob is defense-in-depth and `fail_on_unmatched_files: true` still
           # rejects an empty release artifact.
+          #
+          # ⚠️ Media (Assimil MP3/PDF) are NEVER tracked in git, so this glob can
+          # only ever match code-only artifacts. If media were ever added to the
+          # repo, this release MUST NOT be extended to bundle them — Assimil
+          # content is proprietary and its distribution is prohibited (CLAUDE.md #9).
           files: |
             app/build/outputs/apk/release/app-release*.apk
             app/build/outputs/bundle/release/app-release.aab
