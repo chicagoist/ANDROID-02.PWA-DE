@@ -2,7 +2,7 @@
  * Just German — учебный проект
  * Copyright (c) 2026 chicagoist
  *
- * SPDX-License-Identifier: LicenseRef-proprietary
+ * SPDX-License-Identifier: MIT
  *
  * Аудио, учебник и метод Assimil принадлежат правообладателю Assimil SAS
  * (Франция, assimil.com). Распространение этих материалов запрещено.

@@ -27,12 +27,13 @@ APPLICATION CODE
 
 The application source code (Kotlin, Jetpack Compose UI, Gradle
 configuration, lesson/quiz JSON data) was written by chicagoist as an
-educational project. All rights to the application code are reserved to
-chicagoist (see the SPDX headers in the source files:
-SPDX-License-Identifier: LicenseRef-proprietary). It is provided on an
-"AS IS" basis, without warranty of any kind, express or implied, including
-but not limited to the implied warranties of merchantability and fitness
-for a particular purpose.
+educational project. It is licensed under the MIT License — see the LICENSE
+file at the repository root and the SPDX headers in the source files
+(SPDX-License-Identifier: MIT). The MIT license applies ONLY to this code;
+it does not cover the third-party Assimil content described above, which
+remains proprietary. The code is provided on an "AS IS" basis, without
+warranty of any kind, express or implied, including but not limited to the
+implied warranties of merchantability and fitness for a particular purpose.
 
 Русская версия уведомления о правах — в разделе «Лицензия и права»
 файла README.md.
