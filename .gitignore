@@ -16,6 +16,8 @@ captures/
 *.keystore
 release_base64.txt
 keystore-passwords.txt
+# Keystore backups (release.jks.bak.*) are old-password copies — never commit
+*.jks.bak*
 
 # OS
 .DS_Store
