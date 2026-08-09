@@ -121,8 +121,7 @@ com.chicagoist.justgerman
 │   └── repository/
 │       ├── LessonRepository.kt     # Загрузка из assets
 │       ├── MediaStore.kt           # Аудио/PDF (assets или импорт)
-│       ├── ProgressRepository.kt   # Прогресс (DataStore)
-│       └── SettingsRepository.kt   # Настройки (DataStore)
+│       └── ProgressRepository.kt   # Прогресс (DataStore)
 ```
 
 ## TODO
@@ -132,11 +131,11 @@ com.chicagoist.justgerman
 - [x] Кнопка открытия учебника PDF
 - [x] Импорт медиафайлов из resources.zip
 - [x] Прогресс через DataStore (отметка уроков как пройденных)
-- [x] Показ/скрытие переводов (переключатель в уроке)
+- [x] Русские переводы реплик диалога (всегда видны, с пометкой машинного перевода)
 - [x] Оптимизация APK — release в формате App Bundle (AAB) + сжатие ресурсов
 - [x] Шрифты Ubuntu Sans (OFL 1.1) в `res/font/` — regular/medium/semibold/bold
 - [x] Иконка приложения — adaptive icon + legacy для API 24-25 + monochrome (Android 13)
-- [x] Открытие PDF на нужной странице урока (встроенный просмотрщик на PdfRenderer)
+- [x] Открытие учебника PDF во внешнем просмотрщике (Intent.ACTION_VIEW + FileProvider)
 
 ## Связанный проект
 
