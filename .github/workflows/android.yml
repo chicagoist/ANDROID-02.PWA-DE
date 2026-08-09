@@ -10,6 +10,11 @@
 #
 # For local builds, tools/build-release.sh reads keystore-passwords.txt directly
 # instead of going through GitHub Secrets.
+#
+# ⚠️ Media (Assimil MP3/PDF) are NEVER tracked in git, so every artifact this
+# workflow uploads (app-debug, app-release-apk, app-release-aab) is code-only.
+# Never add media to the repo or to artifacts — Assimil content is proprietary
+# and its distribution is prohibited (CLAUDE.md #9).
 
 name: Android Build
 
