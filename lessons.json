@@ -4,11 +4,12 @@
       "id": 1,
       "week": 1,
       "phase": "passive",
+      "title": "Guten Tag! Was darf es sein?",
       "topics": [
         "Im Café",
         "Das Restaurant",
         "Im Park",
-        "Wie geht&#x27;s?",
+        "Wie geht's?",
         "Am Telefon"
       ],
       "audioPath": "/resources/CD1/01%20Lektion.mp3",
@@ -70,8 +71,8 @@
           "russian": "евро"
         }
       ],
-      "grammar": "ределённые артикли: der (м.р.), die (ж.р.), das (ср.р.). Вежливая форма 'möchten' для заказа.",
-      "essence": "ервое погружение. Студент ещё ничего не знает — и это нормально. Задача: дать ему почувствовать вкус языка.",
+      "grammar": "Определённые артикли: der (м.р.), die (ж.р.), das (ср.р.). Вежливая форма 'möchten' для заказа.",
+      "essence": "Первое погружение. Студент ещё ничего не знает — и это нормально. Задача: дать ему почувствовать вкус языка.",
       "difficulties": [
         "Род существительных.",
         "Произношение «ch». В слове «ich» — мягкое «хь» (кончик языка у нижних зубов). Большинство русских студентов говорят «ихь» слишком твёрдо. Пусть представят, что они — кошка, которая шипит, но нежно.",
@@ -89,11 +90,12 @@
       "id": 2,
       "week": 1,
       "phase": "passive",
+      "title": "Ich habe großen Hunger, nicht wahr?",
       "topics": [
         "Im Café",
         "Das Restaurant",
         "Im Park",
-        "Wie geht&#x27;s?",
+        "Wie geht's?",
         "Am Telefon"
       ],
       "audioPath": "/resources/CD1/02%20Lektion.mp3",
@@ -155,8 +157,8 @@
           "russian": "заказывать"
         }
       ],
-      "grammar": "прос 'nicht wahr?' ('не так ли?') для подтверждения. Винительный падеж: einen, eine, ein.",
-      "essence": "накомство с haben и неопределённым артиклем.",
+      "grammar": "Вопрос 'nicht wahr?' ('не так ли?') для подтверждения. Винительный падеж: einen, eine, ein.",
+      "essence": "Знакомство с haben и неопределённым артиклем.",
       "difficulties": [
         "«Ich habe Hunger».",
         "«Nicht wahr?»",
@@ -169,11 +171,12 @@
       "id": 3,
       "week": 1,
       "phase": "passive",
+      "title": "Entschuldigung, ist hier noch frei?",
       "topics": [
         "Im Café",
         "Das Restaurant",
         "Im Park",
-        "Wie geht&#x27;s?",
+        "Wie geht's?",
         "Am Telefon"
       ],
       "audioPath": "/resources/CD1/03%20Lektion.mp3",
@@ -235,8 +238,8 @@
           "russian": "прекрасный"
         }
       ],
-      "grammar": "рядок слов в вопросе: глагол на первом месте. Вежливая форма 'Sie' с глаголом во мн.ч.",
-      "essence": "ервый разговор с незнакомцем. Порядок слов в вопросах.",
+      "grammar": "Порядок слов в вопросе: глагол на первом месте. Вежливая форма 'Sie' с глаголом во мн.ч.",
+      "essence": "Первый разговор с незнакомцем. Порядок слов в вопросах.",
       "difficulties": [
         "Порядок слов.",
         "Dieser/diese/dieses.",
@@ -249,11 +252,12 @@
       "id": 4,
       "week": 1,
       "phase": "passive",
+      "title": "Hallo, Anna! Wie geht es dir?",
       "topics": [
         "Im Café",
         "Das Restaurant",
         "Im Park",
-        "Wie geht&#x27;s?",
+        "Wie geht's?",
         "Am Telefon"
       ],
       "audioPath": "/resources/CD1/04%20Lektion.mp3",
@@ -315,8 +319,8 @@
           "russian": "благодарность"
         }
       ],
-      "grammar": "ряжение глаголов: ich geh-e, du geh-st, er/sie geh-t. Различие du (ты) и Sie (Вы).",
-      "essence": "еформальное общение. Спряжение глаголов. Du vs Sie.",
+      "grammar": "Спряжение глаголов: ich geh-e, du geh-st, er/sie geh-t. Различие du (ты) и Sie (Вы).",
+      "essence": "Неформальное общение. Спряжение глаголов. Du vs Sie.",
       "difficulties": [
         "Du vs Sie.",
         "Спряжение: ich trinke, du trinkst, er trinkt.",
@@ -329,11 +333,12 @@
       "id": 5,
       "week": 1,
       "phase": "passive",
+      "title": "Hallo, hier spricht Frau Schmidt. Kann ich bitte Herrn Müller sprechen?",
       "topics": [
         "Im Café",
         "Das Restaurant",
         "Im Park",
-        "Wie geht&#x27;s?",
+        "Wie geht's?",
         "Am Telefon"
       ],
       "audioPath": "/resources/CD1/05%20Lektion.mp3",
@@ -390,8 +395,8 @@
           "russian": "перезванивать"
         }
       ],
-      "grammar": "дальная конструкция 'möchte + Infinitiv': Ich möchte sprechen. Отделяемые приставки: an-rufen.",
-      "essence": "елефонный этикет. Модальный глагол möchte.",
+      "grammar": "Модальная конструкция 'möchte + Infinitiv': Ich möchte sprechen. Отделяемые приставки: an-rufen.",
+      "essence": "Телефонный этикет. Модальный глагол möchte.",
       "difficulties": [
         "«Hier ist Peter Schmitt».",
         "möchte + Infinitiv.",
@@ -404,11 +409,12 @@
       "id": 6,
       "week": 1,
       "phase": "passive",
+      "title": "Der Zug nach Berlin fährt um 14 Uhr 30 ab.",
       "topics": [
         "Im Café",
         "Das Restaurant",
         "Im Park",
-        "Wie geht&#x27;s?",
+        "Wie geht's?",
         "Am Telefon"
       ],
       "audioPath": "/resources/CD1/06%20Lektion.mp3",
@@ -465,8 +471,8 @@
           "russian": "кондуктор"
         }
       ],
-      "grammar": "льные глаголы: fahren — er fährt (изменение корневой гласной). Отделяемая приставка ab-.",
-      "essence": "пешка, транспорт. Сильные глаголы с умлаутом.",
+      "grammar": "Сильные глаголы: fahren — er fährt (изменение корневой гласной). Отделяемая приставка ab-.",
+      "essence": "Спешка, транспорт. Сильные глаголы с умлаутом.",
       "difficulties": [
         "Сильные глаголы: fahren → du fährst, er fährt.",
         "müssen + Infinitiv.",
@@ -479,11 +485,12 @@
       "id": 7,
       "week": 1,
       "phase": "passive",
+      "title": "Also, was haben wir diese Woche gelernt?",
       "topics": [
         "Im Café",
         "Das Restaurant",
         "Im Park",
-        "Wie geht&#x27;s?",
+        "Wie geht's?",
         "Am Telefon"
       ],
       "audioPath": "",
@@ -531,8 +538,8 @@
           "russian": "успех"
         }
       ],
-      "grammar": "вторение: определённые артикли (der, die, das), спряжение глаголов, вопросы, du vs Sie, отделяемые приставки.",
-      "essence": "ервый обзорный урок. Закрепляем артикли, sein, haben, спряжение, порядок слов.",
+      "grammar": "Повторение: определённые артикли (der, die, das), спряжение глаголов, вопросы, du vs Sie, отделяемые приставки.",
+      "essence": "Первый обзорный урок. Закрепляем артикли, sein, haben, спряжение, порядок слов.",
       "difficulties": [],
       "mistakes": [],
       "tips": [
@@ -543,6 +550,7 @@
       "id": 8,
       "week": 2,
       "phase": "passive",
+      "title": "Herzlich willkommen auf unserer Party!",
       "topics": [
         "Feier",
         "Einkaufen",
@@ -608,8 +616,8 @@
           "russian": "любить, обожать"
         }
       ],
-      "grammar": "илагательные как определение: ein schönes Kleid, eine elegante Jacke. Окончания прилагательных после ein.",
-      "essence": "ечеринка у Фишеров. Первое описание людей. / Party bei Fischers. Erste Personenbeschreibungen.",
+      "grammar": "Прилагательные как определение: ein schönes Kleid, eine elegante Jacke. Окончания прилагательных после ein.",
+      "essence": "Вечеринка у Фишеров. Первое описание людей. / Party bei Fischers. Erste Personenbeschreibungen.",
       "difficulties": [
         "Прилагательные перед существительными.",
         "Fischers geben eine Party.",
@@ -622,6 +630,7 @@
       "id": 9,
       "week": 2,
       "phase": "passive",
+      "title": "Hallo! Ich heiße Thomas. Und wie heißt du?",
       "topics": [
         "Feier",
         "Einkaufen",
@@ -687,8 +696,8 @@
           "russian": "знакомиться"
         }
       ],
-      "grammar": "агол heißen: ich heiße, du heißt, er/sie heißt. Притяжательные местоимения: mein, dein, sein, ihr.",
-      "essence": "накомство, семья. Глагол heißen. / Vorstellung, Familie. Verb heißen.",
+      "grammar": "Глагол heißen: ich heiße, du heißt, er/sie heißt. Притяжательные местоимения: mein, dein, sein, ihr.",
+      "essence": "Знакомство, семья. Глагол heißen. / Vorstellung, Familie. Verb heißen.",
       "difficulties": [
         "«Ich heiße...» vs «Mein Name ist...».",
         "Семейная лексика.",
@@ -701,6 +710,7 @@
       "id": 10,
       "week": 2,
       "phase": "passive",
+      "title": "Was machst du heute Abend?",
       "topics": [
         "Feier",
         "Einkaufen",
@@ -766,8 +776,8 @@
           "russian": "возможно"
         }
       ],
-      "grammar": "зличие wissen (знать факты/информацию) и kennen (быть знакомым с кем-то/чем-то).",
-      "essence": "ланы на вечер. Сюрприз: у всех одна и та же подруга. / Abendpläne. Überraschung: Alle haben dieselbe Freundin.",
+      "grammar": "Различие wissen (знать факты/информацию) и kennen (быть знакомым с кем-то/чем-то).",
+      "essence": "Планы на вечер. Сюрприз: у всех одна и та же подруга. / Abendpläne. Überraschung: Alle haben dieselbe Freundin.",
       "difficulties": [
         "wissen vs kennen.",
         "«Na sowas!»",
@@ -780,6 +790,7 @@
       "id": 11,
       "week": 2,
       "phase": "passive",
+      "title": "Entschuldigung, woher kommen Sie?",
       "topics": [
         "Feier",
         "Einkaufen",
@@ -845,8 +856,8 @@
           "russian": "центр города"
         }
       ],
-      "grammar": "просительные слова с направительным значением: wo (где), woher (откуда), wohin (куда). Предлоги места.",
-      "essence": "бсурдная встреча в гараже. Предлоги места и направления. / Absurde Begegnung in einer Garage. Präpositionen von Ort und Richtung.",
+      "grammar": "Вопросительные слова с направительным значением: wo (где), woher (откуда), wohin (куда). Предлоги места.",
+      "essence": "Абсурдная встреча в гараже. Предлоги места и направления. / Absurde Begegnung in einer Garage. Präpositionen von Ort und Richtung.",
       "difficulties": [
         "woher? wo? wohin?",
         "«aus» vs «in».",
@@ -859,6 +870,7 @@
       "id": 12,
       "week": 2,
       "phase": "passive",
+      "title": "Wohin fährst du im Urlaub?",
       "topics": [
         "Feier",
         "Einkaufen",
@@ -924,8 +936,8 @@
           "russian": "Италия"
         }
       ],
-      "grammar": "идаточные предложения с wenn (когда/если): глагол уходит в конец придаточного предложения.",
-      "essence": "ланирование отпуска. Придаточные с wenn. / Urlaubsplanung. Nebensätze mit wenn.",
+      "grammar": "Придаточные предложения с wenn (когда/если): глагол уходит в конец придаточного предложения.",
+      "essence": "Планирование отпуска. Придаточные с wenn. / Urlaubsplanung. Nebensätze mit wenn.",
       "difficulties": [
         "Wenn-предложения.",
         "Направления без артикля.",
@@ -938,6 +950,7 @@
       "id": 13,
       "week": 2,
       "phase": "passive",
+      "title": "Kannst du mir bitte helfen?",
       "topics": [
         "Feier",
         "Einkaufen",
@@ -1003,8 +1016,8 @@
           "russian": "помогать"
         }
       ],
-      "grammar": "дальные глаголы: können, wollen, müssen. Они изменяют корневую гласную и спрягаются особым образом.",
-      "essence": "одальные глаголы! können, wollen, müssen. / Modalverben! können, wollen, müssen.",
+      "grammar": "Модальные глаголы: können, wollen, müssen. Они изменяют корневую гласную и спрягаются особым образом.",
+      "essence": "Модальные глаголы! können, wollen, müssen. / Modalverben! können, wollen, müssen.",
       "difficulties": [
         "Три модальных глагола сразу.",
         "Спряжение können.",
@@ -1018,6 +1031,7 @@
       "id": 14,
       "week": 2,
       "phase": "passive",
+      "title": "Erzähl mal, was hast du heute gelernt?",
       "topics": [
         "Feier",
         "Einkaufen",
@@ -1069,8 +1083,8 @@
           "russian": "ясно, понятно"
         }
       ],
-      "grammar": "вторение: притяжательные местоимения, wissen vs kennen, wenn-предложения, модальные глаголы.",
-      "essence": "овторение пройденного материала: Прилагательные-ассоциации : Показываете картинки. Студент: «Der Mann ist groß und blond. Die Frau ist klein und dunkelhaarig.» Ускоряйте темп!, woher-wo-wohin эстафета : Бросаете мяч с вопросом «Woher kommen Sie?» → студент отвечает и бросает следующему с вопросом «Wo wohnen Sie?» → тот отвечает и бросает с «Wohin fahren Sie?», Модальный баттл : Два студента. Один говорит: «Ich will nach Berlin fahren.» Второй: «Du kannst nicht nach Berlin fahren! Du musst arbeiten!» Первый: «Ich will aber!» — и так далее. Кто дольше продержится, не переходя на русский — победил., Wenn-цепочка : Первый студент: «Wenn das Wetter schön ist, fahre ich nach Hamburg.» Второй: «Wenn du nach Hamburg fährst, besuche ich dich.» Третий: «Wenn du mich besuchst, trinken wir Bier.» И так по кругу. Развивает грамматическую гибкость., Рефлексия : Каждый говорит: «Diese Woche habe ich gelernt, dass...» и заканчивает фразу.",
+      "grammar": "Повторение: притяжательные местоимения, wissen vs kennen, wenn-предложения, модальные глаголы.",
+      "essence": "Повторение пройденного материала: Прилагательные-ассоциации : Показываете картинки. Студент: «Der Mann ist groß und blond. Die Frau ist klein und dunkelhaarig.» Ускоряйте темп!, woher-wo-wohin эстафета : Бросаете мяч с вопросом «Woher kommen Sie?» → студент отвечает и бросает следующему с вопросом «Wo wohnen Sie?» → тот отвечает и бросает с «Wohin fahren Sie?», Модальный баттл : Два студента. Один говорит: «Ich will nach Berlin fahren.» Второй: «Du kannst nicht nach Berlin fahren! Du musst arbeiten!» Первый: «Ich will aber!» — и так далее. Кто дольше продержится, не переходя на русский — победил., Wenn-цепочка : Первый студент: «Wenn das Wetter schön ist, fahre ich nach Hamburg.» Второй: «Wenn du nach Hamburg fährst, besuche ich dich.» Третий: «Wenn du mich besuchst, trinken wir Bier.» И так по кругу. Развивает грамматическую гибкость., Рефлексия : Каждый говорит: «Diese Woche habe ich gelernt, dass...» и заканчивает фразу.",
       "difficulties": [],
       "mistakes": [],
       "tips": [
@@ -1081,6 +1095,7 @@
       "id": 15,
       "week": 3,
       "phase": "passive",
+      "title": "Was ist los mit dir? Du siehst traurig aus.",
       "topics": [
         "Freund",
         "Arbeit",
@@ -1141,8 +1156,8 @@
           "russian": "пить"
         }
       ],
-      "grammar": "нструкция 'Gehen wir + Infinitiv' (пойдём...). Дательный падеж: mir, dir.",
-      "essence": "тешение друга. Приглашение выпить. / Einen Freund trösten. Einladung zum Trinken.",
+      "grammar": "Конструкция 'Gehen wir + Infinitiv' (пойдём...). Дательный падеж: mir, dir.",
+      "essence": "Утешение друга. Приглашение выпить. / Einen Freund trösten. Einladung zum Trinken.",
       "difficulties": [
         "«Ich bin deprimiert.»",
         "«Gehen wir etwas trinken!»",
@@ -1156,6 +1171,7 @@
       "id": 16,
       "week": 3,
       "phase": "passive",
+      "title": "Es ist schon Mitternacht! Wir müssen ein Taxi nehmen.",
       "topics": [
         "Freund",
         "Arbeit",
@@ -1216,8 +1232,8 @@
           "russian": "улица"
         }
       ],
-      "grammar": "аза 'Es geht mir gut' — мне хорошо (дательный падеж). Предлог 'in' с дативом для указания времени.",
-      "essence": "олночь, такси, «мне здесь так хорошо!» / Mitternacht, Taxi, «Mir geht&#x27;s so gut hier!»",
+      "grammar": "Фраза 'Es geht mir gut' — мне хорошо (дательный падеж). Предлог 'in' с дативом для указания времени.",
+      "essence": "Полночь, такси, «мне здесь так хорошо!» / Mitternacht, Taxi, «Mir geht&#x27;s so gut hier!»",
       "difficulties": [
         "Время на немецком:",
         "«Es geht mir gut»",
@@ -1230,6 +1246,7 @@
       "id": 17,
       "week": 3,
       "phase": "passive",
+      "title": "Wem gehört dieses Buch? Ist das deins?",
       "topics": [
         "Freund",
         "Arbeit",
@@ -1290,8 +1307,8 @@
           "russian": "господин"
         }
       ],
-      "grammar": "тельный падеж (Dativ): dem (м.р./ср.р.), der (ж.р.), den (мн.ч.). Вопрос 'wem?' (кому?).",
-      "essence": "атив! Его адрес, его имя — ihm, seinen, seiner. / Dativ! Seine Adresse, sein Name — ihm, seinen, seiner.",
+      "grammar": "Дательный падеж (Dativ): dem (м.р./ср.р.), der (ж.р.), den (мн.ч.). Вопрос 'wem?' (кому?).",
+      "essence": "Датив! Его адрес, его имя — ihm, seinen, seiner. / Dativ! Seine Adresse, sein Name — ihm, seinen, seiner.",
       "difficulties": [
         "Дательный падеж — первое серьёзное знакомство.",
         "«USW» = und so weiter",
@@ -1304,6 +1321,7 @@
       "id": 18,
       "week": 3,
       "phase": "passive",
+      "title": "Darf ich hier parken?",
       "topics": [
         "Freund",
         "Arbeit",
@@ -1369,8 +1387,8 @@
           "russian": "запрещено"
         }
       ],
-      "grammar": "дальный глагол dürfen — разрешение. 'man darf nicht' — категорический запрет. Причастия: erlaubt, verboten.",
-      "essence": "одальный глагол dürfen. Запреты и разрешения. / Modalverb dürfen. Verbote und Erlaubnisse.",
+      "grammar": "Модальный глагол dürfen — разрешение. 'man darf nicht' — категорический запрет. Причастия: erlaubt, verboten.",
+      "essence": "Модальный глагол dürfen. Запреты и разрешения. / Modalverb dürfen. Verbote und Erlaubnisse.",
       "difficulties": [
         "dürfen = «иметь разрешение».",
         "Спряжение dürfen:",
@@ -1384,6 +1402,7 @@
       "id": 19,
       "week": 3,
       "phase": "passive",
+      "title": "Magst du Fisch? Ich liebe Fischgerichte!",
       "topics": [
         "Freund",
         "Arbeit",
@@ -1444,8 +1463,8 @@
           "russian": "вегетарианский"
         }
       ],
-      "grammar": "зличие mögen (любить вообще) и möchten (хотеть сейчас). Степени сравнения: gesund — gesünder.",
-      "essence": "да, предпочтения. Mögen vs möchten. / Essen, Vorlieben. Mögen vs möchten.",
+      "grammar": "Различие mögen (любить вообще) и möchten (хотеть сейчас). Степени сравнения: gesund — gesünder.",
+      "essence": "Еда, предпочтения. Mögen vs möchten. / Essen, Vorlieben. Mögen vs möchten.",
       "difficulties": [
         "mögen vs möchten.",
         "Спряжение mögen:",
@@ -1458,6 +1477,7 @@
       "id": 20,
       "week": 3,
       "phase": "passive",
+      "title": "Entschuldigung, wo ist hier der Bahnhof?",
       "topics": [
         "Freund",
         "Arbeit",
@@ -1523,8 +1543,8 @@
           "russian": "метро"
         }
       ],
-      "grammar": "едлоги места с дативом: an der Ampel, in der Stadt. Повелительное наклонение: Gehen Sie!",
-      "essence": "риентация в городе. Предлоги места. / Orientierung. Präpositionen des Ortes.",
+      "grammar": "Предлоги места с дативом: an der Ampel, in der Stadt. Повелительное наклонение: Gehen Sie!",
+      "essence": "Ориентация в городе. Предлоги места. / Orientierung. Präpositionen des Ortes.",
       "difficulties": [
         "Предлоги места с дативом (где?) и аккузативом (куда?).",
         "Предлоги:",
@@ -1537,6 +1557,7 @@
       "id": 21,
       "week": 3,
       "phase": "passive",
+      "title": "Heute wiederholen wir die dritte Woche! Alles klar?",
       "topics": [
         "Freund",
         "Arbeit",
@@ -1588,8 +1609,8 @@
           "russian": "по-немецки"
         }
       ],
-      "grammar": "вторение: дательный падеж, dürfen (разрешение), выражение 'Das tut mir leid', указания направления.",
-      "essence": "овторение пройденного материала: Датив-детектив : Раздайте карточки с предложениями, где нужно определить падеж. «Ich kenne ihn» (Akk) vs «Ich gebe ihm das Buch» (Dat). Студенты — детективы, определяют «преступника» (падеж)., dürfen-дебаты : На карточках — места (Bibliothek, Park, Straße, Restaurant). Студент вытягивает и говорит: «Hier darf man...» или «Hier darf man nicht...». Остальные угадывают место., Предложный квест : Разложите предметы по комнате. Студент описывает: «Das Buch ist auf dem Tisch. Der Stift ist unter dem Stuhl. Der Ball ist neben dem Fenster.» Используйте реальные предметы!, mögen/möchten аукцион : Показываете картинки еды. Студент: «Ich mag Schokolade, aber ich möchte jetzt einen Apfel.» Учитель: «Falsch!» или «Richtig!», Рефлексия : «Mein Lieblingssatz dieser Woche war... weil...»",
+      "grammar": "Повторение: дательный падеж, dürfen (разрешение), выражение 'Das tut mir leid', указания направления.",
+      "essence": "Повторение пройденного материала: Датив-детектив : Раздайте карточки с предложениями, где нужно определить падеж. «Ich kenne ihn» (Akk) vs «Ich gebe ihm das Buch» (Dat). Студенты — детективы, определяют «преступника» (падеж)., dürfen-дебаты : На карточках — места (Bibliothek, Park, Straße, Restaurant). Студент вытягивает и говорит: «Hier darf man...» или «Hier darf man nicht...». Остальные угадывают место., Предложный квест : Разложите предметы по комнате. Студент описывает: «Das Buch ist auf dem Tisch. Der Stift ist unter dem Stuhl. Der Ball ist neben dem Fenster.» Используйте реальные предметы!, mögen/möchten аукцион : Показываете картинки еды. Студент: «Ich mag Schokolade, aber ich möchte jetzt einen Apfel.» Учитель: «Falsch!» или «Richtig!», Рефлексия : «Mein Lieblingssatz dieser Woche war... weil...»",
       "difficulties": [],
       "mistakes": [],
       "tips": [
@@ -1600,6 +1621,7 @@
       "id": 22,
       "week": 4,
       "phase": "passive",
+      "title": "Ich suche eine neue Wohnung. Eine große, helle Wohnung.",
       "topics": [
         "Wohnungssuche",
         "Ausbildung",
@@ -1659,8 +1681,8 @@
           "russian": "дешёвый, недорогой"
         }
       ],
-      "grammar": "лонение прилагательных после ein: eine große Wohnung, eine günstigere Wohnung. Степени сравнения прилагательных.",
-      "essence": "оиск и осмотр квартиры. Склонение прилагательных! / Wohnungssuche. Adjektivdeklination — erste Begegnung!",
+      "grammar": "Склонение прилагательных после ein: eine große Wohnung, eine günstigere Wohnung. Степени сравнения прилагательных.",
+      "essence": "Поиск и осмотр квартиры. Склонение прилагательных! / Wohnungssuche. Adjektivdeklination — erste Begegnung!",
       "difficulties": [
         "Склонение прилагательных — первая встреча.",
         "«Die Wohnung ist schön» vs «Die schöne Wohnung».",
@@ -1673,6 +1695,7 @@
       "id": 23,
       "week": 4,
       "phase": "passive",
+      "title": "Meine Tanten und Onkel kommen zu Besuch.",
       "topics": [
         "Wohnungssuche",
         "Ausbildung",
@@ -1732,8 +1755,8 @@
           "russian": "друг"
         }
       ],
-      "grammar": "ожественное число существительных: -e, -en, -er, -s. Окончания множественного числа.",
-      "essence": "одственники в гостях. Множественное число. / Verwandte zu Besuch. Plural.",
+      "grammar": "Множественное число существительных: -e, -en, -er, -s. Окончания множественного числа.",
+      "essence": "Родственники в гостях. Множественное число. / Verwandte zu Besuch. Plural.",
       "difficulties": [
         "Множественное число — 5 способов образования.",
         "Гостевая лексика:",
@@ -1746,6 +1769,7 @@
       "id": 24,
       "week": 4,
       "phase": "passive",
+      "title": "Wann fährt der nächste Zug nach Köln?",
       "topics": [
         "Wohnungssuche",
         "Ausbildung",
@@ -1810,8 +1834,8 @@
           "russian": "пересадка, стыковка"
         }
       ],
-      "grammar": "сла и время: часы и минуты. Порядок слов в вопросах: вопросительное слово + глагол + подлежащее.",
-      "essence": "асписание поездов, время отправления. / Fahrplan, Uhrzeit.",
+      "grammar": "Числа и время: часы и минуты. Порядок слов в вопросах: вопросительное слово + глагол + подлежащее.",
+      "essence": "Расписание поездов, время отправления. / Fahrplan, Uhrzeit.",
       "difficulties": [
         "Числа и время.",
         "Расписание:",
@@ -1824,6 +1848,7 @@
       "id": 25,
       "week": 4,
       "phase": "passive",
+      "title": "Herzlichen Glückwunsch zum Geburtstag!",
       "topics": [
         "Wohnungssuche",
         "Ausbildung",
@@ -1883,8 +1908,8 @@
           "russian": "надеяться"
         }
       ],
-      "grammar": "деляемые приставки: auf-machen (открывать). Глагол gefallen + датив: es gefällt dir.",
-      "essence": "одарки, дни рождения. Отделяемые приставки! / Geschenke, Geburtstag. Trennbare Präfixe!",
+      "grammar": "Отделяемые приставки: auf-machen (открывать). Глагол gefallen + датив: es gefällt dir.",
+      "essence": "Подарки, дни рождения. Отделяемые приставки! / Geschenke, Geburtstag. Trennbare Präfixe!",
       "difficulties": [
         "Отделяемые приставки.",
         "Дни рождения в Германии.",
@@ -1897,6 +1922,7 @@
       "id": 26,
       "week": 4,
       "phase": "passive",
+      "title": "Die Heizung funktioniert nicht. Es ist kalt!",
       "topics": [
         "Wohnungssuche",
         "Ausbildung",
@@ -1956,8 +1982,8 @@
           "russian": "звонить"
         }
       ],
-      "grammar": "дальный глагол sollen (долженствование по чьей-то воле). Отделяемые приставки: an-rufen.",
-      "essence": "роблемы в доме. Модальный глагол sollen. / Probleme im Haus. Modalverb sollen.",
+      "grammar": "Модальный глагол sollen (долженствование по чьей-то воле). Отделяемые приставки: an-rufen.",
+      "essence": "Проблемы в доме. Модальный глагол sollen. / Probleme im Haus. Modalverb sollen.",
       "difficulties": [
         "sollen",
         "Hausmeister",
@@ -1970,6 +1996,7 @@
       "id": 27,
       "week": 4,
       "phase": "passive",
+      "title": "Wir müssen über das Geld sprechen.",
       "topics": [
         "Wohnungssuche",
         "Ausbildung",
@@ -2029,8 +2056,8 @@
           "russian": "экономить, копить"
         }
       ],
-      "grammar": "едлоги с Akkusativ: für (для), ohne (без), durch (через), gegen (против). Глагол с отделяемой приставкой: aus-geben.",
-      "essence": "инансовые споры. Предлоги с аккузативом. / Finanzstreit. Präpositionen mit Akkusativ.",
+      "grammar": "Предлоги с Akkusativ: für (для), ohne (без), durch (через), gegen (против). Глагол с отделяемой приставкой: aus-geben.",
+      "essence": "Финансовые споры. Предлоги с аккузативом. / Finanzstreit. Präpositionen mit Akkusativ.",
       "difficulties": [
         "Предлоги, требующие аккузатива:",
         "Финансовая лексика:",
@@ -2043,6 +2070,7 @@
       "id": 28,
       "week": 4,
       "phase": "passive",
+      "title": "Das war der erste Monat! Eine ganze Menge Stoff, oder?",
       "topics": [
         "Wohnungssuche",
         "Ausbildung",
@@ -2093,8 +2121,8 @@
           "russian": "дальше"
         }
       ],
-      "grammar": "вторение месяца: склонение прилагательных, множественное число существительных, числительные, отделяемые приставки, предлоги с Akkusativ.",
-      "essence": "овторение пройденного материала: Прилагательный баттл : Показываете предмет. Студент: «Das ist ein alter Tisch.» Следующий: «Nein, das ist ein neuer Tisch!» И так далее — кто последний правильно описал предмет, победил., Отделяемая эстафета : Карточки с глаголами (aufmachen, zumachen, anrufen, einkaufen). Студент вытягивает и составляет предложение с отделённой приставкой., sollen-советы : Ситуации на карточках. «Meine Heizung ist kaputt!» → «Du sollst den Hausmeister rufen!» Студенты дают советы через sollen., Месячный обзор : Викторина по всем 28 урокам. 10 вопросов, командная игра., Рефлексия месяца : «Im ersten Monat habe ich gelernt... Am schwersten war... Am lustigsten war...»",
+      "grammar": "Повторение месяца: склонение прилагательных, множественное число существительных, числительные, отделяемые приставки, предлоги с Akkusativ.",
+      "essence": "Повторение пройденного материала: Прилагательный баттл : Показываете предмет. Студент: «Das ist ein alter Tisch.» Следующий: «Nein, das ist ein neuer Tisch!» И так далее — кто последний правильно описал предмет, победил., Отделяемая эстафета : Карточки с глаголами (aufmachen, zumachen, anrufen, einkaufen). Студент вытягивает и составляет предложение с отделённой приставкой., sollen-советы : Ситуации на карточках. «Meine Heizung ist kaputt!» → «Du sollst den Hausmeister rufen!» Студенты дают советы через sollen., Месячный обзор : Викторина по всем 28 урокам. 10 вопросов, командная игра., Рефлексия месяца : «Im ersten Monat habe ich gelernt... Am schwersten war... Am lustigsten war...»",
       "difficulties": [],
       "mistakes": [],
       "tips": [
@@ -2105,6 +2133,7 @@
       "id": 29,
       "week": 5,
       "phase": "transition",
+      "title": "Hast du den Brief schon geschrieben?",
       "topics": [
         "Brief",
         "Urlaub",
@@ -2170,8 +2199,8 @@
           "russian": "работа"
         }
       ],
-      "grammar": "rfekt (прошедшее разговорное): haben + Partizip II (ge- + корень + -(e)t / -en).",
-      "essence": "пистолярный жанр. Первое знакомство с Perfekt! / Brief schreiben. Erste Begegnung mit Perfekt!",
+      "grammar": "Perfekt (прошедшее разговорное): haben + Partizip II (ge- + корень + -(e)t / -en).",
+      "essence": "Эпистолярный жанр. Первое знакомство с Perfekt! / Brief schreiben. Erste Begegnung mit Perfekt!",
       "difficulties": [
         "Perfekt — главное прошедшее время в разговорной речи.",
         "Письмо по-немецки.",
@@ -2186,6 +2215,7 @@
       "id": 30,
       "week": 5,
       "phase": "transition",
+      "title": "Guten Abend! Ich habe ein Problem mit meinem Zimmer.",
       "topics": [
         "Brief",
         "Urlaub",
@@ -2251,8 +2281,8 @@
           "russian": "прибывать"
         }
       ],
-      "grammar": "rfekt глаголов движения: sein + Partizip II (ich bin gekommen, angekommen).",
-      "essence": "алобы в отеле. Perfekt с sein. / Hotelbeschwerden. Perfekt mit sein.",
+      "grammar": "Perfekt глаголов движения: sein + Partizip II (ich bin gekommen, angekommen).",
+      "essence": "Жалобы в отеле. Perfekt с sein. / Hotelbeschwerden. Perfekt mit sein.",
       "difficulties": [
         "Perfekt с sein.",
         "Вежливые жалобы.",
@@ -2265,6 +2295,7 @@
       "id": 31,
       "week": 5,
       "phase": "transition",
+      "title": "Guten Morgen, Herr Doktor Weber. Darf ich hereinkommen?",
       "topics": [
         "Brief",
         "Urlaub",
@@ -2325,8 +2356,8 @@
           "russian": "документы"
         }
       ],
-      "grammar": "дальные глаголы в деловом контексте: können, müssen, möchte. Вежливая форма 'Sie' в переписке.",
-      "essence": "еловая коммуникация. Повторение модальных глаголов. / Geschäftskommunikation. Modalverben-Wiederholung.",
+      "grammar": "Модальные глаголы в деловом контексте: können, müssen, möchte. Вежливая форма 'Sie' в переписке.",
+      "essence": "Деловая коммуникация. Повторение модальных глаголов. / Geschäftskommunikation. Modalverben-Wiederholung.",
       "difficulties": [
         "Иерархия в немецком офисе.",
         "Вежливые просьбы через Konjunktiv II:",
@@ -2339,6 +2370,7 @@
       "id": 32,
       "week": 5,
       "phase": "transition",
+      "title": "Erzählen Sie mir bitte etwas über sich. Warum haben Sie sich beworben?",
       "topics": [
         "Brief",
         "Urlaub",
@@ -2399,8 +2431,8 @@
           "russian": "должность"
         }
       ],
-      "grammar": "идаточные предложения с weil (потому что) и dass (что): глагол уходит в конец предложения.",
-      "essence": "нтервью, биография. Придаточные с weil и dass. / Interview. Nebensätze mit weil und dass.",
+      "grammar": "Придаточные предложения с weil (потому что) и dass (что): глагол уходит в конец предложения.",
+      "essence": "Интервью, биография. Придаточные с weil и dass. / Interview. Nebensätze mit weil und dass.",
       "difficulties": [
         "Придаточные с weil (потому что) и dass (что).",
         "Биографическая лексика:",
@@ -2413,6 +2445,7 @@
       "id": 33,
       "week": 5,
       "phase": "transition",
+      "title": "Herzlich willkommen! Kommt herein und fühlt euch wie zu Hause!",
       "topics": [
         "Brief",
         "Urlaub",
@@ -2473,8 +2506,8 @@
           "russian": "кусок"
         }
       ],
-      "grammar": "отделяемые приставки: be-, ge-, er-, ver-, zer-, ent-, emp-. Они не отделяются и не принимают ge- в Partizip II.",
-      "essence": "еожиданный приятный визит. Неотделяемые приставки. / Angenehmer Besuch. Untrennbare Präfixe.",
+      "grammar": "Неотделяемые приставки: be-, ge-, er-, ver-, zer-, ent-, emp-. Они не отделяются и не принимают ge- в Partizip II.",
+      "essence": "Неожиданный приятный визит. Неотделяемые приставки. / Angenehmer Besuch. Untrennbare Präfixe.",
       "difficulties": [
         "Неотделяемые приставки:",
         "Разница между отделяемыми и неотделяемыми."
@@ -2486,6 +2519,7 @@
       "id": 34,
       "week": 5,
       "phase": "transition",
+      "title": "Was isst man typischerweise in Deutschland?",
       "topics": [
         "Brief",
         "Urlaub",
@@ -2546,8 +2580,8 @@
           "russian": "региональный"
         }
       ],
-      "grammar": "льтурный урок: региональная немецкая кухня. Глагол 'essen' (есть) — ich esse, du isst, er isst.",
-      "essence": "улинарные традиции. Культурный урок-передышка. / Kulinarische Traditionen. Kulturelle Atempause.",
+      "grammar": "Культурный урок: региональная немецкая кухня. Глагол 'essen' (есть) — ich esse, du isst, er isst.",
+      "essence": "Кулинарные традиции. Культурный урок-передышка. / Kulinarische Traditionen. Kulturelle Atempause.",
       "difficulties": [
         "Культурный контекст.",
         "Кулинарная лексика:",
@@ -2560,6 +2594,7 @@
       "id": 35,
       "week": 5,
       "phase": "transition",
+      "title": "Fünfte Woche geschafft! Perfekt ist jetzt ganz klar.",
       "topics": [
         "Brief",
         "Urlaub",
@@ -2611,8 +2646,8 @@
           "russian": "увлекательный"
         }
       ],
-      "grammar": "вторение: Perfekt с haben и sein, придаточные с weil/dass, неотделяемые приставки.",
-      "essence": "овторение пройденного материала: Perfekt-диктант : Диктуете предложения в Präsens, студенты записывают их в Perfekt. «Ich schreibe einen Brief» → «Ich habe einen Brief geschrieben.», haben oder sein? — баттл : Называете глагол, студент говорит: «haben!» или «sein!» и образует Perfekt. За ошибку — приседание., Придаточный марафон : «Ich lerne Deutsch...» — каждый студент добавляет weil- или dass-придаточное. Цепочка из 10+ предложений., Приставки: отделяемые vs неотделяемые : Карточки с глаголами, студент сортирует на две колонки., Рефлексия : «Mein schwierigster Satz dieser Woche war... weil...»",
+      "grammar": "Повторение: Perfekt с haben и sein, придаточные с weil/dass, неотделяемые приставки.",
+      "essence": "Повторение пройденного материала: Perfekt-диктант : Диктуете предложения в Präsens, студенты записывают их в Perfekt. «Ich schreibe einen Brief» → «Ich habe einen Brief geschrieben.», haben oder sein? — баттл : Называете глагол, студент говорит: «haben!» или «sein!» и образует Perfekt. За ошибку — приседание., Придаточный марафон : «Ich lerne Deutsch...» — каждый студент добавляет weil- или dass-придаточное. Цепочка из 10+ предложений., Приставки: отделяемые vs неотделяемые : Карточки с глаголами, студент сортирует на две колонки., Рефлексия : «Mein schwierigster Satz dieser Woche war... weil...»",
       "difficulties": [],
       "mistakes": [],
       "tips": [
@@ -2623,6 +2658,7 @@
       "id": 36,
       "week": 6,
       "phase": "transition",
+      "title": "Dieses Kleid ist teurer als das andere. Aber es ist schöner.",
       "topics": [
         "Geld",
         "Bank",
@@ -2683,8 +2719,8 @@
           "russian": "вкус"
         }
       ],
-      "grammar": "епени сравнения прилагательных: Positiv (schön), Komparativ (schöner), Superlativ (am schönsten). Сравнение с 'als'.",
-      "essence": "еньги, покупки, финансовые реалии. / Geld, Einkäufe, Finanzrealitäten.",
+      "grammar": "Степени сравнения прилагательных: Positiv (schön), Komparativ (schöner), Superlativ (am schönsten). Сравнение с 'als'.",
+      "essence": "Деньги, покупки, финансовые реалии. / Geld, Einkäufe, Finanzrealitäten.",
       "difficulties": [
         "Степени сравнения прилагательных:",
         "Немецкая финансовая культура.",
@@ -2697,6 +2733,7 @@
       "id": 37,
       "week": 6,
       "phase": "transition",
+      "title": "Ich habe Stress auf der Arbeit. Ich weiß nicht, was ich tun soll.",
       "topics": [
         "Geld",
         "Bank",
@@ -2757,8 +2794,8 @@
           "russian": "обращать внимание, заботиться"
         }
       ],
-      "grammar": "юзы deshalb (поэтому), trotzdem (несмотря на это), obwohl (хотя). После deshalb/trotzdem — обратный порядок слов.",
-      "essence": "ак давать советы. Союзы deshalb, trotzdem, obwohl. / Ratschläge geben. Konjunktionen deshalb, trotzdem, obwohl.",
+      "grammar": "Союзы deshalb (поэтому), trotzdem (несмотря на это), obwohl (хотя). После deshalb/trotzdem — обратный порядок слов.",
+      "essence": "Как давать советы. Союзы deshalb, trotzdem, obwohl. / Ratschläge geben. Konjunktionen deshalb, trotzdem, obwohl.",
       "difficulties": [
         "deshalb / trotzdem / obwohl.",
         "Tip (der Tipp)"
@@ -2770,6 +2807,7 @@
       "id": 38,
       "week": 6,
       "phase": "transition",
+      "title": "Wenn ich mehr Zeit hätte, wäre alles besser.",
       "topics": [
         "Geld",
         "Bank",
@@ -2830,8 +2868,8 @@
           "russian": "свободное время"
         }
       ],
-      "grammar": "njunktiv II: wäre (был бы), hätte (имел бы), würde + Infinitiv (сделал бы). Вежливые пожелания.",
-      "essence": "роблемы на работе. Гипотетические конструкции с Konjunktiv II. / Arbeitsprobleme. Konjunktiv II: wäre, hätte, würde.",
+      "grammar": "Konjunktiv II: wäre (был бы), hätte (имел бы), würde + Infinitiv (сделал бы). Вежливые пожелания.",
+      "essence": "Проблемы на работе. Гипотетические конструкции с Konjunktiv II. / Arbeitsprobleme. Konjunktiv II: wäre, hätte, würde.",
       "difficulties": [
         "Konjunktiv II: wäre, hätte, würde.",
         "würde + Infinitiv — ваш спасательный круг.",
@@ -2844,6 +2882,7 @@
       "id": 39,
       "week": 6,
       "phase": "transition",
+      "title": "Ich könnte dir bei der Arbeit helfen, wenn du willst.",
       "topics": [
         "Geld",
         "Bank",
@@ -2904,8 +2943,8 @@
           "russian": "исправлять"
         }
       ],
-      "grammar": "njunktiv II модальных глаголов: könnte, sollte, möchte. Конструкция 'würde' для вежливых просьб.",
-      "essence": "родолжение поиска решений. Konjunktiv II с модальными: könnte, sollte, möchte. / Fortsetzung der Lösungssuche. Konjunktiv II Modalverben.",
+      "grammar": "Konjunktiv II модальных глаголов: könnte, sollte, möchte. Конструкция 'würde' для вежливых просьб.",
+      "essence": "Продолжение поиска решений. Konjunktiv II с модальными: könnte, sollte, möchte. / Fortsetzung der Lösungssuche. Konjunktiv II Modalverben.",
       "difficulties": [
         "Модальные глаголы в Konjunktiv II: - könnte = мог бы (können) - sollte = следовало бы (sollen) - müsste = должен был бы (müssen) - dürfte = мог бы (иметь разрешение) (dürfen) - möchte = хотел бы (mögen) — студент уже знает эту форму!",
         "Разница между sollte и müsste."
@@ -2917,6 +2956,7 @@
       "id": 40,
       "week": 6,
       "phase": "transition",
+      "title": "Achtung! Der ICE nach München fährt jetzt ein. Zurückbleiben bitte!",
       "topics": [
         "Geld",
         "Bank",
@@ -2977,8 +3017,8 @@
           "russian": "объявление"
         }
       ],
-      "grammar": "велительное наклонение (Imperativ): Steigen Sie ein! (вежл.), Steig ein! (ты-форма). Глаголы с отделяемыми приставками.",
-      "essence": "поезде/метро. Транспортная лексика. / In der Bahn. Transportvokabular.",
+      "grammar": "Повелительное наклонение (Imperativ): Steigen Sie ein! (вежл.), Steig ein! (ты-форма). Глаголы с отделяемыми приставками.",
+      "essence": "В поезде/метро. Транспортная лексика. / In der Bahn. Transportvokabular.",
       "difficulties": [
         "Транспортная лексика:",
         "Объявления в транспорте.",
@@ -2991,6 +3031,7 @@
       "id": 41,
       "week": 6,
       "phase": "transition",
+      "title": "Guten Tag, Herr Doktor. Mir geht es nicht gut. Ich habe Fieber.",
       "topics": [
         "Geld",
         "Bank",
@@ -3051,8 +3092,8 @@
           "russian": "здоровый"
         }
       ],
-      "grammar": "велительное наклонение (Imperativ): вежливая форма (nehmen Sie), форма для du (nimm). Глаголы с изменением корня.",
-      "essence": "изит к врачу. Императив! / Arztbesuch. Imperativ!",
+      "grammar": "Повелительное наклонение (Imperativ): вежливая форма (nehmen Sie), форма для du (nimm). Глаголы с изменением корня.",
+      "essence": "Визит к врачу. Императив! / Arztbesuch. Imperativ!",
       "difficulties": [
         "Императив (повелительное наклонение): - du-форма: sag! (ты скажи!), komm! (ты приди!) - Sie-форма: sagen Sie! (скажите!), kommen Sie! (придите!) - ihr-форма: sagt! (вы скажите!, группе), kommt! Обратите внимание: в du-форме у сильных глаголов с умлаутом умлаут исчезает: du fährst → Fahr! (без умлаута!).",
         "Медицинская лексика:",
@@ -3065,6 +3106,7 @@
       "id": 42,
       "week": 6,
       "phase": "transition",
+      "title": "Sechs Wochen geschafft! Konjunktiv II ist nicht mehr schwer?",
       "topics": [
         "Geld",
         "Bank",
@@ -3116,8 +3158,8 @@
           "russian": "логичный"
         }
       ],
-      "grammar": "вторение: степени сравнения, deshalb/trotzdem/obwohl, Konjunktiv II (wäre, hätte, würde, könnte, sollte), Imperativ.",
-      "essence": "овторение пройденного материала: Степени сравнения — аукцион : Показываете картинки. Студенты называют сравнительную и превосходную степень. Очки за скорость., deshalb/trotzdem/obwohl — цепочка : «Ich bin krank...» → следующий добавляет deshalb/trotzdem/obwohl-предложение. По кругу 3 раза., Konjunktiv-Bingo : Карточки бинго с würde, hätte, wäre, könnte, sollte, müsste. Вы называете ситуацию, студент зачёркивает подходящую форму., Императив-врач : Пациент описывает проблему, врач даёт 3 указания в императиве., Рефлексия : «Wenn ich einen Wunsch frei hätte, würde ich...»",
+      "grammar": "Повторение: степени сравнения, deshalb/trotzdem/obwohl, Konjunktiv II (wäre, hätte, würde, könnte, sollte), Imperativ.",
+      "essence": "Повторение пройденного материала: Степени сравнения — аукцион : Показываете картинки. Студенты называют сравнительную и превосходную степень. Очки за скорость., deshalb/trotzdem/obwohl — цепочка : «Ich bin krank...» → следующий добавляет deshalb/trotzdem/obwohl-предложение. По кругу 3 раза., Konjunktiv-Bingo : Карточки бинго с würde, hätte, wäre, könnte, sollte, müsste. Вы называете ситуацию, студент зачёркивает подходящую форму., Императив-врач : Пациент описывает проблему, врач даёт 3 указания в императиве., Рефлексия : «Wenn ich einen Wunsch frei hätte, würde ich...»",
       "difficulties": [],
       "mistakes": [],
       "tips": [
@@ -3128,6 +3170,7 @@
       "id": 43,
       "week": 7,
       "phase": "transition",
+      "title": "Weißt du noch, wie wir früher zusammen gespielt haben?",
       "topics": [
         "Erinnerungen",
         "Schule",
@@ -3188,8 +3231,8 @@
           "russian": "думать о"
         }
       ],
-      "grammar": "äteritum (прошедшее повествовательное) слабых и сильных глаголов: war, hatte, spielte, gab. Использование в рассказах.",
-      "essence": "остальгические воспоминания. Präteritum! / Nostalgie. Präteritum!",
+      "grammar": "Präteritum (прошедшее повествовательное) слабых и сильных глаголов: war, hatte, spielte, gab. Использование в рассказах.",
+      "essence": "Ностальгические воспоминания. Präteritum! / Nostalgie. Präteritum!",
       "difficulties": [
         "Präteritum — «газетное» прошедшее.",
         "Ностальгическая лексика:",
@@ -3202,6 +3245,7 @@
       "id": 44,
       "week": 7,
       "phase": "transition",
+      "title": "Lieber Jonas, ich schreibe dir diesen Brief aus Berlin.",
       "topics": [
         "Erinnerungen",
         "Schule",
@@ -3262,8 +3306,8 @@
           "russian": "скоро"
         }
       ],
-      "grammar": "чные и притяжательные местоимения в дативе и аккузативе: mir (мне), dir (тебе), mich (меня), dich (тебя).",
-      "essence": "ичное письмо. Эпистолярный жанр (продвинутый). / Persönlicher Brief. Briefstruktur.",
+      "grammar": "Личные и притяжательные местоимения в дативе и аккузативе: mir (мне), dir (тебе), mich (меня), dich (тебя).",
+      "essence": "Личное письмо. Эпистолярный жанр (продвинутый). / Persönlicher Brief. Briefstruktur.",
       "difficulties": [
         "Структура немецкого письма: - Приветствие: Lieber Christian, / Liebe Anna, - Вступление: wie geht es dir? / ich hoffe, dir geht es gut. - Основная часть: ich schreibe dir, weil... - Заключение: ich freue mich auf deine Antwort. - Прощание: Viele Grüße / Liebe Grüße / Dein(e)...",
         "Личные местоимения в дативе и аккузативе: | | Nom | Akk | Dat | |---|---|---|---| | я | ich | mich | mir | | ты | du | dich | dir | | он | er | ihn | ihm | | она | sie | sie | ihr | «ich schreibe DIR» (датив — кому?), «ich sehe DICH» (аккузатив — кого?). Датив = получатель, аккузатив = объект. ### 🇩🇪 Anleitung für den Lehrer"
@@ -3275,6 +3319,7 @@
       "id": 45,
       "week": 7,
       "phase": "transition",
+      "title": "Ich ziehe nächste Woche um. Ich freue mich auf die neue Wohnung.",
       "topics": [
         "Erinnerungen",
         "Schule",
@@ -3335,8 +3380,8 @@
           "russian": "сообщить"
         }
       ],
-      "grammar": "аголы с предложным управлением: sich freuen auf (радоваться чему-л.), warten auf (ждать), helfen bei (помогать в).",
-      "essence": "еремены, переезд. Глаголы с предлогами. / Veränderung, Umzug. Verben mit Präpositionen.",
+      "grammar": "Глаголы с предложным управлением: sich freuen auf (радоваться чему-л.), warten auf (ждать), helfen bei (помогать в).",
+      "essence": "Перемены, переезд. Глаголы с предлогами. / Veränderung, Umzug. Verben mit Präpositionen.",
       "difficulties": [
         "Глаголы с фиксированными предлогами.",
         "Новая жизнь:"
@@ -3348,6 +3393,7 @@
       "id": 46,
       "week": 7,
       "phase": "transition",
+      "title": "Wem hast du geholfen? Deiner Schwester?",
       "topics": [
         "Erinnerungen",
         "Schule",
@@ -3408,8 +3454,8 @@
           "russian": "принадлежать"
         }
       ],
-      "grammar": "аголы с дательным падежом: helfen (кому?), danken (кому?), gehören (кому?). Вопрос 'wem?' (кому?).",
-      "essence": "родолжение истории. Управление глаголов. / Fortsetzung. Verben mit Dativ.",
+      "grammar": "Глаголы с дательным падежом: helfen (кому?), danken (кому?), gehören (кому?). Вопрос 'wem?' (кому?).",
+      "essence": "Продолжение истории. Управление глаголов. / Fortsetzung. Verben mit Dativ.",
       "difficulties": [
         "Глаголы с дативом:",
         "«Das gefällt mir.»",
@@ -3422,6 +3468,7 @@
       "id": 47,
       "week": 7,
       "phase": "transition",
+      "title": "Wir streiten uns zu oft. Das gefällt mir nicht.",
       "topics": [
         "Erinnerungen",
         "Schule",
@@ -3482,8 +3529,8 @@
           "russian": "спокойно"
         }
       ],
-      "grammar": "звратные глаголы (reflexive Verben): sich streiten, sich ärgern, sich kümmern. Возвратное местоимение 'sich'.",
-      "essence": "емейные диалоги. Возвратные глаголы. / Ehedialoge. Reflexive Verben.",
+      "grammar": "Возвратные глаголы (reflexive Verben): sich streiten, sich ärgern, sich kümmern. Возвратное местоимение 'sich'.",
+      "essence": "Семейные диалоги. Возвратные глаголы. / Ehedialoge. Reflexive Verben.",
       "difficulties": [
         "Возвратные глаголы:",
         "«Ehe» = брак (супружество).",
@@ -3496,6 +3543,7 @@
       "id": 48,
       "week": 7,
       "phase": "transition",
+      "title": "Es ist deine Schuld, dass wir den Zug verpasst haben!",
       "topics": [
         "Erinnerungen",
         "Schule",
@@ -3556,8 +3604,8 @@
           "russian": "прекращать"
         }
       ],
-      "grammar": "идаточные причины: weil (потому что), da (так как), denn (ибо). После weil и da глагол в конце, после denn — прямой порядок.",
-      "essence": "бвинения. Придаточные причины: weil, da, denn. / Schuldzuweisungen. Kausalsätze: weil, da, denn.",
+      "grammar": "Придаточные причины: weil (потому что), da (так как), denn (ибо). После weil и da глагол в конце, после denn — прямой порядок.",
+      "essence": "Обвинения. Придаточные причины: weil, da, denn. / Schuldzuweisungen. Kausalsätze: weil, da, denn.",
       "difficulties": [
         "Три способа сказать «потому что»: -",
         "schuld sein an + Dat",
@@ -3570,6 +3618,7 @@
       "id": 49,
       "week": 7,
       "phase": "transition",
+      "title": "Woche sieben: Präteritum, reflexive Verben, Briefe schreiben.",
       "topics": [
         "Erinnerungen",
         "Schule",
@@ -3625,8 +3674,8 @@
           "russian": "волнительный"
         }
       ],
-      "grammar": "вторение: Präteritum, дативные глаголы, глаголы с предложным управлением, возвратные глаголы, weil/da/denn.",
-      "essence": "овторение пройденного материала: Präteritum-баттл : Называете глагол в Infinitiv, студент называет Präteritum-форму. Только для «суперзвёзд»: sein → war, haben → hatte, gehen → ging, kommen → kam, wissen → wusste, denken → dachte., Глагол + предлог — найди пару : Карточки с глаголами и отдельно с предлогами. Студенты находят «супружеские пары»: warten + auf, denken + an, sich freuen + auf/über..., Возвратная эстафета : ich freue MICH → du freust DICH → er freut SICH... По кругу, разные глаголы., weil/da/denn — трибунал : Ситуации «Кто виноват?» Студент выбирает способ оправдания и использует weil, da или denn., Рефлексия : «Ich erinnere mich an... Ich freue mich auf... Ich ärgere mich über...»",
+      "grammar": "Повторение: Präteritum, дативные глаголы, глаголы с предложным управлением, возвратные глаголы, weil/da/denn.",
+      "essence": "Повторение пройденного материала: Präteritum-баттл : Называете глагол в Infinitiv, студент называет Präteritum-форму. Только для «суперзвёзд»: sein → war, haben → hatte, gehen → ging, kommen → kam, wissen → wusste, denken → dachte., Глагол + предлог — найди пару : Карточки с глаголами и отдельно с предлогами. Студенты находят «супружеские пары»: warten + auf, denken + an, sich freuen + auf/über..., Возвратная эстафета : ich freue MICH → du freust DICH → er freut SICH... По кругу, разные глаголы., weil/da/denn — трибунал : Ситуации «Кто виноват?» Студент выбирает способ оправдания и использует weil, da или denn., Рефлексия : «Ich erinnere mich an... Ich freue mich auf... Ich ärgere mich über...»",
       "difficulties": [],
       "mistakes": [],
       "tips": [
@@ -3637,6 +3686,7 @@
       "id": 50,
       "week": 8,
       "phase": "transition",
+      "title": "Guten Tag! Kann ich Ihnen helfen?",
       "topics": [
         "Verkäufer",
         "Verhandlung",
@@ -3701,8 +3751,8 @@
           "russian": "стоить"
         }
       ],
-      "grammar": "РВАЯ АКТИВНАЯ ЛЕКЦИЯ! Теперь вы говорите самостоятельно. Порядок слов: время, место, образ действия.",
-      "essence": "ЕРВЫЙ АКТИВНЫЙ УРОК! В магазине, диалог продавца и покупателя. / ERSTE AKTIVE LEKTION! Im Laden.",
+      "grammar": "ПЕРВАЯ АКТИВНАЯ ЛЕКЦИЯ! Теперь вы говорите самостоятельно. Порядок слов: время, место, образ действия.",
+      "essence": "ПЕРВЫЙ АКТИВНЫЙ УРОК! В магазине, диалог продавца и покупателя. / ERSTE AKTIVE LEKTION! Im Laden.",
       "difficulties": [
         "Первый активный перевод!",
         "«Verkäufer sein ist nicht leicht.»",
@@ -3717,6 +3767,7 @@
       "id": 51,
       "week": 8,
       "phase": "transition",
+      "title": "Erinnerst du dich an unseren Urlaub in Spanien?",
       "topics": [
         "Verkäufer",
         "Verhandlung",
@@ -3776,8 +3827,8 @@
           "russian": "прыгать"
         }
       ],
-      "grammar": "usquamperfekt (предпрошедшее время): nachdem + Plusquamperfekt, главное предложение + Präteritum. 'Nachdem' с предпрошедшим.",
-      "essence": "оспоминания. Plusquamperfekt. / Erinnerungen. Plusquamperfekt.",
+      "grammar": "Plusquamperfekt (предпрошедшее время): nachdem + Plusquamperfekt, главное предложение + Präteritum. 'Nachdem' с предпрошедшим.",
+      "essence": "Воспоминания. Plusquamperfekt. / Erinnerungen. Plusquamperfekt.",
       "difficulties": [
         "Plusquamperfekt = «предпрошедшее» время.",
         "sich erinnern an + Akk"
@@ -3789,6 +3840,7 @@
       "id": 52,
       "week": 8,
       "phase": "transition",
+      "title": "Es war einmal ein Prinz, der in Berlin wohnte.",
       "topics": [
         "Verkäufer",
         "Verhandlung",
@@ -3848,8 +3900,8 @@
           "russian": "магия"
         }
       ],
-      "grammar": "njunktiv II в прошедшем времени: wäre ... gewesen, hätte ... gehabt. Irreale Wunschsätze: 'Wenn ich ... wäre, würde ich ...'",
-      "essence": "овременная версия сказки. Konjunktiv II в действии! / Modernes Märchen. Konjunktiv II in Aktion!",
+      "grammar": "Konjunktiv II в прошедшем времени: wäre ... gewesen, hätte ... gehabt. Irreale Wunschsätze: 'Wenn ich ... wäre, würde ich ...'",
+      "essence": "Современная версия сказки. Konjunktiv II в действии! / Modernes Märchen. Konjunktiv II in Aktion!",
       "difficulties": [
         "Konjunktiv II в связном тексте.",
         "Сказочная лексика:",
@@ -3862,6 +3914,7 @@
       "id": 53,
       "week": 8,
       "phase": "transition",
+      "title": "Die schöne Frau hieß Rapunzel und hatte langes, goldenes Haar.",
       "topics": [
         "Verkäufer",
         "Verhandlung",
@@ -3921,8 +3974,8 @@
           "russian": "побеждать"
         }
       ],
-      "grammar": "льное склонение прилагательных: без артикля — langes Haar, mit langem Haar (после предлогов). Окончания: -er, -es, -em, -e.",
-      "essence": "родолжение сказки. Прилагательные сильного склонения. / Märchenfortsetzung. Starke Adjektivdeklination.",
+      "grammar": "Сильное склонение прилагательных: без артикля — langes Haar, mit langem Haar (после предлогов). Окончания: -er, -es, -em, -e.",
+      "essence": "Продолжение сказки. Прилагательные сильного склонения. / Märchenfortsetzung. Starke Adjektivdeklination.",
       "difficulties": [
         "Сильное склонение прилагательных (без артикля).",
         "Продолжение нарратива."
@@ -3934,6 +3987,7 @@
       "id": 54,
       "week": 8,
       "phase": "transition",
+      "title": "Stell dir vor, was mir gestern passiert ist!",
       "topics": [
         "Verkäufer",
         "Verhandlung",
@@ -3993,8 +4047,8 @@
           "russian": "выздоровление"
         }
       ],
-      "grammar": "rfekt в повествовании: sein для глаголов движения (gefallen, gegangen) и haben для остальных. Partizip II сильных глаголов.",
-      "essence": "ассказ о происшествии. Perfekt в длинном нарративе. / Einen Vorfall erzählen. Perfekt im langen Narrativ.",
+      "grammar": "Perfekt в повествовании: sein для глаголов движения (gefallen, gegangen) и haben для остальных. Partizip II сильных глаголов.",
+      "essence": "Рассказ о происшествии. Perfekt в длинном нарративе. / Einen Vorfall erzählen. Perfekt im langen Narrativ.",
       "difficulties": [
         "Perfekt в рассказе.",
         "«Ist Ihnen... passiert?»",
@@ -4007,6 +4061,7 @@
       "id": 55,
       "week": 8,
       "phase": "transition",
+      "title": "Das war wirklich ein lustiger Tag! Wir haben so viel gelacht!",
       "topics": [
         "Verkäufer",
         "Verhandlung",
@@ -4066,8 +4121,8 @@
           "russian": "ранить"
         }
       ],
-      "grammar": "исательная лексика: прилагательные для детального описания. Порядок прилагательных: мнение → размер → цвет → материал.",
-      "essence": "абавная история. Богатая описательная лексика. / Lustige Geschichte. Viel beschreibendes Vokabular.",
+      "grammar": "Описательная лексика: прилагательные для детального описания. Порядок прилагательных: мнение → размер → цвет → материал.",
+      "essence": "Забавная история. Богатая описательная лексика. / Lustige Geschichte. Viel beschreibendes Vokabular.",
       "difficulties": [
         "Прилагательные в описаниях.",
         "Ирония в немецком тексте."
@@ -4079,6 +4134,7 @@
       "id": 56,
       "week": 8,
       "phase": "transition",
+      "title": "Aktive Phase! Jetzt sprechen wir selbst! Übersetzungsduell!",
       "topics": [
         "Verkäufer",
         "Verhandlung",
@@ -4133,8 +4189,8 @@
           "russian": "курс"
         }
       ],
-      "grammar": "вторение: Plusquamperfekt с nachdem, Konjunktiv II в прошедшем времени, сильное склонение прилагательных, повествование в Perfekt.",
-      "essence": "овторение пройденного материала: Активный перевод — дуэль : Студенты в парах. Один читает русское предложение, второй переводит на немецкий. Потом меняются. Очки за правильные ответы, бонус за скорость., Konjunktiv-сказка : Группа сочиняет сказку по цепочке. Каждое предложение должно содержать Konjunktiv II: «Wenn ich ein Wolf WÄRE, WÜRDE ich...», Plusquam-Ecke : Тренировка Plusquamperfekt: «Als ich ankam, hatte er schon...» — по цепочке., Рефлексия активной фазы : Обсуждение: что изменилось? Легче ли стало переводить? Какие ошибки повторяются? «Seit der aktiven Phase fühle ich mich... weil...»",
+      "grammar": "Повторение: Plusquamperfekt с nachdem, Konjunktiv II в прошедшем времени, сильное склонение прилагательных, повествование в Perfekt.",
+      "essence": "Повторение пройденного материала: Активный перевод — дуэль : Студенты в парах. Один читает русское предложение, второй переводит на немецкий. Потом меняются. Очки за правильные ответы, бонус за скорость., Konjunktiv-сказка : Группа сочиняет сказку по цепочке. Каждое предложение должно содержать Konjunktiv II: «Wenn ich ein Wolf WÄRE, WÜRDE ich...», Plusquam-Ecke : Тренировка Plusquamperfekt: «Als ich ankam, hatte er schon...» — по цепочке., Рефлексия активной фазы : Обсуждение: что изменилось? Легче ли стало переводить? Какие ошибки повторяются? «Seit der aktiven Phase fühle ich mich... weil...»",
       "difficulties": [],
       "mistakes": [],
       "tips": [
@@ -4145,6 +4201,7 @@
       "id": 57,
       "week": 9,
       "phase": "active",
+      "title": "Du siehst deiner Mutter sehr ähnlich! Die gleichen Augen.",
       "topics": [
         "Vater und Söhne",
         "Familie",
@@ -4204,8 +4261,8 @@
           "russian": "черта, свойство"
         }
       ],
-      "grammar": "словицы и сравнения: 'Der Apfel fällt nicht weit vom Stamm'. Сравнительные конструкции: genauso ... wie.",
-      "essence": "емейные сходства, характеры. Пословицы. / Familienähnlichkeiten. Sprichwörter.",
+      "grammar": "Пословицы и сравнения: 'Der Apfel fällt nicht weit vom Stamm'. Сравнительные конструкции: genauso ... wie.",
+      "essence": "Семейные сходства, характеры. Пословицы. / Familienähnlichkeiten. Sprichwörter.",
       "difficulties": [
         "Пословицы — золотая жила языка.",
         "Сравнительная конструкция wie... so...",
@@ -4218,6 +4275,7 @@
       "id": 58,
       "week": 9,
       "phase": "active",
+      "title": "Guten Morgen! Was kosten die Äpfel?",
       "topics": [
         "Vater und Söhne",
         "Familie",
@@ -4277,8 +4335,8 @@
           "russian": "корзинка"
         }
       ],
-      "grammar": "ры веса и количества: das Kilo, die Schale, die Tüte. Числа и цены в разговорной речи.",
-      "essence": "оход на рынок. Вес, меры, покупки. / Marktbesuch. Gewichte, Maße.",
+      "grammar": "Меры веса и количества: das Kilo, die Schale, die Tüte. Числа и цены в разговорной речи.",
+      "essence": "Поход на рынок. Вес, меры, покупки. / Marktbesuch. Gewichte, Maße.",
       "difficulties": [
         "Меры веса в Германии:",
         "Рыночная лексика:",
@@ -4291,6 +4349,7 @@
       "id": 59,
       "week": 9,
       "phase": "active",
+      "title": "Was hältst du von der neuen Regierung?",
       "topics": [
         "Vater und Söhne",
         "Familie",
@@ -4350,8 +4409,8 @@
           "russian": "мнение"
         }
       ],
-      "grammar": "ражение мнения: 'Ich halte von...', 'Ich finde...', 'Meiner Meinung nach...'. Глагол 'halten von' + датив.",
-      "essence": "бсуждение, мнения. halten von. / Meinungsaustausch. halten von.",
+      "grammar": "Выражение мнения: 'Ich halte von...', 'Ich finde...', 'Meiner Meinung nach...'. Глагол 'halten von' + датив.",
+      "essence": "Обсуждение, мнения. halten von. / Meinungsaustausch. halten von.",
       "difficulties": [
         "halten von + Dat",
         "Выражение мнения:",
@@ -4364,6 +4423,7 @@
       "id": 60,
       "week": 9,
       "phase": "active",
+      "title": "Meine Reise durch die Schweiz war atemberaubend!",
       "topics": [
         "Vater und Söhne",
         "Familie",
@@ -4423,8 +4483,8 @@
           "russian": "рай"
         }
       ],
-      "grammar": "исательные прилагательные в повествовании. Предлоги: durch (через, Akkusativ). Глаголы движения с sein в Perfekt.",
-      "essence": "утешествие, загадочная история. / Reisegeschichte. Beschreibungen.",
+      "grammar": "Описательные прилагательные в повествовании. Предлоги: durch (через, Akkusativ). Глаголы движения с sein в Perfekt.",
+      "essence": "Путешествие, загадочная история. / Reisegeschichte. Beschreibungen.",
       "difficulties": [
         "Описательная лексика:",
         "Повествовательное напряжение."
@@ -4436,6 +4496,7 @@
       "id": 61,
       "week": 9,
       "phase": "active",
+      "title": "Rate mal, was ich heute erlebt habe!",
       "topics": [
         "Vater und Söhne",
         "Familie",
@@ -4495,8 +4556,8 @@
           "russian": "переживать, испытывать"
         }
       ],
-      "grammar": "дальные частицы: ja (же, ведь), aber auch (вот так), doch (всё же). Они придают эмоциональную окраску.",
-      "essence": "дивление. Эмоциональные реакции. Модальные частицы. / Überraschung. Modalpartikeln.",
+      "grammar": "Модальные частицы: ja (же, ведь), aber auch (вот так), doch (всё же). Они придают эмоциональную окраску.",
+      "essence": "Удивление. Эмоциональные реакции. Модальные частицы. / Überraschung. Modalpartikeln.",
       "difficulties": [
         "Модальные частицы — секретный соус немецкого языка.",
         "«Kein Wunder!»",
@@ -4509,6 +4570,7 @@
       "id": 62,
       "week": 9,
       "phase": "active",
+      "title": "Kannst du dir vorstellen, wen ich gestern getroffen habe?",
       "topics": [
         "Vater und Söhne",
         "Familie",
@@ -4568,8 +4630,8 @@
           "russian": "рассказывать"
         }
       ],
-      "grammar": "зличие erzählen (рассказывать историю/подробно) и sagen (сказать/сообщить факт).",
-      "essence": "лучайные события. erzählen,讲故事。 / Zufall. Geschichten erzählen.",
+      "grammar": "Различие erzählen (рассказывать историю/подробно) и sagen (сказать/сообщить факт).",
+      "essence": "Случайные события. erzählen,讲故事。 / Zufall. Geschichten erzählen.",
       "difficulties": [
         "Zufall",
         "erzählen vs sagen vs sprechen: - erzählen = рассказывать историю - sagen = сказать (что-то конкретное) - sprechen = говорить (на языке / с кем-то) ### 🇩🇪 Anleitung für den Lehrer"
@@ -4581,6 +4643,7 @@
       "id": 63,
       "week": 9,
       "phase": "active",
+      "title": "Woche neun! Heute: Passiv wird gelernt!",
       "topics": [
         "Vater und Söhne",
         "Familie",
@@ -4640,8 +4703,8 @@
           "russian": "отчёт"
         }
       ],
-      "grammar": "ssiv (пассивный залог): werden + Partizip II. Время: Präsens (wird gemacht), Präteritum (wurde gemacht). Агенс с 'von'.",
-      "essence": "овторение + Passiv! / Wiederholung + Passiv-Einführung.",
+      "grammar": "Passiv (пассивный залог): werden + Partizip II. Время: Präsens (wird gemacht), Präteritum (wurde gemacht). Агенс с 'von'.",
+      "essence": "Повторение + Passiv! / Wiederholung + Passiv-Einführung.",
       "difficulties": [
         "Passiv = werden + Partizip II.",
         "Passiv в настоящем времени."
@@ -4655,6 +4718,7 @@
       "id": 64,
       "week": 10,
       "phase": "active",
+      "title": "Du siehst heute besonders schön aus. Ist etwas passiert?",
       "topics": [
         "Der Auserwählte",
         "Prüfungen",
@@ -4714,8 +4778,8 @@
           "russian": "любить"
         }
       ],
-      "grammar": "standspassiv (пассив состояния): sein + Partizip II. 'Die Stadt ist getaucht' — состояние как результат действия.",
-      "essence": "омантика, выбор партнёра. Пассив продолжается. / Romantik. Passiv Fortsetzung.",
+      "grammar": "Zustandspassiv (пассив состояния): sein + Partizip II. 'Die Stadt ist getaucht' — состояние как результат действия.",
+      "essence": "Романтика, выбор партнёра. Пассив продолжается. / Romantik. Passiv Fortsetzung.",
       "difficulties": [
         "Zustandspassiv (пассив состояния).",
         "der Auserwählte",
@@ -4728,6 +4792,7 @@
       "id": 65,
       "week": 10,
       "phase": "active",
+      "title": "Ich finde, viele Vorurteile sind einfach falsch.",
       "topics": [
         "Der Auserwählte",
         "Prüfungen",
@@ -4787,8 +4852,8 @@
           "russian": "выдвижной ящик"
         }
       ],
-      "grammar": "гументация: Ausdrücke für Debatte (Ich finde... , Stimmt!, Quatsch!). Придаточные предложения с dass для выражения мнения.",
-      "essence": "ебаты о предубеждениях. Аргументация. / Debatte über Vorurteile. Argumentation.",
+      "grammar": "Аргументация: Ausdrücke für Debatte (Ich finde... , Stimmt!, Quatsch!). Придаточные предложения с dass для выражения мнения.",
+      "essence": "Дебаты о предубеждениях. Аргументация. / Debatte über Vorurteile. Argumentation.",
       "difficulties": [
         "Дискурсивные маркеры:",
         "begegnen + Dat",
@@ -4801,6 +4866,7 @@
       "id": 66,
       "week": 10,
       "phase": "active",
+      "title": "Ich verstehe nur Bahnhof. Kannst du das bitte wiederholen?",
       "topics": [
         "Der Auserwählte",
         "Prüfungen",
@@ -4860,8 +4926,8 @@
           "russian": "типичный"
         }
       ],
-      "grammar": "иомы (Redewendungen): буквальное и переносное значение. Важно понимать культурный контекст устойчивых выражений.",
-      "essence": "диомы! Переносный смысл. / Redewendungen. Bildliche Sprache.",
+      "grammar": "Идиомы (Redewendungen): буквальное и переносное значение. Важно понимать культурный контекст устойчивых выражений.",
+      "essence": "Идиомы! Переносный смысл. / Redewendungen. Bildliche Sprache.",
       "difficulties": [
         "Идиомы — сердце языка.",
         "wörtlich nehmen"
@@ -4873,6 +4939,7 @@
       "id": 67,
       "week": 10,
       "phase": "active",
+      "title": "Warum können Geister so schlecht lügen?",
       "topics": [
         "Der Auserwählte",
         "Prüfungen",
@@ -4932,8 +4999,8 @@
           "russian": "плохо"
         }
       ],
-      "grammar": "ыковые шутки: игра слов, буквальное vs переносное значение. Вопросительные слова в косвенных вопросах.",
-      "essence": "зыковые шутки. Буквальное vs переносное. / Sprachwitze. Wörtliche Bedeutung.",
+      "grammar": "Языковые шутки: игра слов, буквальное vs переносное значение. Вопросительные слова в косвенных вопросах.",
+      "essence": "Языковые шутки. Буквальное vs переносное. / Sprachwitze. Wörtliche Bedeutung.",
       "difficulties": [
         "Юмор через буквализм.",
         "Языковая игра."
@@ -4945,6 +5012,7 @@
       "id": 68,
       "week": 10,
       "phase": "active",
+      "title": "Die Bedienungsanleitung ist auf Deutsch. Kannst du sie lesen?",
       "topics": [
         "Der Auserwählte",
         "Prüfungen",
@@ -5004,8 +5072,8 @@
           "russian": "вилка, штекер"
         }
       ],
-      "grammar": "ssiv в инструкциях: wird + Partizip II. Модальные глаголы с Passiv: darf ... werden, muss ... werden.",
-      "essence": "нструкция по использованию телефона-автомата. Passiv в действии. / Bedienungsanleitung. Passiv in Aktion.",
+      "grammar": "Passiv в инструкциях: wird + Partizip II. Модальные глаголы с Passiv: darf ... werden, muss ... werden.",
+      "essence": "Инструкция по использованию телефона-автомата. Passiv в действии. / Bedienungsanleitung. Passiv in Aktion.",
       "difficulties": [
         "Пассив в инструкциях.",
         "Техническая лексика:",
@@ -5018,6 +5086,7 @@
       "id": 69,
       "week": 10,
       "phase": "active",
+      "title": "Zuerst wird die Schraube gelockert. Dann wird das Teil entfernt.",
       "topics": [
         "Der Auserwählte",
         "Prüfungen",
@@ -5077,8 +5146,8 @@
           "russian": "шаг"
         }
       ],
-      "grammar": "ssiv с модальными глаголами: muss gereinigt werden, sollte gewechselt werden. Придаточные с 'bevor'.",
-      "essence": "нструкция по использованию телефона-автомата. Passiv в действии. / Bedienungsanleitung. Passiv in Aktion.",
+      "grammar": "Passiv с модальными глаголами: muss gereinigt werden, sollte gewechselt werden. Придаточные с 'bevor'.",
+      "essence": "Инструкция по использованию телефона-автомата. Passiv в действии. / Bedienungsanleitung. Passiv in Aktion.",
       "difficulties": [
         "Пассив в инструкциях.",
         "Техническая лексика:",
@@ -5091,6 +5160,7 @@
       "id": 70,
       "week": 10,
       "phase": "active",
+      "title": "Woche zehn: Passiv und jetzt Relativsätze!",
       "topics": [
         "Der Auserwählte",
         "Prüfungen",
@@ -5150,8 +5220,8 @@
           "russian": "запоминать"
         }
       ],
-      "grammar": "вторение: Passiv (werden + Partizip II). Относительные предложения (Relativsätze): der, die, das — глагол в конце.",
-      "essence": "овторение + Relativsätze! / Wiederholung + Relativsätze!",
+      "grammar": "Повторение: Passiv (werden + Partizip II). Относительные предложения (Relativsätze): der, die, das — глагол в конце.",
+      "essence": "Повторение + Relativsätze! / Wiederholung + Relativsätze!",
       "difficulties": [
         "Относительные предложения.",
         "Схема:"
@@ -5165,6 +5235,7 @@
       "id": 71,
       "week": 11,
       "phase": "active",
+      "title": "Fritzchen, was ist 3 mal 4?",
       "topics": [
         "Fritzchen",
         "Humor",
@@ -5225,8 +5296,8 @@
           "russian": "знать"
         }
       ],
-      "grammar": "пичные Fritzchen-Witze: простые диалоги с неожиданной концовкой. Косвенный вопрос с 'ob' (ли).",
-      "essence": "емецкие анекдоты. Структура шутки. / Deutsche Witze. Witz-Struktur.",
+      "grammar": "Типичные Fritzchen-Witze: простые диалоги с неожиданной концовкой. Косвенный вопрос с 'ob' (ли).",
+      "essence": "Немецкие анекдоты. Структура шутки. / Deutsche Witze. Witz-Struktur.",
       "difficulties": [
         "Fritzchen-Witze.",
         "Структура Witz:",
@@ -5239,6 +5310,7 @@
       "id": 72,
       "week": 11,
       "phase": "active",
+      "title": "Heute koche ich ein traditionelles deutsches Essen: Sauerbraten!",
       "topics": [
         "Fritzchen",
         "Humor",
@@ -5299,8 +5371,8 @@
           "russian": "рецепт"
         }
       ],
-      "grammar": "линарные рецепты: Passiv в инструкциях (wird mariniert, wird geschmort). Предлоги с дативом: mit, von.",
-      "essence": "емецкая кухня, рецепты. / Deutsche Küche. Rezepte.",
+      "grammar": "Кулинарные рецепты: Passiv в инструкциях (wird mariniert, wird geschmort). Предлоги с дативом: mit, von.",
+      "essence": "Немецкая кухня, рецепты. / Deutsche Küche. Rezepte.",
       "difficulties": [
         "Quark",
         "Рецепты по-немецки:",
@@ -5313,6 +5385,7 @@
       "id": 73,
       "week": 11,
       "phase": "active",
+      "title": "Meine Damen und Herren, willkommen an Bord des Fluges LH 403 nach Frankfurt.",
       "topics": [
         "Fritzchen",
         "Humor",
@@ -5373,8 +5446,8 @@
           "russian": "чрезвычайная ситуация"
         }
       ],
-      "grammar": "ssiv в официальных объявлениях (werden herunterfallen). Инфинитивные конструкции: bitten + zu + Infinitiv.",
-      "essence": "олёт на самолёте. Инструкции по безопасности. / Flugreise. Sicherheitsanweisungen.",
+      "grammar": "Passiv в официальных объявлениях (werden herunterfallen). Инфинитивные конструкции: bitten + zu + Infinitiv.",
+      "essence": "Полёт на самолёте. Инструкции по безопасности. / Flugreise. Sicherheitsanweisungen.",
       "difficulties": [
         "sich anschnallen",
         "Лексика безопасности:",
@@ -5387,6 +5460,7 @@
       "id": 74,
       "week": 11,
       "phase": "active",
+      "title": "Papa, ich möchte dir etwas Wichtiges sagen.",
       "topics": [
         "Fritzchen",
         "Humor",
@@ -5447,8 +5521,8 @@
           "russian": "слушать (внимательно)"
         }
       ],
-      "grammar": "оциональные диалоги: глаголы с дательным падежом (zuhören, danken). Придаточные предложения для выражения чувств.",
-      "essence": "тношения отца и сына. Эмоциональный диалог. / Vater-Sohn-Beziehung. Emotionaler Dialog.",
+      "grammar": "Эмоциональные диалоги: глаголы с дательным падежом (zuhören, danken). Придаточные предложения для выражения чувств.",
+      "essence": "Отношения отца и сына. Эмоциональный диалог. / Vater-Sohn-Beziehung. Emotionaler Dialog.",
       "difficulties": [
         "Глубокий эмоциональный текст.",
         "Семейная лексика:",
@@ -5461,6 +5535,7 @@
       "id": 75,
       "week": 11,
       "phase": "active",
+      "title": "Endlich zu Hause! Die Reise war anstrengend, aber schön.",
       "topics": [
         "Fritzchen",
         "Humor",
@@ -5521,8 +5596,8 @@
           "russian": "обратно"
         }
       ],
-      "grammar": "аголы с изменением восприятия: vorkommen + датив (казаться), wirken (выглядеть). Придаточные с 'dass'.",
-      "essence": "озвращение домой после долгого отсутствия. / Heimkehr. Veränderte Wahrnehmung.",
+      "grammar": "Глаголы с изменением восприятия: vorkommen + датив (казаться), wirken (выглядеть). Придаточные с 'dass'.",
+      "essence": "Возвращение домой после долгого отсутствия. / Heimkehr. Veränderte Wahrnehmung.",
       "difficulties": [
         "Ностальгия и перемены.",
         "«Man sieht alles mit anderen Augen.»"
@@ -5534,6 +5609,7 @@
       "id": 76,
       "week": 11,
       "phase": "active",
+      "title": "Die ganze Familie kommt zu Weihnachten! Alle Verwandten!",
       "topics": [
         "Fritzchen",
         "Humor",
@@ -5594,8 +5670,8 @@
           "russian": "полный"
         }
       ],
-      "grammar": "пы родственников: der Verwandte, die Verwandten (склонение по слабому типу). Прилагательные в роли существительных.",
-      "essence": "емейный визит. Типажи родственников. / Familienbesuch. Verwandtschaftstypen.",
+      "grammar": "Типы родственников: der Verwandte, die Verwandten (склонение по слабому типу). Прилагательные в роли существительных.",
+      "essence": "Семейный визит. Типажи родственников. / Familienbesuch. Verwandtschaftstypen.",
       "difficulties": [
         "Семейные типажи.",
         "Verwandtschaft:"
@@ -5607,6 +5683,7 @@
       "id": 77,
       "week": 11,
       "phase": "active",
+      "title": "Ich lerne Deutsch, um in Deutschland zu arbeiten.",
       "topics": [
         "Fritzchen",
         "Humor",
@@ -5667,8 +5744,8 @@
           "russian": "приглашённый"
         }
       ],
-      "grammar": "финитивные обороты: um...zu (чтобы), ohne...zu (не...а), statt...zu (вместо того чтобы). Подлежащее в главном и придаточном совпадает.",
-      "essence": "m...zu, ohne...zu, statt...zu. / Infinitivkonstruktionen: um...zu, ohne...zu, statt...zu.",
+      "grammar": "Инфинитивные обороты: um...zu (чтобы), ohne...zu (не...а), statt...zu (вместо того чтобы). Подлежащее в главном и придаточном совпадает.",
+      "essence": "um...zu, ohne...zu, statt...zu. / Infinitivkonstruktionen: um...zu, ohne...zu, statt...zu.",
       "difficulties": [
         "Инфинитивные обороты с zu: - um...zu = чтобы: «Ich lerne, UM zu arbeiten.» - ohne...zu = не делая: «Er ging, OHNE etwas zu sagen.» - statt...zu = вместо того чтобы: «STATT zu arbeiten, schlief er.»",
         "Правило:"
@@ -5680,6 +5757,7 @@
       "id": 78,
       "week": 12,
       "phase": "active",
+      "title": "Wusstest du, dass Deutschland über 16 Bundesländer hat?",
       "topics": [
         "Fritzchen",
         "Humor",
@@ -5740,8 +5818,8 @@
           "russian": "событие"
         }
       ],
-      "grammar": "слительные: Jahre (1989), Höhenangaben (157 Meter). Интересные факты: Wusstest du, dass...? (Ты знал, что...?)",
-      "essence": "нтересные факты о Германии. Стиль wissen. / Interessante Fakten. Sachlicher Stil.",
+      "grammar": "Числительные: Jahre (1989), Höhenangaben (157 Meter). Интересные факты: Wusstest du, dass...? (Ты знал, что...?)",
+      "essence": "Интересные факты о Германии. Стиль wissen. / Interessante Fakten. Sachlicher Stil.",
       "difficulties": [
         "Фактический стиль.",
         "wissen (старое написание: wußten)."
@@ -5753,6 +5831,7 @@
       "id": 79,
       "week": 12,
       "phase": "active",
+      "title": "Der Bayerische Dialekt klingt ganz anders als Hochdeutsch.",
       "topics": [
         "Fritzchen",
         "Humor",
@@ -5813,8 +5892,8 @@
           "russian": "культура"
         }
       ],
-      "grammar": "авнение диалектов: anders als (иначе чем). Этнокультурная лексика: региональные приветствия.",
-      "essence": "иалекты немецкого. / Deutsche Dialekte.",
+      "grammar": "Сравнение диалектов: anders als (иначе чем). Этнокультурная лексика: региональные приветствия.",
+      "essence": "Диалекты немецкого. / Deutsche Dialekte.",
       "difficulties": [
         "Диалектная палитра.",
         "Hochdeutsch vs Dialekt."
@@ -5826,6 +5905,7 @@
       "id": 80,
       "week": 12,
       "phase": "active",
+      "title": "In Deutschland glauben viele an Glücksbringer. Das Schwein bringt Glück!",
       "topics": [
         "Fritzchen",
         "Humor",
@@ -5886,8 +5966,8 @@
           "russian": "несчастье, неудача"
         }
       ],
-      "grammar": "еверия: глагол 'glauben an' + Akkusativ (верить во что-то). Безличная конструкция 'man glaubt'.",
-      "essence": "емецкие суеверия. / Deutscher Aberglaube.",
+      "grammar": "Суеверия: глагол 'glauben an' + Akkusativ (верить во что-то). Безличная конструкция 'man glaubt'.",
+      "essence": "Немецкие суеверия. / Deutscher Aberglaube.",
       "difficulties": [
         "Немецкие суеверия:",
         "Aberglaube vs Glaube."
@@ -5899,6 +5979,7 @@
       "id": 81,
       "week": 12,
       "phase": "active",
+      "title": "Kennst du die Sage von der Lorelei?",
       "topics": [
         "Fritzchen",
         "Humor",
@@ -5959,8 +6040,8 @@
           "russian": "опасность"
         }
       ],
-      "grammar": "ssiv: werden angezogen (притягиваются). Предлоги причины: wegen (из-за, Genitiv). Релятивизация с 'von' в Passiv.",
-      "essence": "емецкий фольклор, легенда о Лорелее. / Deutsche Folklore: Die Lorelei.",
+      "grammar": "Passiv: werden angezogen (притягиваются). Предлоги причины: wegen (из-за, Genitiv). Релятивизация с 'von' в Passiv.",
+      "essence": "Немецкий фольклор, легенда о Лорелее. / Deutsche Folklore: Die Lorelei.",
       "difficulties": [
         "Лорелея",
         "Sage vs Märchen vs Legende."
@@ -5972,6 +6053,7 @@
       "id": 82,
       "week": 12,
       "phase": "active",
+      "title": "Guten Morgen! Ich habe einen Termin beim Arzt um 10 Uhr.",
       "topics": [
         "Fritzchen",
         "Humor",
@@ -6032,8 +6114,8 @@
           "russian": "ждать"
         }
       ],
-      "grammar": "одолжительные диалоги: выражение нетерпения (ich hasse..., es eilig haben). Косвенная речь в разговоре.",
-      "essence": "жидание у врача. Длинный диалог. / Längster Dialog des Kurses! Ausdauertest.",
+      "grammar": "Продолжительные диалоги: выражение нетерпения (ich hasse..., es eilig haben). Косвенная речь в разговоре.",
+      "essence": "Ожидание у врача. Длинный диалог. / Längster Dialog des Kurses! Ausdauertest.",
       "difficulties": [
         "Двухчастный урок.",
         "Wartezimmer-лексика:",
@@ -6046,6 +6128,7 @@
       "id": 83,
       "week": 12,
       "phase": "active",
+      "title": "Endlich bin ich dran! Der Arzt hat mich aufgerufen.",
       "topics": [
         "Fritzchen",
         "Humor",
@@ -6106,8 +6189,8 @@
           "russian": "антибиотик"
         }
       ],
-      "grammar": "алог с врачом: 'Was fehlt Ihnen?' — вежливый вопрос. Глагол 'fehlen' с дательным падежом.",
-      "essence": "жидание у врача. Длинный диалог. / Längster Dialog des Kurses! Ausdauertest.",
+      "grammar": "Диалог с врачом: 'Was fehlt Ihnen?' — вежливый вопрос. Глагол 'fehlen' с дательным падежом.",
+      "essence": "Ожидание у врача. Длинный диалог. / Längster Dialog des Kurses! Ausdauertest.",
       "difficulties": [
         "Двухчастный урок.",
         "Wartezimmer-лексика:",
@@ -6120,6 +6203,7 @@
       "id": 84,
       "week": 12,
       "phase": "active",
+      "title": "Woche elf ist geschafft! Elf Wochen Deutsch!",
       "topics": [
         "Fritzchen",
         "Humor",
@@ -6175,8 +6259,8 @@
           "russian": "успеть, справиться"
         }
       ],
-      "grammar": "вторение: Passiv (werden + Partizip II), Relativsätze, um/ohne/statt...zu, Infinitivsätze. Абергой и легенды.",
-      "essence": "овторение пройденного материала: Диалектная викторина , 2. Инфинитивные обороты — цепочка (15 мин), 3. Суеверный диалог (10 мин), 4. Легенда-экспромт (15 мин), 5. Рефлексия (10 мин)",
+      "grammar": "Повторение: Passiv (werden + Partizip II), Relativsätze, um/ohne/statt...zu, Infinitivsätze. Абергой и легенды.",
+      "essence": "Повторение пройденного материала: Диалектная викторина , 2. Инфинитивные обороты — цепочка (15 мин), 3. Суеверный диалог (10 мин), 4. Легенда-экспромт (15 мин), 5. Рефлексия (10 мин)",
       "difficulties": [],
       "mistakes": [],
       "tips": [
@@ -6187,6 +6271,7 @@
       "id": 85,
       "week": 13,
       "phase": "active",
+      "title": "Ich bin ein Morgenmensch. Ich stehe um 5 Uhr auf und laufe eine Stunde.",
       "topics": [
         "Pessimistin",
         "Zukunft",
@@ -6247,8 +6332,8 @@
           "russian": "притягиваться"
         }
       ],
-      "grammar": "тирическое описание характеров: Gegensätze (противопоставления). Устойчивые выражения: 'Gegensätze ziehen sich an.'",
-      "essence": "ва противоположных характера в диалоге. Сатира на человеческие слабости. / Zwei gegensätzliche Charaktere. Satire.",
+      "grammar": "Сатирическое описание характеров: Gegensätze (противопоставления). Устойчивые выражения: 'Gegensätze ziehen sich an.'",
+      "essence": "Два противоположных характера в диалоге. Сатира на человеческие слабости. / Zwei gegensätzliche Charaktere. Satire.",
       "difficulties": [
         "Характеры в немецком:",
         "Сатирический тон.",
@@ -6261,6 +6346,7 @@
       "id": 86,
       "week": 13,
       "phase": "active",
+      "title": "Die Fenster müssen gesichert werden. Die Gegend ist nicht sicher.",
       "topics": [
         "Pessimistin",
         "Zukunft",
@@ -6321,8 +6407,8 @@
           "russian": "преувеличивать"
         }
       ],
-      "grammar": "ssiv с модальными глаголами: müssen gesichert werden, kann verriegelt werden, sollten aufbewahrt werden.",
-      "essence": "ащита собственности. Пассив с модальными глаголами! / Eigentumsschutz. Passiv mit Modalverben!",
+      "grammar": "Passiv с модальными глаголами: müssen gesichert werden, kann verriegelt werden, sollten aufbewahrt werden.",
+      "essence": "Защита собственности. Пассив с модальными глаголами! / Eigentumsschutz. Passiv mit Modalverben!",
       "difficulties": [
         "Пассив с модальными глаголами:",
         "Eigentum"
@@ -6334,6 +6420,7 @@
       "id": 87,
       "week": 13,
       "phase": "active",
+      "title": "Hör zu! Ich erzähle dir einen Witz: Zwei Männer im Biergarten...",
       "topics": [
         "Pessimistin",
         "Zukunft",
@@ -6394,8 +6481,8 @@
           "russian": "встречаться"
         }
       ],
-      "grammar": "зговорный стиль: Imperativ (Hör zu!, Sag!). Прямая речь в повествовании. Шутки с неожиданной концовкой.",
-      "essence": "мор, розыгрыши, совместное времяпрепровождение. / Spaß, Scherze.",
+      "grammar": "Разговорный стиль: Imperativ (Hör zu!, Sag!). Прямая речь в повествовании. Шутки с неожиданной концовкой.",
+      "essence": "Юмор, розыгрыши, совместное времяпрепровождение. / Spaß, Scherze.",
       "difficulties": [
         "Spaßvogel",
         "Разговорный стиль."
@@ -6407,6 +6494,7 @@
       "id": 88,
       "week": 13,
       "phase": "active",
+      "title": "Lass uns ein bisschen alles wiederholen: Wetter, Essen, Reisen!",
       "topics": [
         "Pessimistin",
         "Zukunft",
@@ -6467,8 +6555,8 @@
           "russian": "тёплый"
         }
       ],
-      "grammar": "ни-повторение: темы из начала курса (Wetter, Essen, Reisen). Обобщающая лексика.",
-      "essence": "мешанные темы. Мини-повторение всего курса. / Gemischte Themen. Mini-Wiederholung.",
+      "grammar": "Мини-повторение: темы из начала курса (Wetter, Essen, Reisen). Обобщающая лексика.",
+      "essence": "Смешанные темы. Мини-повторение всего курса. / Gemischte Themen. Mini-Wiederholung.",
       "difficulties": [
         "Verschiedenes",
         "Совет:"
@@ -6482,6 +6570,7 @@
       "id": 89,
       "week": 13,
       "phase": "active",
+      "title": "Setzt euch! Das Essen ist fertig. Guten Appetit!",
       "topics": [
         "Pessimistin",
         "Zukunft",
@@ -6542,8 +6631,8 @@
           "russian": "счастье"
         }
       ],
-      "grammar": "ма 'Gemütlichkeit': немецкое понятие уюта. Imperativ: Setzt euch! (мн.ч. ты-форма). Степени сравнения: besser als.",
-      "essence": "емейный ужин. Тепло и уют. / Familienessen. Gemütlichkeit.",
+      "grammar": "Тема 'Gemütlichkeit': немецкое понятие уюта. Imperativ: Setzt euch! (мн.ч. ты-форма). Степени сравнения: besser als.",
+      "essence": "Семейный ужин. Тепло и уют. / Familienessen. Gemütlichkeit.",
       "difficulties": [
         "gemütlich"
       ],
@@ -6554,6 +6643,7 @@
       "id": 90,
       "week": 13,
       "phase": "active",
+      "title": "Hast du gestern den Tatort gesehen? Der war spannend!",
       "topics": [
         "Pessimistin",
         "Zukunft",
@@ -6614,8 +6704,8 @@
           "russian": "серия, эпизод"
         }
       ],
-      "grammar": "ражение мнения о фильме: 'Ich fand...', 'Findest du?', Vergleich mit 'als'. Präteritum: fand, war.",
-      "essence": "бсуждение телепередачи. Мнения о фильме. / Krimi-Diskussion.",
+      "grammar": "Выражение мнения о фильме: 'Ich fand...', 'Findest du?', Vergleich mit 'als'. Präteritum: fand, war.",
+      "essence": "Обсуждение телепередачи. Мнения о фильме. / Krimi-Diskussion.",
       "difficulties": [
         "Обсуждение фильма:",
         "«Tatort» — культовый немецкий сериал."
@@ -6627,6 +6717,7 @@
       "id": 91,
       "week": 13,
       "phase": "active",
+      "title": "Der Chef sagt, er habe keine Zeit für das Meeting.",
       "topics": [
         "Pessimistin",
         "Zukunft",
@@ -6687,8 +6778,8 @@
           "russian": "фирма"
         }
       ],
-      "grammar": "direkte Rede (косвенная речь): Konjunktiv I (er habe, sie sei, sie hätten). Глагол в конце придаточного предложения.",
-      "essence": "освенная речь! Конъюнктив I. / Indirekte Rede. Konjunktiv I.",
+      "grammar": "Indirekte Rede (косвенная речь): Konjunktiv I (er habe, sie sei, sie hätten). Глагол в конце придаточного предложения.",
+      "essence": "Косвенная речь! Конъюнктив I. / Indirekte Rede. Konjunktiv I.",
       "difficulties": [
         "Konjunktiv I — для пересказа чужих слов.",
         "Образование:"
@@ -6700,6 +6791,7 @@
       "id": 92,
       "week": 14,
       "phase": "active",
+      "title": "Kenne ein neues Sprichwort: 'Lügen haben kurze Beine.'",
       "topics": [
         "Pessimistin",
         "Zukunft",
@@ -6760,8 +6852,8 @@
           "russian": "мудрый"
         }
       ],
-      "grammar": "словицы о характере: устойчивые конструкции. Сравнительные предложения с 'wer...der...' (кто...тот...).",
-      "essence": "ословицы о характерах. / Sprichwörter über Charaktere.",
+      "grammar": "Пословицы о характере: устойчивые конструкции. Сравнительные предложения с 'wer...der...' (кто...тот...).",
+      "essence": "Пословицы о характерах. / Sprichwörter über Charaktere.",
       "difficulties": [
         "Немецкие пословицы: - «Stille Wasser sind tief.» = Тихие воды глубоки. - «Der Schein trügt.» = Внешность обманчива. - «Hochmut kommt vor dem Fall.» = Гордыня до добра не доводит. ### 🇩🇪 Anleitung für den Lehrer"
       ],
@@ -6772,6 +6864,7 @@
       "id": 93,
       "week": 14,
       "phase": "active",
+      "title": "Es war eine stürmische Nacht. Der Detektiv betrat das alte Haus.",
       "topics": [
         "Pessimistin",
         "Zukunft",
@@ -6832,8 +6925,8 @@
           "russian": "доказательство, улика"
         }
       ],
-      "grammar": "тективный рассказ: Präteritum в повествовании (betrat, lag, fand). Описание обстановки. Прилагательные в роли определения.",
-      "essence": "етективная история. / Kriminalgeschichte.",
+      "grammar": "Детективный рассказ: Präteritum в повествовании (betrat, lag, fand). Описание обстановки. Прилагательные в роли определения.",
+      "essence": "Детективная история. / Kriminalgeschichte.",
       "difficulties": [
         "Aktenzeichen",
         "Детективная лексика:"
@@ -6845,6 +6938,7 @@
       "id": 94,
       "week": 14,
       "phase": "active",
+      "title": "Wie geht es dir? Ich habe gehört, du warst krank.",
       "topics": [
         "Pessimistin",
         "Zukunft",
@@ -6905,8 +6999,8 @@
           "russian": "улучшение"
         }
       ],
-      "grammar": "ма болезни: Perfekt (ich habe gehört, du warst krank). Пожелания: 'Gute Besserung!' (Выздоравливай!).",
-      "essence": "олезнь, выздоровление. / Krankheit, Genesung.",
+      "grammar": "Тема болезни: Perfekt (ich habe gehört, du warst krank). Пожелания: 'Gute Besserung!' (Выздоравливай!).",
+      "essence": "Болезнь, выздоровление. / Krankheit, Genesung.",
       "difficulties": [
         "Звукоподражания:",
         "Болезнь и здоровье:",
@@ -6919,6 +7013,7 @@
       "id": 95,
       "week": 14,
       "phase": "active",
+      "title": "Die gestrige Sitzung des Rates wurde kontrovers diskutiert.",
       "topics": [
         "Pessimistin",
         "Zukunft",
@@ -6979,8 +7074,8 @@
           "russian": "журналистика"
         }
       ],
-      "grammar": "зетный стиль: Passiv (wurde diskutiert, wurde bekannt gegeben), Konjunktiv I в косвенной речи (sei notwendig).",
-      "essence": "азетный стиль. Объективное изложение. / Zeitungsstil. Fakten, Kürze, Konjunktiv I.",
+      "grammar": "Газетный стиль: Passiv (wurde diskutiert, wurde bekannt gegeben), Konjunktiv I в косвенной речи (sei notwendig).",
+      "essence": "Газетный стиль. Объективное изложение. / Zeitungsstil. Fakten, Kürze, Konjunktiv I.",
       "difficulties": [
         "Bericht-Stil.",
         "Zeitungsvokabular:"
@@ -6992,6 +7087,7 @@
       "id": 96,
       "week": 14,
       "phase": "active",
+      "title": "In Deutschland sagt man oft direkt, was man denkt. Das ist ehrlich.",
       "topics": [
         "Pessimistin",
         "Zukunft",
@@ -7052,8 +7148,8 @@
           "russian": "светская беседа"
         }
       ],
-      "grammar": "авнение культур: 'In Deutschland ... in Russland ...'. Steigerung: indirekter, länger. Konjunktionen: sondern (а, но наоборот).",
-      "essence": "ультурные различия. Межкультурная коммуникация. / Kulturelle Unterschiede. Abschlussdiskussion.",
+      "grammar": "Сравнение культур: 'In Deutschland ... in Russland ...'. Steigerung: indirekter, länger. Konjunktionen: sondern (а, но наоборот).",
+      "essence": "Культурные различия. Межкультурная коммуникация. / Kulturelle Unterschiede. Abschlussdiskussion.",
       "difficulties": [
         "Культурные сравнения.",
         "Итоговое обсуждение:"
@@ -7065,6 +7161,7 @@
       "id": 97,
       "week": 14,
       "phase": "active",
+      "title": "Sehr geehrte Damen und Herren, ich begrüße Sie herzlich.",
       "topics": [
         "Pessimistin",
         "Zukunft",
@@ -7125,8 +7222,8 @@
           "russian": "внимание"
         }
       ],
-      "grammar": "рмальная речь: Konjunktiv II вежливости (wäre...gewesen). Passiv-конструкции. Благодарственные обороты.",
-      "essence": "фициальная речь. Формальный регистр. / Formelle Rede. Höchster Formalitätsgrad.",
+      "grammar": "Формальная речь: Konjunktiv II вежливости (wäre...gewesen). Passiv-конструкции. Благодарственные обороты.",
+      "essence": "Официальная речь. Формальный регистр. / Formelle Rede. Höchster Formalitätsgrad.",
       "difficulties": [
         "Официальная речь.",
         "Rede-Struktur:"
@@ -7138,6 +7235,7 @@
       "id": 98,
       "week": 14,
       "phase": "active",
+      "title": "Heute wiederholen wir ALLES! Der gesamte Kurs in einer Stunde!",
       "topics": [
         "Pessimistin",
         "Zukunft",
@@ -7198,8 +7296,8 @@
           "russian": "дверь"
         }
       ],
-      "grammar": "анд-финальное повторение: все темы курса от A2 до B1. Обзор грамматики: Artikel, Verben, Sätze, Zeitformen.",
-      "essence": "СЁ! Все 97 уроков в одном повторении. / ALLES! Die gesamten 97 Lektionen.",
+      "grammar": "Гранд-финальное повторение: все темы курса от A2 до B1. Обзор грамматики: Artikel, Verben, Sätze, Zeitformen.",
+      "essence": "ВСЁ! Все 97 уроков в одном повторении. / ALLES! Die gesamten 97 Lektionen.",
       "difficulties": [],
       "mistakes": [],
       "tips": [
@@ -7210,6 +7308,7 @@
       "id": 99,
       "week": 15,
       "phase": "active",
+      "title": "Liebe Freunde, heute schreibe ich euch den letzten Brief dieses Kurses.",
       "topics": [
         "Pessimistin",
         "Zukunft",
@@ -7270,8 +7369,8 @@
           "russian": "удовольствие, веселье"
         }
       ],
-      "grammar": "чное письмо (Brief): структура, обращения, прощание. Perfekt для подведения итогов (ich habe gelernt, konnte).",
-      "essence": "ичное письмо другу. Подведение итогов курса. / Persönlicher Brief. Kursrückblick.",
+      "grammar": "Личное письмо (Brief): структура, обращения, прощание. Perfekt для подведения итогов (ich habe gelernt, konnte).",
+      "essence": "Личное письмо другу. Подведение итогов курса. / Persönlicher Brief. Kursrückblick.",
       "difficulties": [
         "Письмо как рефлексия.",
         "Эмоциональный момент."
@@ -7283,6 +7382,7 @@
       "id": 100,
       "week": 15,
       "phase": "active",
+      "title": "Herzlichen Glückwunsch! Wir haben es geschafft! Lektion 100!",
       "topics": [
         "Pessimistin",
         "Zukunft",
@@ -7343,8 +7443,8 @@
           "russian": "будущее"
         }
       ],
-      "grammar": "НАЛ! Повторение всех тем. Тосты и поздравления: 'Prost!', 'Herzlichen Glückwunsch!'. Взгляд в будущее (B2).",
-      "essence": "ИНАЛ! Заключительный урок курса. / FINALE! Abschlusslektion.",
+      "grammar": "ФИНАЛ! Повторение всех тем. Тосты и поздравления: 'Prost!', 'Herzlichen Glückwunsch!'. Взгляд в будущее (B2).",
+      "essence": "ФИНАЛ! Заключительный урок курса. / FINALE! Abschlusslektion.",
       "difficulties": [
         "Заголовок-шутка.",
         "Финальный диалог.",
@@ -7356,7 +7456,7 @@
   ],
   "metadata": {
     "totalLessons": 100,
-    "generatedAt": "2026-08-05T17:35:45.865Z",
+    "generatedAt": "2026-08-08T14:14:17.618Z",
     "version": "1.0"
   }
 }

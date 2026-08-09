@@ -14,7 +14,39 @@ function extractText(html, start, end) {
 function extractTopics(html) {
   const topicsText = extractText(html, '<p class="text-xs text-zinc-600 text-center">', '</p>');
   if (!topicsText) return [];
-  return topicsText.split('·').map(t => t.trim()).filter(t => t.length > 0);
+  // Decode HTML entities (same as extractGrammar). Otherwise the apostrophe
+  // in titles like "Wie geht's?" is stored as the literal "&#x27;" in the JSON,
+  // which then renders verbatim on screen — verified Bug B.
+  const decoded = topicsText
+    .replace(/&#x27;/g, "'")
+    .replace(/&quot;/g, '"')
+    .replace(/&amp;/g, '&');
+  return decoded.split('·').map(t => t.trim()).filter(t => t.length > 0);
+}
+
+// Per-lesson title: use the first DE dialog line as the recognizable
+// chapter heading (e.g. "Guten Tag!" for Lesson 1, "Ich habe großen Hunger"
+// for Lesson 2). The source HTML has no discrete per-lesson <h1> — the
+// only <h3>s are section labels like "Диалог урока" / "Грамматика". Assimil
+// prints its chapter heading as the first dialogue line, which is
+// short, unique, and recognisable in the UI. This fixes Bug A where the
+// home/week/lesson screens rendered `lesson.topics` (week themes, shared
+// by all 7 lessons of the week) as if it were the per-lesson title.
+function extractLessonTitle(html) {
+  const dialogSection = extractText(
+    html,
+    '<h3 class="text-sm font-semibold text-zinc-100">Диалог урока</h3>',
+    '<div class="rounded-xl border border-zinc-800 bg-zinc-900/30 p-4"><button class="flex items-center justify-between w-full"><div class="flex items-center gap-2"><svg'
+  );
+  if (!dialogSection) return '';
+  const match = dialogSection.match(
+    /<p class="text-sm text-zinc-100 font-medium leading-relaxed">([^<]+)<\/p>/
+  );
+  if (!match) return '';
+  return match[1].trim()
+    .replace(/&#x27;/g, "'")
+    .replace(/&quot;/g, '"')
+    .replace(/&amp;/g, '&');
 }
 
 // Extract audio path
@@ -66,14 +98,18 @@ function extractVocabulary(html) {
 
 // Extract grammar note
 function extractGrammar(html) {
-  const grammarText = extractText(html, '<h3 class="text-sm font-semibold text-zinc-100">Грамматика</h3>', '<p class="mt-3 text-sm text-zinc-300 leading-relaxed">');
+  const grammarContentTag = '<p class="mt-3 text-sm text-zinc-300 leading-relaxed">';
+  const grammarText = extractText(html, '<h3 class="text-sm font-semibold text-zinc-100">Грамматика</h3>', grammarContentTag);
   const contentEnd = html.indexOf('</p></div></div><div class="space-y-4">', html.indexOf(grammarText));
   if (contentEnd === -1) return '';
 
-  const startIdx = html.indexOf('<p class="mt-3 text-sm text-zinc-300 leading-relaxed">');
+  const startIdx = html.indexOf(grammarContentTag);
   if (startIdx === -1) return '';
 
-  let content = html.substring(startIdx + 56, contentEnd).trim();
+  // Use tag.length to skip exactly the opening HTML tag. A previous version
+  // hardcoded +56 which silently ate the first 2 Cyrillic letters of every
+  // grammar section (e.g. "Определённые" became "ределённые").
+  let content = html.substring(startIdx + grammarContentTag.length, contentEnd).trim();
   // Decode HTML entities
   content = content.replace(/&#x27;/g, "'").replace(/&quot;/g, '"').replace(/&amp;/g, '&');
 
@@ -82,14 +118,17 @@ function extractGrammar(html) {
 
 // Extract lesson essence
 function extractEssence(html) {
-  const essenceSection = extractText(html, '<h3 class="text-sm font-semibold text-zinc-100">Суть урока</h3>', '<p class="text-sm text-zinc-300 leading-relaxed">');
-  const contentStart = html.indexOf('<p class="text-sm text-zinc-300 leading-relaxed">', html.indexOf('Суть урока'));
+  const essenceContentTag = '<p class="text-sm text-zinc-300 leading-relaxed">';
+  const essenceSection = extractText(html, '<h3 class="text-sm font-semibold text-zinc-100">Суть урока</h3>', essenceContentTag);
+  const contentStart = html.indexOf(essenceContentTag, html.indexOf('Суть урока'));
   if (contentStart === -1) return '';
 
   const contentEnd = html.indexOf('</p></div><div class="rounded-xl border border-zinc-800 bg-zinc-900/30 p-4">', contentStart);
   if (contentEnd === -1) return '';
 
-  return html.substring(contentStart + 50, contentEnd).trim();
+  // Same defense as extractGrammar: tag.length, not a hardcoded +50 (which
+  // used to eat the first Cyrillic letter of every essence section).
+  return html.substring(contentStart + essenceContentTag.length, contentEnd).trim();
 }
 
 // Extract list items (difficulties, mistakes, tips)
@@ -151,6 +190,7 @@ function parseLesson(lessonNum) {
     id: lessonNum,
     week: week,
     phase: phase,
+    title: extractLessonTitle(html),
     topics: extractTopics(html),
     audioPath: extractAudioPath(html),
     dialog: extractDialog(html),
