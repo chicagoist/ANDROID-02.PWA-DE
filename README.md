@@ -1,5 +1,7 @@
 # Just German — Android App
 
+> 🌐 **English** · [Русский](#русская-версия)
+
 Native Android application for learning German (A2→B1) using the Assimil method.
 
 ## Contents
@@ -169,6 +171,8 @@ The full copyright notice is in the [`NOTICE`](NOTICE) file.
 ---
 
 # Русская версия
+
+> 🌐 [English](#just-german--android-app) · **Русский**
 
 # Just German — Android App
 
