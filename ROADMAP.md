@@ -1,5 +1,7 @@
 # ROADMAP — modernization plan for Just German
 
+> 🌐 **English** · [Русский](#русская-версия)
+
 > Functionally the codebase is **complete**: 100 lessons, 12 quizzes, audio player
 > (ExoPlayer), TTS speech synthesis, PDF textbook (external viewer), progress (DataStore),
 > RU translations of the lines — everything has been tested on a smartphone.
@@ -73,6 +75,8 @@ release description. The alternative is #3 (unit tests).
 ---
 
 # Русская версия
+
+> 🌐 [English](#roadmap--modernization-plan-for-just-german) · **Русский**
 
 # ROADMAP — план дальнейшей модернизации Just German
 
